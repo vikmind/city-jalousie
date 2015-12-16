@@ -68,7 +68,8 @@ gulp.task('deploy', ['build'], function(){
  ******************************/
 gulp.task('clean', function(){
 	del([
-		'public/**/*'
+		'public/**/*',
+		'.publish'
 	]);
 });
 
