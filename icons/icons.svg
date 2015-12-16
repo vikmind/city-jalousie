@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="arrow-down" viewBox="0 0 8 5">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff" fill="none" opacity="0.7" fill-rule="evenodd" d="M 1 1 L 4 4 Z L 7 1 Z"/>
+</symbol><symbol id="arrow-left" viewBox="0 0 12 22">
+    <path stroke-linejoin="miter" stroke-linecap="round" stroke-width="2" stroke="#000000" fill="none" opacity="0.2" fill-rule="evenodd" d="M 11 21 L 1 11 Z L 11 1 Z"/>
+</symbol><symbol id="arrow-right" viewBox="0 0 12 22">
+    <path stroke-linejoin="miter" stroke-linecap="round" stroke-width="2" stroke="#000000" fill="none" opacity="0.4" fill-rule="evenodd" d="M 1 1 L 11 11 Z L 1 21 Z"/>
+</symbol></svg>
