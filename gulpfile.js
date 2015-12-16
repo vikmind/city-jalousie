@@ -53,9 +53,9 @@ gulp.task('build', [
 /******************************
  * Deploy task
  ******************************/
-gulp.task('deploy', ['build'], function(){
+gulp.task('deploy', function(){
 	'use strict';
-	gulp.src('./public/**')
+	return gulp.src('public/**/*')
 		.pipe(ghPages({
 			branch: "gh-pages",
 			force: true,
