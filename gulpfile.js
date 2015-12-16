@@ -99,6 +99,7 @@ gulp.task('svg2png', function () {
 		.pipe(svg2png())
 		.pipe(gulp.dest('public/icons'));
 });
+gulp.task('svg',['svg2png', 'svgstore']);
 
 /******************************
  * Copy views to public
@@ -117,7 +118,7 @@ gulp.task('pluginsConcat', function () {
 	bowerFiles.push('./bower_components/svg4everybody/dist/svg4everybody.legacy.min.js');
 	gulp.src(bowerFiles)
 		.pipe(concat('plugins.min.js'))
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(gulp.dest('public/js'));
 });
 

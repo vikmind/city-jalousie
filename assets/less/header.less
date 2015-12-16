@@ -1,0 +1,49 @@
+.header{
+	background: center no-repeat;
+	background-size: cover;
+	height: 625px;
+	&__tools{
+		height: 100px;
+		&>.container{
+			position: relative;
+			padding-top: 15px;
+		}
+	}
+	&__logo{
+		position: absolute;
+		left: 50%;
+		top: 0;
+		margin-left: -71px;
+		width: 142px;
+		height: 142px;
+		text-align: center;
+		background: linear-gradient(to bottom left, #fff 0%,#fff 50%, #f5f5f5 50%, #f5f5f5 100%);
+		border: 2px solid #fff;
+		&:before{
+			content: '';
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			bottom: 4px;
+			right: 4px;
+			border: 1px dashed fade(#000,20%);
+		}
+	}
+	&__logo-img{
+		position: relative;
+		margin: 20px 0;
+	}
+	&__phone-callme{
+		float: left;
+		width: 50%;
+		padding-right: 110px;
+	}
+	&__cart-search{
+		float: left;
+		width: 50%;
+		padding-left: 129px;
+	}
+	&__nav{
+
+	}
+}
