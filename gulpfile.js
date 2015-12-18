@@ -53,7 +53,7 @@ gulp.task('build', [
 /******************************
  * Deploy task
  ******************************/
-gulp.task('deploy', function(){
+gulp.task('deploy', ['build'], function(){
 	'use strict';
 	return gulp.src('public/**/*')
 		.pipe(ghPages({
@@ -69,7 +69,7 @@ gulp.task('deploy', function(){
 gulp.task('clean', function(){
 	del([
 		'public/**/*',
-		'.publish'
+		'.publish/**/*'
 	]);
 });
 

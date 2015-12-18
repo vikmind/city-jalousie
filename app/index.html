@@ -6,32 +6,34 @@
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-	<header class="header" style="background-image: url(img/header.jpg);">
-		<div class="header__tools">
+	<header class="site-header" style="background-image: url(img/header.jpg);">
+		<div class="site-header__tools">
 			<div class="container">
-				<div class="header__phone-callme phone-top">
-					<div class="header__phone">
-						<span class="phone-top__icon icon icon-phone"></span>
-					</div>
-					<div class="header__callme">
-						
-					</div>
+				<div class="site-header__phone-callme phone-top">
+					<span class="phone-top__icon icon icon-phone"></span>
+					<a href="tel:+74955426484" class="phone-top__link">+7 (495) 542-64-84</a>
+					<div class="phone-top__time">9-21ч</div>
+					<button class="phone-top__button">перезвоните мне</button>
 				</div>
-				<div class="header__cart-search">
-					<div class="header__cart">
-						<span class="icon icon-cart"></span>
+				<div class="site-header__logo">
+					<img src="img/logo.png" alt="Сити Жалюзи" class="site-header__logo-img">
+				</div>
+				<div class="site-header__cart-search">
+					<div class="site-header__cart cart-top">
+						<div class="cart-top__icon-holder">
+							<span class="cart-top__icon icon icon-cart"></span>
+							<span class="cart-top__count">12</span>
+						</div>
+						<div class="cart-top__text">Корзина</div>
 					</div>
-					<form class="header__search search" action="/#search">
-						<input type="search" class="search__input">
-						<button type="submit" class="search__submit"><span class="icon icon-search"></span></button>
+					<form class="site-header__search search-top" action="/#search">
+						<input type="search" class="search-top__input">
+						<button type="submit" class="search-top__submit"><span class="icon icon-search"></span></button>
 					</form>
-				</div>
-				<div class="header__logo">
-					<img src="img/logo.png" alt="Сити Жалюзи" class="header__logo-img">
 				</div>
 			</div>
 		</div>
-		<div class="header__nav">
+		<div class="site-header__nav">
 			<nav class="nav-top container"></nav>
 		</div>
 	</header>
