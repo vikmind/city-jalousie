@@ -17,6 +17,8 @@ var gulp = require('gulp'),
 	modRewrite = require('connect-modrewrite'),
 	notify = require('gulp-notify'),
 	ghPages = require('gulp-gh-pages'),
+	jade = require('gulp-jade'),
+	data = require('gulp-data'),
 	del = require('del');
 
 console.info('********** Bower Files **********');
@@ -28,6 +30,7 @@ console.info(bowerFiles);
 gulp.task('default', [
 	'copyAssets',
 	'copyViews',
+	'jade',
 	'browser-sync',
 	'pluginsConcat',
 	'jsConcat',
@@ -43,6 +46,7 @@ gulp.task('default', [
 gulp.task('build', [
 	'copyAssets',
 	'copyViews',
+	'jade',
 	'pluginsConcat',
 	'jsConcat',
 	'less-min',
@@ -111,6 +115,18 @@ gulp.task('copyViews', function () {
 		.pipe(fileinclude())
 		.pipe(gulp.dest('public'));
 });
+gulp.task('jade', function(){
+	'use strict';
+	gulp.src('app/**/*jade')
+		.pipe(data(function(file){
+			return require('./assets/data/views.json');
+		}))
+		.pipe(jade())
+		.on('error', notify.onError(function (error) {
+			return '\nAn error occurred while jading.\nLook in the console for details.\n' + error;
+		}))
+		.pipe(gulp.dest('public'));
+});
 
 /******************************
  * JS plugins
@@ -169,6 +185,7 @@ gulp.task('watch', function () {
 	gulp.watch('assets/less/*.less', ['less']);
 	gulp.watch('app/**/*.js', ['jsConcat']);
 	gulp.watch('app/**/*.html', ['copyViews']);
+	gulp.watch('app/**/*.jade', ['jade']);
 	gulp.watch(['assets/**/*.*', '!assets/less/*.less'], ['copyAssets']);
 });
 

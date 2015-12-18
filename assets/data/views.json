@@ -1,0 +1,68 @@
+{
+	"topmenu": [
+    {
+      "category": "жалюзи",
+      "hassubs": true,
+      "name": "Вертикальные"},
+    {
+      "category": "жалюзи",
+      "hassubs": true,
+      "name": "горизонтальные"},
+    {
+      "category": "жалюзи",
+      "hassubs": true,
+      "name": "Мираж"},
+    {
+      "category": "",
+      "hassubs": false,
+      "name": "Шторы"},
+    {
+      "category": "Шторы",
+      "hassubs": true,
+      "name": "Римские"},
+    {
+      "category": "Шторы",
+      "hassubs": true,
+      "name": "Рулонные"},
+    {
+      "category": "Шторы",
+      "hassubs": false,
+      "name": "Плиссе"},
+    {
+      "category": "",
+      "hassubs": false,
+      "name": "Карнизы"},
+    {
+      "category": "",
+      "hassubs": false,
+      "name": "Рольставни"},
+    {
+      "category": "",
+      "hassubs": false,
+      "name": "Ворота"},
+    {
+      "category": "",
+      "hassubs": false,
+      "name": "одежда сцены"}
+	],
+  "topsubmenu": [
+    {
+      "image": "menu1.jpg",
+      "name": "Классические"},
+    {
+      "image": "menu2.jpg",
+      "name": "Декоративные"},
+    {
+      "image": "menu3.jpg",
+      "name": "Нитяные"},
+    {
+      "image": "menu4.jpg",
+      "name": "Кисея"},
+    {
+      "image": "menu5.jpg",
+      "name": "Нитяные"},
+    {
+      "image": "menu6.jpg",
+      "name": "Кисея"}
+  ]
+}

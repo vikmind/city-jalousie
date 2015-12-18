@@ -1,0 +1,34 @@
+header.site-header(style='background-image: url(img/header.jpg);')
+	.container
+		.site-header__tools
+			.site-header__phone-callme.phone-top
+				span.phone-top__icon.icon.icon-phone
+				a.phone-top__link(href='tel:+74955426484') +7 (495) 542-64-84
+				.phone-top__time 9-21ч
+				button.phone-top__button перезвоните мне
+			.site-header__logo
+				img.site-header__logo-img(src='img/logo.png', alt='Сити Жалюзи')
+			.site-header__cart-search
+				.site-header__cart.cart-top
+					.cart-top__icon-holder
+						span.cart-top__icon.icon.icon-cart
+						span.cart-top__count 12
+					.cart-top__text Корзина
+				form.site-header__search.search-top(action='/#search')
+					input.search-top__input(type='search', placeholder='Поиск')
+					button.search-top__submit(type='submit')
+						span.icon.icon-search
+		nav.site-header__nav.nav-top
+			ul.nav-top__list
+				each link in topmenu
+					li(class="nav-top__item #{link.hassubs ? 'withsub': ''}")
+						a.nav-top__link
+							span.nav-top__category #{link.category}
+							span.nav-top__name #{link.name}
+						if link.hassubs
+							ul.nav-top__sub-list
+								each sublink in topsubmenu
+									li.nav-top__sub-item
+										a.nav-top__sub-link
+											img(src="img/#{sublink.image}", alt="#{sublink.name}").nav-top__sub-image
+											span.nav-top__sub-name #{sublink.name}
