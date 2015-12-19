@@ -21,14 +21,14 @@ header.site-header(style='background-image: url(img/header.jpg);')
 		nav.site-header__nav.nav-top
 			ul.nav-top__list
 				each link in topmenu
-					li(class="nav-top__item #{link.hassubs ? 'withsub': ''}")
-						a.nav-top__link
-							span.nav-top__category #{link.category}
-							span.nav-top__name #{link.name}
+					li(class="nav-top__item #{link.hassubs ? 'withsub': ''} #{link.active ? 'active': ''}")
+						a.nav-top__link(href="#")
+							div.nav-top__category #{link.category}
+							div.nav-top__name #{link.name}
 						if link.hassubs
 							ul.nav-top__sub-list
 								each sublink in topsubmenu
 									li.nav-top__sub-item
-										a.nav-top__sub-link
+										a.nav-top__sub-link(href="#")
 											img(src="img/#{sublink.image}", alt="#{sublink.name}").nav-top__sub-image
 											span.nav-top__sub-name #{sublink.name}
