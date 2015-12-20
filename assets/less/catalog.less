@@ -1,0 +1,28 @@
+.catalog {
+	&__title{
+		opacity: 0.8;
+		color: #000;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 30px;
+		padding-left: 20px;
+		margin: 0 0 30px;
+	}
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		.clearfix();
+	}
+	&__item {
+		float: left;
+		width: 100%/4;
+		padding: 0 10px;
+		margin-bottom: 40px;
+	}
+	&_3 {
+		.catalog__item {
+			width: 100%/3;
+		}
+	}
+}

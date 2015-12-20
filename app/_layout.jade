@@ -1,5 +1,6 @@
 block vars
 	- var title = '';
+include includes/mixins
 doctype
 html(lang='en', ng-app='myApp')
 	head
@@ -23,5 +24,6 @@ html(lang='en', ng-app='myApp')
 	body(ng-controller='MainCtrl')
 		include includes/header
 		block content
+		include includes/footer
 		script(src='js/plugins.min.js')
 		script(src='js/app.js')

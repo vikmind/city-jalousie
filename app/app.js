@@ -1,6 +1,7 @@
 var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
+		'homeCtrl',
 		'angular-owl-carousel'
 	])
 	.config([

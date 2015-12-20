@@ -1,0 +1,3 @@
+mixin svg-icon(name, addclass)
+	svg(class='icon icon-#{name} #{addclass}')
+		use(xlink:href="icons/icons.svg##{name}")

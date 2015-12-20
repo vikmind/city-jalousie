@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('mainCtrl', ['benefitsDirective'])
+	angular.module('mainCtrl', [])
 		.controller('MainCtrl', [
 			'$scope',
 			'$log',
