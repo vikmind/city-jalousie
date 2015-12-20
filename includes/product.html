@@ -1,0 +1,118 @@
+<div class="product">
+	<!-- Product view -->
+	<div class="product__wrapper">
+		<!-- Label -->
+		<div ng-if="value!==3" class="product__label">
+			<div class="product__label-text">
+				-30%
+			</div>
+		</div>
+		<div class="product__inner">
+			<!-- Img -->
+			<div
+				style="background: url('img/product.jpg'); background-size: cover"
+				class="product__img">
+			</div>
+			<!-- Cart btn -->
+			<a href="#" class="product__cart-btn">
+				<svg class="icon icon-cart"><use xlink:href="icons/icons.svg#cart"></use></svg>
+				<span class="product__cart-label">
+					В корзину
+				</span>
+			</a>
+			<div class="product__container">
+				<!-- Review -->
+				<div class="product__review">
+					<ul class="product__review-list">
+						<li class="product__review-item">
+							<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
+						</li>
+						<li class="product__review-item">
+							<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
+						</li>
+						<li class="product__review-item">
+							<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
+						</li>
+						<li class="product__review-item">
+							<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
+						</li>
+						<li class="product__review-item">
+							<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
+						</li>
+					</ul>
+					<!-- Review label -->
+					<div class="product__review-label">
+						<span class="product__review-count">220</span>
+						отзывов
+					</div>
+				</div>
+				<header class="product__header">
+					<!-- Title -->
+					<h2 class="product__title">
+						Жалюзи Гофре
+					</h2>
+					<!-- Subtitle -->
+					<h3 class="product__subtitle">
+						Плиссе
+					</h3>
+				</header>
+				<!-- Colors -->
+				<div class="product__colors">
+					<h3 class="product__colors-title">
+						<span>45</span> цветов и текстур
+					</h3>
+					<ul class="product__colors-list" ng-init="product.color=1">
+						<li class="product__colors-item">
+							<label class="product__colors-label">
+								<input
+									type="radio"
+									name="product"
+									value="1"
+									ng-model="product.color">
+								<div class="product__colors-dot"></div>
+							</label>
+						</li>
+						<li class="product__colors-item">
+							<label class="product__colors-label">
+								<input
+									type="radio"
+									name="product"
+									value="2"
+									ng-model="product.color">
+								<div class="product__colors-dot"></div>
+							</label>
+						</li>
+						<li class="product__colors-item">
+							<label class="product__colors-label">
+								<input
+									type="radio"
+									name="product"
+									value="3"
+									ng-model="product.color">
+								<div class="product__colors-dot"></div>
+							</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- Footer -->
+			<footer class="product__footer">
+				<!-- Price container -->
+				<div class="product__price-container">
+					<!-- Old price -->
+					<div ng-if="value!==3" class="product__price-old">
+						2300 р./м<sup>2</sup>
+					</div>
+					<!-- New price -->
+					<div class="product__price-new">
+						<strong>от {{1300 * product.color}} р.</strong>/м<sup>2</sup>
+					</div>
+				</div>
+				<!-- Btn -->
+				<a href="product.html" class="btn btn_green btn_size-1">
+					Детали
+				</a>
+			</footer>
+		</div>
+	</div>
+</div>
