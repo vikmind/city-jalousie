@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="arrow-down" viewBox="0 0 8 5">
     <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff" fill="none" opacity="0.7" fill-rule="evenodd" d="M 1 1 C 1 1 4 4 4 4 C 4 4 7 1 7 1"/>
-</symbol><symbol id="arrow-left" viewBox="0 0 12 22">
-    <path stroke-linejoin="miter" stroke-linecap="round" stroke-width="2" stroke="#000000" fill="none" opacity="0.2" fill-rule="evenodd" d="M 11 21 C 11 21 1 11 1 11 C 1 11 11 1 11 1"/>
-</symbol><symbol id="arrow-right" viewBox="0 0 12 22">
-    <path stroke-linejoin="miter" stroke-linecap="round" stroke-width="2" stroke="#000000" fill="none" opacity="0.4" fill-rule="evenodd" d="M 1 1 C 1 1 11 11 11 11 C 11 11 1 21 1 21"/>
+</symbol><symbol id="ribbon_number" viewBox="0 0 65 40">
+    <path fill="#ca575b" fill-rule="evenodd" d="M 0 0 C 0 0 60 0 60 0 C 60 0 60 40 60 40 C 60 40 49.08 35 28.63 35 C 9.1 35 0 40 0 40 C 0 40 0 0 0 0 Z"/>
+    <path stroke-linejoin="miter" stroke-linecap="butt" stroke-dasharray="4,2" stroke-width="1" stroke="#ffffff" fill="none" opacity="0.3" fill-rule="evenodd" d="M 3 3 C 3 3 57 3 57 3 C 57 3 57 37 57 37 C 57 37 49.08 32 28.63 32 C 9.1 32 3 37 3 37 C 3 37 3 3 3 3 Z"/>
+    <path fill="#ffffff" opacity="0.1" fill-rule="evenodd" d="M 0 0 C 0 0 60 0 60 0 C 60 0 60 40 60 40 C 60 40 0 0 0 0 Z"/>
+    <path fill="#7d3031" fill-rule="evenodd" d="M 60 0 C 60 0 65 5 65 5 C 65 5 60 5 60 5 C 60 5 60 0 60 0 Z"/>
+</symbol><symbol id="ribbon_text" viewBox="0 0 85 40">
+    <path fill="#ca575b" fill-rule="evenodd" d="M 0 0 C 0 0 80 0 80 0 C 80 0 80 40 80 40 C 80 40 59.08 35 38.63 35 C 19.1 35 0 40 0 40 C 0 40 0 0 0 0 Z"/>
+    <path stroke-linejoin="miter" stroke-linecap="butt" stroke-dasharray="4,2" stroke-width="1" stroke="#ffffff" fill="none" opacity="0.3" fill-rule="evenodd" d="M 3 3 C 3 3 77 3 77 3 C 77 3 77 37 77 37 C 77 37 59.08 32 38.63 32 C 19.1 32 3 37 3 37 C 3 37 3 3 3 3 Z"/>
+    <path fill="#ffffff" opacity="0.1" fill-rule="evenodd" d="M 0 0 C 0 0 80 0 80 0 C 80 0 80 40 80 40 C 80 40 0 0 0 0 Z"/>
+    <path fill="#7d3031" fill-rule="evenodd" d="M 80 0 C 80 0 85 5 85 5 C 85 5 80 5 80 5 C 80 5 80 0 80 0 Z"/>
+</symbol><symbol id="shevron-left" viewBox="0 0 12 22">
+    <path stroke-linejoin="miter" stroke-linecap="round" stroke-width="2" stroke="#000000" fill="none" fill-rule="evenodd" d="M 11 21 C 11 21 1 11 1 11 C 1 11 11 1 11 1"/>
+</symbol><symbol id="shevron-right" viewBox="0 0 12 22">
+    <path stroke-linejoin="miter" stroke-linecap="round" stroke-width="2" stroke="#000000" fill="none" fill-rule="evenodd" d="M 1 1 C 1 1 11 11 11 11 C 11 11 1 21 1 21"/>
 </symbol></svg>
