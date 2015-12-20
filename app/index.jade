@@ -2,4 +2,26 @@ extends _layout
 block vars
 	- var title="Главная"
 block content
-	h1 Главная
+	main.home
+		section.container-holder
+			.container.container_margin-bottom
+				.column-3
+					.news
+						.news__inner
+							div.news__img-holder
+								img.news__img(src="img/news_constructor.jpg", alt="Constructor")
+							.news__container
+								.news__label
+									.news__label-text
+										| акция
+								h2.news__title
+									| Конструктор жалюзи и штор
+								p.news__text
+									| Затрудняетесь с выбором  материала для штор или жалюзи? Вам поможет наш конструктор! Загрузите фото своего окна и  прикладывайте шторы прямо  на фото.
+								a.btn.btn_green(href="#")
+									| Перейти в конструктор
+				.column-1
+					benefits(title="Услуги", url="services.json", id="services")
+		.container
+			.column-1
+				benefits(title="Преимущества", url="benefits.json", id="advantages")

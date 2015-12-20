@@ -1,12 +1,27 @@
 block vars
 	- var title = '';
 doctype
-html(lang='en')
+html(lang='en', ng-app='myApp')
 	head
 		meta(charset='UTF-8')
 		title Сити Жалюзи – #{title}
 		meta(name='viewport', content='width=device-width,initial-scale=1')
 		link(rel='stylesheet', href='css/app.css')
-	body
+		script.
+			WebFontConfig = {
+				google: { families: [ 'Open+Sans:400,700,600,800:latin,cyrillic', 'PT+Sans:400,700:latin,cyrillic', 'Roboto:400,500,700:latin,cyrillic' ] }
+			};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+					'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+	body(ng-controller='MainCtrl')
 		include includes/header
 		block content
+		script(src='js/plugins.min.js')
+		script(src='js/app.js')

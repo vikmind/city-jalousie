@@ -1,0 +1,62 @@
+.benefit {
+	width: 100%;
+	height: 380px;
+	position: relative;
+	text-align: center;
+	&__inner {
+		position: relative;
+		padding: 30px;
+		z-index: 5;
+	}
+	&__bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: .05;
+		z-index: 1;
+	}
+	&__img {
+		width: 90px;
+		margin-top: 32px;
+	}
+	&__title {
+		font-size: 20px;
+		font-weight: 100;
+		line-height: 26px;
+		margin: 13px 0 14px;
+	}
+	&__text {
+		font-size: 13px;
+		font-weight: 300;
+		line-height: 20px;
+		letter-spacing: 0.3px;
+		opacity: 0.9;
+	}
+	&__shevron {
+		position: absolute;
+		bottom: 27px;
+		z-index: 10;
+		opacity: .3;
+		transition: opacity @animation-time;
+		&:hover{
+			opacity: .4;
+		}
+		&_left {
+			left: 37px;
+		}
+		&_right {
+			right: 37px;
+		}
+	}
+}
+.text-block_benefits .benefit{
+	height: 460px;
+	&__img{
+		margin-top: 60px;
+	}
+	&__title{
+		margin: 25px 0;
+	}
+}

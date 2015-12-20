@@ -1,6 +1,6 @@
 header.site-header(style='background-image: url(img/header.jpg);')
-	.container
-		.site-header__tools
+	.site-header__tools
+		.container
 			.site-header__phone-callme.phone-top
 				span.phone-top__icon.icon.icon-phone
 				a.phone-top__link(href='tel:+74955426484') +7 (495) 542-64-84
@@ -15,10 +15,11 @@ header.site-header(style='background-image: url(img/header.jpg);')
 						span.cart-top__count 12
 					.cart-top__text Корзина
 				form.site-header__search.search-top(action='/#search')
-					input.search-top__input(type='search', placeholder='Поиск')
+					input.search-top__input(type='text', placeholder='Поиск')
 					button.search-top__submit(type='submit')
 						span.icon.icon-search
-		nav.site-header__nav.nav-top
+	nav.site-header__nav.nav-top
+		.container
 			ul.nav-top__list
 				each link in topmenu
 					li(class="nav-top__item #{link.hassubs ? 'withsub': ''} #{link.active ? 'active': ''}")

@@ -57,7 +57,7 @@ gulp.task('build', [
 /******************************
  * Deploy task
  ******************************/
-gulp.task('deploy', ['build'], function(){
+gulp.task('deploy', function(){
 	'use strict';
 	return gulp.src('public/**/*')
 		.pipe(ghPages({
@@ -71,7 +71,7 @@ gulp.task('deploy', ['build'], function(){
  * Clean task
  ******************************/
 gulp.task('clean', function(){
-	del([
+	return del([
 		'public/**/*',
 		'.publish/**/*'
 	]);
@@ -82,7 +82,7 @@ gulp.task('clean', function(){
  ******************************/
 gulp.task('copyAssets', function () {
 	'use strict';
-	gulp.src([
+	return gulp.src([
 			'assets/**/*.*',
 			'!assets/**/*.less'
 		])
@@ -94,13 +94,13 @@ gulp.task('copyAssets', function () {
  ******************************/
 gulp.task('svgstore', function () {
 	'use strict';
-	gulp.src('assets/icons/*.svg')
+	return gulp.src('assets/icons/*.svg')
 		.pipe(svgstore())
 		.pipe(gulp.dest('public/icons'));
 });
 gulp.task('svg2png', function () {
 	'use strict';
-	gulp.src('assets/icons/*.svg')
+	return gulp.src('assets/icons/*.svg')
 		.pipe(svg2png())
 		.pipe(gulp.dest('public/icons'));
 });
@@ -111,13 +111,13 @@ gulp.task('svg',['svg2png', 'svgstore']);
  ******************************/
 gulp.task('copyViews', function () {
 	'use strict';
-	gulp.src('app/**/*html')
+	return gulp.src('app/**/*html')
 		.pipe(fileinclude())
 		.pipe(gulp.dest('public'));
 });
 gulp.task('jade', function(){
 	'use strict';
-	gulp.src('app/**/*jade')
+	return gulp.src('app/**/*jade')
 		.pipe(data(function(file){
 			return require('./assets/data/views.json');
 		}))
@@ -133,7 +133,7 @@ gulp.task('jade', function(){
  ******************************/
 gulp.task('pluginsConcat', function () {
 	bowerFiles.push('./bower_components/svg4everybody/dist/svg4everybody.legacy.min.js');
-	gulp.src(bowerFiles)
+	return gulp.src(bowerFiles)
 		.pipe(concat('plugins.min.js'))
 		// .pipe(uglify())
 		.pipe(gulp.dest('public/js'));
@@ -143,7 +143,7 @@ gulp.task('pluginsConcat', function () {
  * JS concat
  ******************************/
 gulp.task('jsConcat', function () {
-	gulp.src(['app/**/*.js'])
+	return gulp.src(['app/**/*.js'])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(concat('app.js'))
@@ -193,7 +193,7 @@ gulp.task('watch', function () {
  * Less
  ******************************/
 gulp.task('less', function () {
-	gulp.src('assets/less/app.less')
+	return gulp.src('assets/less/app.less')
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(less())
@@ -212,7 +212,7 @@ gulp.task('less', function () {
  * Less min
  ******************************/
 gulp.task('less-min', function () {
-	gulp.src('assets/less/app.less')
+	return gulp.src('assets/less/app.less')
 		.pipe(plumber())
 		.pipe(less())
 		.on('error', notify.onError(function (error) {
