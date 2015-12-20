@@ -1,13 +1,21 @@
 .delivery {
 	height: 430px;
-	margin: 40px 0;
+	margin: 0;
 	color: #fff;
 	text-align: left;
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		.stripes();
+	}
 	.container{
-		padding: 0 40px;
+		padding: 0 20px;
 	}
 	&__inside{
 		width: 50%;
+		padding-top: 20px;
 	}
 	&__img {
 		height: 430px;
@@ -28,18 +36,19 @@
 		font-weight: 900;
 		line-height: 36px;
 		text-transform: uppercase;
-		margin: 0 0 34px;
+		margin: 92px 0 21px;
 		letter-spacing: 0.1em;
 	}
 	&__text {
 		color: #fff;
 		font-family: Roboto;
-		font-size: 17px;
+		font-size: 16px;
 		font-weight: 400;
-		line-height: 20px;
-		margin: 0 0 55px;
+		line-height: 24px;
+		margin: 0 0 31px;
+		width: 73%;
 	}
 	.btn + .btn{
-		margin-left: 38px;
+		margin-left: 20px;
 	}
 }
