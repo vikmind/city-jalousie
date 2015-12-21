@@ -5,7 +5,7 @@ block content
 	main.home(ng-controller="HomeCtrl")
 		section.container-holder
 			.container.container_margin-bottom
-				.column-3
+				.column-3.column_pr0
 					.news
 						.news__inner
 							div.news__img-holder
@@ -20,18 +20,17 @@ block content
 									| Затрудняетесь с выбором  материала для штор или жалюзи? Вам поможет наш конструктор! Загрузите фото своего окна и  прикладывайте шторы прямо  на фото.
 								a.btn.btn_green(href="#")
 									| Перейти в конструктор
-				.column-1
+				.column-1.column_pl2
 					benefits(title="Услуги", url="services.json", id="services")
 		.container
-			.column-3
-				.column-1-3
-					benefits(title="Преимущества", url="advantages.json", id="advantages")
-				.column-1-3
-					include includes/product.html
-				.column-1-3
-					.search-color
+			.column-1.column_pr0
+				benefits(title="Преимущества", url="advantages.json", id="advantages")
 			.column-1
-				.room-type
+				include includes/product.html
+			.column-1.column_pl0.column_pr0
+				include includes/search-color
+			.column-1.column_pl2
+				include includes/room-type
 		// Jumbotron
 		section.jumbotron.container__holder
 			.container

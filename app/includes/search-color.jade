@@ -1,0 +1,11 @@
+section.search-color
+	h3.search-color__title Поиск по цвету
+	p.search-color__text Выберите цвет материала и мы покажем варианты жалюзи и штор c выбранным цветом
+	.search-color__set
+		ul.colors-set
+			- var colors = ['red', 'green', 'orange', 'brown', 'purple']
+			- for(var i=0; i<18; i++)
+				li.colors-set__item
+					color(model="filterColor.#{colors[i%5]}", name="color", fill="#{colors[i%5]}")
+	footer.search-color__footer
+		button.btn.btn_green Посмотреть все цвета

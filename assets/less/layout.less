@@ -36,6 +36,18 @@ a, input, textarea, select, button {
 		float: left;
 		padding: 0 10px;
 		.clearfix();
+		&.column_pl0{
+			padding-left: 0;
+		}
+		&.column_pr0{
+			padding-right: 0;
+		}
+		&.column_pl2{
+			padding-left: 20px;
+		}
+		&.column_pr2{
+			padding-right: 20px;
+		}
 		&:first-of-type {
 			padding-left: 0;
 		}
@@ -65,9 +77,6 @@ a, input, textarea, select, button {
 	&_relative {
 		position: relative;
 	}
-}
-.column-1-3{
-	width: 100%/3;
 }
 .column-1 {
 	width: 100%/4;

@@ -1,4 +1,54 @@
 .room-type{
 	height: 380px;
-	background: #fff;
+	background-color: #ced55a;
+	position: relative;
+	padding: 30px;
+	.stitch();
+	&__title{
+		color: #525528;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 30px;
+		.letter-spacing(50);
+		margin: 0 0 10px;
+		position: relative;
+	}
+	&__list{
+		list-style: none;
+		margin: 0 -20px 0;
+		padding: 0;
+		position: relative;
+	}
+	&__item{
+		float: left;
+		width: 100/3*1%;
+		text-align: center;
+		padding: 21px 10px;
+	}
+	&__link{
+		text-decoration: none;
+		display: block;
+	}
+	&__icon{
+		fill: #525528;
+		opacity: 0.5;
+		height: 32px;
+		transition: fill @animation-time, opacity @animation-time;
+		.room-type__link:hover &{
+			opacity: 1;
+			fill: #525528;
+		}
+	}
+	&__name{
+		font-size: 13px;
+		color: #3a3d10;
+		font-weight: 600;
+		line-height: 20px;
+		opacity: .7;
+		transition: color @animation-time, opacity @animation-time;
+		.room-type__link:hover &{
+			color: #393b11;
+			opacity: 1;
+		}
+	}
 }

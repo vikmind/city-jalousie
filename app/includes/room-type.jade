@@ -1,0 +1,9 @@
+.room-type
+	h3.room-type__title Тип помещения
+	ul.room-type__list
+		each room in room_types
+			li.room-type__item
+				a.room-type__link(href='')
+					+svg-icon(room.icon, 'room-type__icon')
+					div.room-type__name #{room.name}
+					

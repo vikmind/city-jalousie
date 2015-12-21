@@ -117,7 +117,7 @@ gulp.task('copyViews', function () {
 });
 gulp.task('jade', function(){
 	'use strict';
-	return gulp.src('app/**/*jade')
+	return gulp.src('app/*.jade')
 		.pipe(data(function(file){
 			return require('./assets/data/views.json');
 		}))
