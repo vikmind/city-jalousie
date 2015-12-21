@@ -65,5 +65,43 @@
     {
       "image": "menu6.jpg",
       "name": "Кисея"}
+  ],
+  "room_types": [
+    {
+      "icon": "school",
+      "name": "Школа"
+    },
+    {
+      "icon": "shop",
+      "name": "Магазин"
+    },
+    {
+      "icon": "cafe",
+      "name": "Кафе"
+    },
+    {
+      "icon": "medicine",
+      "name": "Медицина"
+    },
+    {
+      "icon": "garage",
+      "name": "Гараж"
+    },
+    {
+      "icon": "office",
+      "name": "Офис"
+    },
+    {
+      "icon": "children",
+      "name": "Детская"
+    },
+    {
+      "icon": "kitchen",
+      "name": "Кухня"
+    },
+    {
+      "icon": "living",
+      "name": "Гостиная"
+    }
   ]
 }

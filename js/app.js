@@ -2,6 +2,7 @@ var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
 		'homeCtrl',
+		'colorDirective',
 		'angular-owl-carousel'
 	])
 	.config([
@@ -126,6 +127,36 @@ app.constant('API_PATH', 'data/');
 
 	function benefitsDirectiveLink(scope, el, attr) {
 		attr.url = attr.url || '#';
+	}
+})();
+
+(function () {
+	'use strict';
+
+	angular.module('colorDirective', [])
+		.directive('color', [
+			colorDirective
+		]);
+
+	function colorDirective() {
+		return {
+			restrict: 'E',
+			templateUrl: 'views/directives/color.html',
+			scope: {
+				model: '=',
+				checked: '@',
+				disabled: '@',
+				fill: '@',
+				name: '@',
+				value: '@'
+			},
+			replace: true,
+			link: colorDirectiveLink
+		};
+	}
+
+	function colorDirectiveLink(scope, el, attr) {
+
 	}
 })();
 
