@@ -9,7 +9,7 @@ section.delivery.container__holder
 			p.delivery__text
 				| Бесплатно при заказе установки конструкции нашими специалистами. За МКАД - 30 руб/км
 			a.btn.btn_green(href="#") заказать замер
-			a.btn.btn_olive(href="#") подробнее о доставке
+			a.btn.btn_yellow(href="#") подробнее о доставке
 footer.site-footer
 	.site-footer__top-menu
 		.container
@@ -55,11 +55,8 @@ footer.site-footer
 									use(xlink:href="icons/icons.svg#insta")
 			// Right
 			.site-footer__column.site-footer__column_right
-				// Title
-				h2.site-footer__title
-					| Виды жалюзи
 				// Menu vertical
-				.menu-vertical
+				.nav-footer
 					.nav-footer__column
 						// Title
 						h2.nav-footer__title
@@ -140,12 +137,9 @@ footer.site-footer
 					| Обратная связь
 				p.site-footer__text
 					| Есть вопросы, пожелания, замечания или хотите нас похвалить?
-				a.btn.btn_blue(href="#")
+				a.btn.btn_yellow(href="#")
 					| Напишите нам
 			.site-footer__column.site-footer__column_right
-				// Title
-				h2.site-footer__title
-					| Виды жалюзи
 				// Menu vertical
 				.nav-footer
 					.nav-footer__column
@@ -214,11 +208,13 @@ footer.site-footer
 			// Logo
 			img.vendor__logo(src="img/vendor_logo.png", alt="")
 			p.vendor__text
-				| Все придумано и разработано командой
+				| Все придумано и разработано командой 
 				a.vendor__link(href="http://brainmaze.net") brainmaze.net
-				| , а дизайн помещения сделан друзьями из
-				a.vendor__link(href="#") brainmaze.net
+				| , а дизайн помещения сделан друзьями из 
+				a.vendor__link(href="#") ab masterplan
 			p.vendor__text.vendor__text_grey
 				| Авторство фотографий
-			p.vendor__text
-				| Передача данных зашифрована и безопасна
+			div.vendor__payment
+				| МЫ ПРИНИМАЕМ
+				img(src="img/payment.png", alt="Visa, MasterCard, Yandex.Money")
+				
