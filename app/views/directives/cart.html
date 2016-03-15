@@ -1,0 +1,53 @@
+<div class="cart" ng-mouseenter="showDropdown()" ng-mouseleave="hideDropdown()" ng-touchend="touchTogle()">
+	<div>
+		<div class="cart__container" ng-class="{'pulse': items.length>0}">
+			<svg class="icon icon-cart" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#cart"></use></svg>
+			<div class="cart__counter">{{items.length}}</div>
+		</div>
+		<div class="cart__text">
+			Корзина
+		</div>
+	</div>
+	<div class="cart__dropdown" ng-mouseenter="showDropdown()" ng-mouseleave="hideDropdown()" ng-class="{expanded : (items.length>0 && dropdownVisible)}">
+		<div class="cart__title">В корзине
+			<ng-pluralize count="items.length"
+				when="{
+				'one': '{} отложенный товар:',
+				'few': '{} отложенных товара:',
+				'many': '{} отложенных товаров:'}"></ng-pluralize>
+		</div>
+		<div class="cart__list-wrapper">
+			<div class="cart__list-holder js-customScroll">
+				<ul class="cart__list">
+					<li
+						ng-repeat="(key, product) in items track by $index"
+						class="cart__item cart-product">
+							<img ng-src="{{product.image}}" class="cart-product__img" />
+							<div class="cart-product__title">
+								{{product.title}}
+								<!-- <span ng-if="product.withCornice && product.cornice.cartText" ng-bind="' + ' + product.cornice.cartText"></span> -->
+							</div>
+							<div class="cart-product__price">
+								<strong>
+									{{product.price | number:0}} р.
+								</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
+								<span class="cart-product__dimensions" ng-if="!!product.allowHeight && !!product.dimensions.width && !!product.dimensions.height">
+									({{product.dimensions.width}} м x {{product.dimensions.height}} м)
+								</span>
+								<span class="cart-product__dimensions" ng-if="!product.allowHeight && !!product.dimensions.width">
+									({{product.dimensions.width}} м)
+								</span>
+							</div>
+							<div class="cart-product__model" ng-if="!!product.texture">модель {{product.texture}}</div>
+							<button class="cart-product__dismiss" ng-click="removeProduct(key)">
+								<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
+							</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<footer class="cart__footer">
+			<button class="cart__phone-button btn btn_green" ng-click="openOrder()">Оформить заказ</button>
+		</footer>
+	</div>
+</div>

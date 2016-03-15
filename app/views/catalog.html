@@ -1,0 +1,100 @@
+<!-- Main content -->
+<main class="main-content">
+	<!-- Image gradient -->
+	<div
+		class="image-gradient"
+		style="background: url(img/slide-1.jpg) center no-repeat; -webkit-background-size: cover; background-size: cover;">
+	</div>
+	<div class="container container_padding">
+		<!-- Search info -->
+		<div class="search-info">
+			<strong>{{pageOptions.title}}</strong>
+			<button class="search-info__filters-toggle btn btn_green" ng-click="toggleOffCanvas('left')">Фильтровать</button>
+			<!-- <span class="hide-in-tablet">По запросу </span><strong>{{pageOptions.title}}</strong> найдено 35 предложений -->
+		</div>
+		<!-- Sort -->
+		<div class="sort">
+			<div class="sort__text">
+				Сортировать по:
+			</div>
+			<ul class="sort__list">
+				<li class="sort__item">
+					<button class="btn" ng-click="toggleSort('price')" ng-class="{btn_red: (searchOptions.sort == 'price')}">
+						<svg class="icon icon-rouble"><use xlink:href="icons/icons.svg#rouble"></use></svg>
+						<span class="btn__text">
+							Стоимости
+						</span>
+					</button>
+				</li>
+				<li class="sort__item active">
+					<button class="btn" ng-click="toggleSort('rating')" ng-class="{btn_red: (searchOptions.sort == 'rating')}">
+						<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
+						<span class="btn__text">
+							Рейтингу
+						</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container container_padding">
+		<aside class="catalog__aside">
+			<!-- Filter -->
+			<div class="form form_filter" catalog-responsive>
+				<form action="#">
+					<!-- Prices range -->
+					<fieldset class="form__fieldset">
+						<legend class="form__legend">
+							Диапазон цен
+						</legend>
+						<!-- Range -->
+						<div class="form__field" ng-if="priceSlider">
+							<!-- Price range -->
+							<range
+								min="priceSlider.min"
+								max="priceSlider.max"
+								options="{{priceSlider.options}}">
+							</range>
+						</div>
+					</fieldset>
+					<!-- Blinds type -->
+					<fieldset class="form__fieldset" ng-if="!!pageOptions.filter_title">
+						<legend class="form__legend">
+							{{pageOptions.filter_title}}
+						</legend>
+						<div class="form__field" ng-repeat="categoryFilter in pageOptions.subcategories">
+							<checkbox
+								model="categoryChecks[categoryFilter.slug]"
+								label="{{categoryFilter.name}}"
+								checked="{{categoryFilter.checked}}"
+								name="{{categoryFilter.slug}}">
+							</checkbox>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<!-- Question -->
+			<div class="catalog__question">
+			<question></question>
+			</div>
+		</aside><!-- Catalog -->
+		<div class="catalog catalog_3">
+			<ul class="catalog__list">
+				<li
+					ng-repeat="product in catalogItems"
+					class="catalog__item">
+					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+				</li>
+			</ul>
+			<!-- More btn -->
+			<div class="more-btn more-btn_red">
+				<a href class="more-btn__link" ng-click="addProductList()" ng-if="showLoadMoreBtn">
+					<span class="icon icon-more"></span>
+					<span class="more-btn__text">
+						Показать еще результаты
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</main>

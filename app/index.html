@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="fragment" content="!" />
+	<title ng-bind="ngMeta.title">Сити Жалюзи</title>
+	
+	<meta name="description" ng-attr-content="{{ ngMeta.description }}">
+	<base href="/" />
+	<link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<script>
+		WebFontConfig = {
+			google: { families: [ 'Open+Sans:400,700,600,800:latin,cyrillic', 'PT+Sans:400,700:latin,cyrillic', 'Roboto:400,500,700:latin,cyrillic' ] }
+		};
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+				'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
+	<link rel="stylesheet" href="css/app.css">
+	<script>
+		// See params list in configService.js
+		window.appLicationConfig = {};
+	</script>
+	<!--[if lt IE 9]>
+    	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-controller="MainCtrl" ng-class="filterOpened?'opened-filter':''">
+	<img src="/icons/icons.svg" alt='main-svg' style="display: none" />
+	<div class="main-wrapper off-canvas" off-canvas>
+		<!-- <div class="off-canvas__menu left show-in-portrait">
+			<div class="mobile-aside ">
+				<header class="mobile-aside__header">
+					<button class="mobile-aside__close" ng-click="toggleOffCanvas('left');">
+						<span>свернуть фильтры</span>
+						<svg class="icon icon-shevron-right"><use xlink:href="/icons/icons.svg#shevron-right"></use></svg>
+					</button>
+				</header>
+				<div class="mobile-aside__content filters"></div>
+			</div>
+		</div>
+		<div class="off-canvas__menu right">
+			<div ng-include="'includes/mobile-menu.html'"></div>
+		</div> -->
+		<div class="off-canvas__wrapper">
+			<div class="off-canvas__content">
+				<responsive></responsive>
+				<div ng-if="!constructorHeader">
+					<div ng-include="'includes/header.html'"></div>
+				</div>
+				<div ng-if="!!constructorHeader">
+					<div ng-include="'includes/header-constructor.html'"></div>
+				</div>
+				<div ng-view autoscroll></div>
+				<div class="dis-loader" ng-class="{'active': showLoader}"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+				<div ng-include="'includes/footer.html'"></div>
+				<script src="https://www.youtube.com/iframe_api"></script>
+				<script src="js/plugins.min.js"></script>
+				<script src="js/app.js"></script>
+				<dialog></dialog>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

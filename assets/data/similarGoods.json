@@ -1,0 +1,84 @@
+[{
+	"id": "1",
+	"image": "img/product1.jpg",
+	"rating": "3.4",
+	"reviews_count": "99",
+	"link": "product/zhaluzi/horizontalnye/aluminievye/aluminievye_product#listya",
+	"title": "ЖалюзиМиражЖалюзиМиражЖалюзиМиражЖалюзиМираж",
+	"category_link": "catalog",
+	"category_title": "Рулонные тканевые",
+	"price": 1000,
+	"sale": 2,
+	"textures": [{
+		"id": "1",
+		"url": "kristall",
+		"model": "Кристалл",
+		"price": 1,
+		"img": "img/product/1.jpg",
+		"translucent": "Не пропускает свет",
+		"country": "США",
+		"width": "150 см",
+		"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
+	},{
+		"id": "2",
+		"url": "listya",
+		"model": "Листья",
+		"price": 500,
+		"img": "img/textures/listya.png",
+		"translucent": "Пропускает свет",
+		"country": "Германия",
+		"width": "250 см",
+		"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
+	},{
+		"id": "3",
+		"url": "luksor_uno",
+		"model": "Люксор Уно",
+		"price": 2200,
+		"img": "img/textures/luksor_uno.png",
+		"translucent": "Не пропускает свет",
+		"country": "Россия",
+		"width": "200 см",
+		"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+	},{
+		"id": "4",
+		"url": "melanzh_red",
+		"model": "Красный Меланж",
+		"price": 1000,
+		"img": "img/textures/melanzh_red.png",
+		"translucent": "Не пропускает свет",
+		"country": "Россия",
+		"width": "200 см",
+		"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+	},{
+		"id": "5",
+		"url": "kristall",
+		"model": "Кристалл",
+		"price": 1,
+		"img": "img/textures/kristall.png",
+		"translucent": "Не пропускает свет",
+		"country": "США",
+		"width": "150 см",
+		"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
+	},{
+		"id": "6",
+		"url": "listya",
+		"model": "Листья",
+		"price": 500,
+		"img": "img/textures/listya.png",
+		"translucent": "Пропускает свет",
+		"country": "Германия",
+		"width": "250 см",
+		"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
+	}]
+},{
+	"id": "2",
+	"sale": 20,
+	"image": "img/product2.jpg",
+	"rating": "3.4",
+	"reviews_count": "100",
+	"link": "product/zhaluzi/horizontalnye/aluminievye/aluminievye_product#melanzh_red",
+	"title": "Жалюзи Мираж Жалюзи Мираж Жалюзи Мираж",
+	"category_link": "catalog",
+	"category_title": "Рулонные тканевые",
+	"price": 800
+}]

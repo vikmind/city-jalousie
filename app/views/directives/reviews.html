@@ -1,0 +1,193 @@
+<section>
+	<div class="reviews">
+		<!-- Header -->
+		<header class="reviews__header">
+			<!-- Title -->
+			<h2 class="reviews__title">
+				Отзывы о товаре ({{reviews.total}})
+			</h2>
+			<!-- Rating -->
+			<div class="reviews__rating">
+				<h3 class="reviews__subtitle">
+					Общий рейтинг:
+				</h3>
+				<div class="reviews__rating-container">
+					<!-- Rating -->
+					<input-stars
+						readonly
+						icon-base="icon"
+						icon-empty="icon-rating-inactive-star"
+						icon-hover="icon-rating-hover-star"
+						icon-full="icon-rating-full-star"
+						list-class="rating"
+						max="5"
+						ng-model="$parent.reviews.avg_rounded">
+					</input-stars>
+					 <div class="reviews__rating-text">
+					 	<strong>{{reviews.avg_rating}}</strong>
+						<ng-pluralize count="reviews.total"
+							when="{
+								'one': '({} отзыв)',
+								'few': '({} отзыва)',
+								'many': '({} отзывов)' }"></ng-pluralize>
+					 </div>
+				</div>
+			</div>
+		</header>
+		<!-- Content -->
+		<ul class="reviews__list">
+			<li
+				ng-repeat="review in reviews.list track by $index"
+				class="reviews__item">
+				<!-- Review -->
+				<div class="review">
+					<!-- Author -->
+					<div class="review__author">
+						{{review.author}}
+					</div>
+					<!-- Rating -->
+					<input-stars
+						readonly
+						icon-base="icon"
+						icon-empty="icon-rating-inactive-star"
+						icon-hover="icon-rating-hover-star"
+						icon-full="icon-rating-full-star"
+						list-class="rating"
+						max="5"
+						ng-model="review.rating">
+					</input-stars>
+					 <!-- Text -->
+					 <p class="review__text">
+					 	{{review.text}}
+					 </p>
+					 <!-- Date -->
+					 <time datetime="2013-09-27" class="review__date">
+					 	{{review.date}}
+					 </time>
+				</div>
+			</li>
+		</ul>
+		<!-- Footer -->
+		<footer class="reviews__footer">
+			<!-- More btn -->
+			<div class="more-btn">
+
+				<a href class="more-btn__link" ng-click="loadMoreReviews()" ng-show="showLoadMoreBtn">
+					<span class="icon icon-more"></span>
+					<span class="more-btn__text">
+						Показать еще 
+						<span ng-if="allReviews - reviews.list.length >= 5">5 отзывов</span>
+						<span ng-if="allReviews - reviews.list.length === 4">4 отзыва</span>
+						<span ng-if="allReviews - reviews.list.length === 3">3 отзыва</span>
+						<span ng-if="allReviews - reviews.list.length === 2">2 отзыва</span>
+						<span ng-if="allReviews - reviews.list.length === 1">1 отзыв</span>
+					</span>
+				</a>
+			</div>
+			<!-- Add new review -->
+			<button class="btn btn_blue btn_size-2 hide-in-mobile" ng-click="toggleReviewForm()">
+				Написать отзыв
+			</button>
+			<button class="btn btn_blue btn_big reviews__mobBtn show-in-mobile" ng-click="toggleReviewForm()">
+				Написать отзыв
+			</button>
+			
+		</footer>
+	</div>
+	<!-- New review -->
+	<div class="form form_review" ng-show="reviewFormVisible">
+		<form name="reviewForm" ng-submit="submitReview()" novalidate ng-if="!formSubmitted">
+			<h2 class="form__title">
+				Напишите свой отзыв
+			</h2>
+			<!-- Contacts row -->
+			<div class="form__row">
+				<div class="form__column">
+					<!-- Name -->
+					<div class="form__field">
+						<input
+							type="text"
+							class="input"
+							name="name"
+							ng-model="formData.name"
+							required
+							placeholder="Ваше имя">
+						<!-- Error -->
+						<div
+							ng-show="form.name.$error.empty"
+							class="error">
+							Это обязательное поле
+						</div>
+					</div>
+				</div>
+				<div class="form__column">
+					<!-- Email -->
+					<div class="form__field">
+						<input
+							type="email"
+							class="input"
+							name="email"
+							ng-model="formData.email"
+							required
+							placeholder="Email (на сайте не публикуется)">
+						<!-- Error -->
+						<div
+							ng-show="form.$submitted || form.email.$touched"
+							class="error">
+							Это обязательное поле
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Rating row -->
+			<div class="form__row">
+				<p class="form__text">
+					Ваш рейтинг товару:
+				</p>
+				<div class="form__field form__rating">
+					<!-- Rating -->
+					<input-stars
+						icon-base="icon"
+						icon-empty="icon-rating-inactive-star"
+						icon-hover="icon-rating-hover-star"
+						icon-full="icon-rating-full-star"
+						list-class="rating"
+						max="5"
+						ng-model="formData.rating">
+					</input-stars>
+				</div>
+			</div>
+			<!-- Text row -->
+			<div class="form__row">
+				<div class="form__field">
+					<textarea
+						required
+						name="review"
+						placeholder="Ваш отзыв"
+						ng-model="formData.review"
+						class="input"></textarea>
+					<!-- Error -->
+					<div
+						ng-if="form.review.$touched"
+						class="error">
+						Это обязательное поле
+					</div>
+				</div>
+			</div>
+			<!-- Text -->
+			<p class="form__text form__text_grey">
+				Внимание! Публикация отзыва производится только после предварительной модерации
+			</p>
+			<button class="btn btn_red btn_size-2 hide-in-mobile">
+				Отправить отзыв
+			</button>
+			<button class="btn btn_big btn_red reviews__mobBtn show-in-mobile">
+				Отправить отзыв
+			</button>
+		</form>
+		<div ng-if="formSubmitted">
+			<h2 class="form__title">Благодарим за отзыв!</h2>
+			<p class="form__text">Он скоро появится на сайте.</p>
+		</div>
+	</div>
+</section>

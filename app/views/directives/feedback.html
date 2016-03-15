@@ -1,0 +1,16 @@
+<form class="order-form" ng-controller="FeedbackCtrl" ng-submit="submitForm()">
+	<h3 class="order-form__title">Напишите нам</h3>
+	<section class="order-form__body" ng-if="!state.complete && !state.loading">
+		<input type="text" class="order-form__input" placeholder="Ваше имя" ng-model="message.name">
+		<input type="text" class="order-form__input" placeholder="Ваш email" ng-model="message.email">
+		<textarea rows="10" class="order-form__input" placeholder="Сообщение" ng-model="message.text"></textarea>
+	</section>
+	<section class="order-form__body" ng-if="state.complete">
+		<p>
+			Спасибо за обращение!
+		</p>
+	</section>
+	<footer class="order-form__footer" ng-if="!state.complete && !state.loading">
+		<button class="btn btn_blue btn_big order-form__submit">Отправить</button>
+	</footer>
+</form>

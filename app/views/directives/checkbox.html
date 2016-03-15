@@ -1,0 +1,15 @@
+<label class="checkbox">
+	<input
+		type="checkbox"
+		ng-model="model"
+		ng-disabled="disabled"
+		ng-checked="checked"
+		name="{{name}}"
+		value="{{value}}">
+	<span class="checkbox__check">
+		<svg class="icon icon-check"><use xlink:href="icons/icons.svg#check"></use></svg>
+	</span>
+	<span class="checkbox__label">
+		{{label}}
+	</span>
+</label>

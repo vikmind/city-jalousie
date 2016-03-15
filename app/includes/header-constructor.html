@@ -1,0 +1,67 @@
+<header class="site-header site-header_constructor">
+	<div class="site-header__inner">
+		<div class="container">
+			<div class="site-header__container site-header__container_left">
+				<!-- Links set -->
+				<div class="links-set">
+					<ul class="links-set__list">
+						<li class="links-set__item show-in-portrait">
+							<button class="links-set__link" ng-click="openCallme()">
+								<svg class="icon icon-callme"><use xlink:href="icons/icons.svg#callme"></use></svg>
+								<span class="links-set__text">
+									Звонок
+								</span>
+							</button>
+						</li>
+						<li class="links-set__item show-in-portrait">
+							<button class="links-set__link" ng-click="openSearch()">
+								<svg class="icon icon-search"><use xlink:href="icons/icons.svg#search"></use></svg>
+								<span class="links-set__text">
+									Поиск
+								</span>
+							</button>
+						</li>
+						<li class="links-set__item hide-in-portrait">
+							<a href="/" class="links-set__link">
+								<svg class="icon icon-gt"><use xlink:href="icons/icons.svg#gt"></use></svg>
+								<span class="links-set__text">
+									Назад
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Constructor title -->
+				<div class="constructor-title hide-in-portrait">
+					<div class="constructor-title__text">
+						Конструктор жалюзи и штор
+					</div>
+				</div>
+			</div>
+			<!-- Logo -->
+			<h1 class="logo">
+				<a href="/#" class="logo__link">
+					<img src="img/logo.svg" alt="logo" class="logo__img">
+				</a>
+				<div class="logo__shadow"></div>
+			</h1>
+			<div class="site-header__container site-header__container_right">
+				<!-- Cart -->
+				<cart></cart>
+				<!-- Call me -->
+				<div class="call-me hide-in-portrait">
+					<svg class="icon icon-operator"><use xlink:href="icons/icons.svg#operator"></use></svg>
+					<button class="call-me__link" ng-click="openCallme()">
+						<span class="ya-phone">+7 (495) 542-64-84</span>
+					</button>
+					<div class="call-me__time">
+						{{workingHours}}
+					</div>
+				</div>
+				<button class="site-header__menu-toggle" ng-click="toggleOffCanvas('right');">
+					<div class="icon-menu" ng-class="{'active':(offCanvasSide === 'right')}"><span></span></div>
+				</button>
+			</div>
+		</div>
+	</div>
+</header>

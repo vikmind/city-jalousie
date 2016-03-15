@@ -1,0 +1,30 @@
+<div class="news">
+	<div class="news__item" ng-repeat="(key,item) in news" ng-class="{active: (key === currentNews)}">
+		<div class="news__inner">
+			<!-- Img -->
+			<div
+				ng-style="{'background-image': 'url(' + item.img + ')'}"
+				class="news__img">
+			</div>
+			<div class="news__container">
+				<!-- Status -->
+				<div class="news__label" ng-if="!!item.label">
+					<div class="news__label-text">
+						{{item.label}}
+					</div>
+				</div>
+				<!-- Title -->
+				<h2 class="news__title" ng-bind-html="item.trustedTitle">
+				</h2>
+				<!-- Text -->
+				<p class="news__text">
+					{{item.text}}
+				</p>
+				<!-- Btn -->
+				<a href="{{item.link}}" class="btn btn_blue">
+					{{item.link_text}}
+				</a>
+			</div>
+		</div>		
+	</div>
+</div>

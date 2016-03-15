@@ -15,14 +15,7 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	plumber = require('gulp-plumber'),
 	modRewrite = require('connect-modrewrite'),
-	notify = require('gulp-notify'),
-	ghPages = require('gulp-gh-pages'),
-	jade = require('gulp-jade'),
-	data = require('gulp-data'),
-	del = require('del');
-
-console.info('********** Bower Files **********');
-console.info(bowerFiles);
+	notify = require('gulp-notify');
 
 /******************************
  * Default task
@@ -30,13 +23,11 @@ console.info(bowerFiles);
 gulp.task('default', [
 	'copyAssets',
 	'copyViews',
-	'jade',
-	'browser-sync',
 	'pluginsConcat',
 	'jsConcat',
 	'less',
-	'svgstore',
-	'svg2png',
+	'svg',
+	'browser-sync',
 	'watch'
 ]);
 
@@ -46,36 +37,11 @@ gulp.task('default', [
 gulp.task('build', [
 	'copyAssets',
 	'copyViews',
-	'jade',
 	'pluginsConcat',
 	'jsConcat',
 	'less-min',
-	'svgstore',
-	'svg2png'
+	'svg'
 ]);
-
-/******************************
- * Deploy task
- ******************************/
-gulp.task('deploy', function(){
-	'use strict';
-	return gulp.src('public/**/*')
-		.pipe(ghPages({
-			branch: "gh-pages",
-			force: true,
-			push: true
-		}));
-});
-
-/******************************
- * Clean task
- ******************************/
-gulp.task('clean', function(){
-	return del([
-		'public/**/*',
-		'.publish/**/*'
-	]);
-});
 
 /******************************
  * Copy assets to public
@@ -104,7 +70,7 @@ gulp.task('svg2png', function () {
 		.pipe(svg2png())
 		.pipe(gulp.dest('public/icons'));
 });
-gulp.task('svg',['svg2png', 'svgstore']);
+gulp.task('svg', ['svgstore'/*, 'svg2png'*/]);
 
 /******************************
  * Copy views to public
@@ -112,30 +78,27 @@ gulp.task('svg',['svg2png', 'svgstore']);
 gulp.task('copyViews', function () {
 	'use strict';
 	return gulp.src('app/**/*html')
+		.pipe(plumber())
 		.pipe(fileinclude())
-		.pipe(gulp.dest('public'));
-});
-gulp.task('jade', function(){
-	'use strict';
-	return gulp.src('app/*.jade')
-		.pipe(data(function(file){
-			return require('./assets/data/views.json');
-		}))
-		.pipe(jade())
-		.on('error', notify.onError(function (error) {
-			return '\nAn error occurred while jading.\nLook in the console for details.\n' + error;
-		}))
 		.pipe(gulp.dest('public'));
 });
 
 /******************************
  * JS plugins
  ******************************/
+var firstTime = true;
 gulp.task('pluginsConcat', function () {
 	bowerFiles.push('./bower_components/svg4everybody/dist/svg4everybody.legacy.min.js');
+	if (firstTime){
+		console.info('********** Bower Files **********');
+		console.info(bowerFiles);
+		firstTime = false;
+	}
 	return gulp.src(bowerFiles)
 		.pipe(concat('plugins.min.js'))
-		// .pipe(uglify())
+		.pipe(uglify({
+			mangle: false
+		}))
 		.pipe(gulp.dest('public/js'));
 });
 
@@ -147,7 +110,9 @@ gulp.task('jsConcat', function () {
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(concat('app.js'))
-		// .pipe(uglify())
+		.pipe(uglify({
+			mangle: false
+		}))
 		.on('error', notify.onError(function (error) {
 			return '\nAn error occurred while uglifying js.\nLook in the console for details.\n' + error;
 		}))
@@ -169,8 +134,17 @@ gulp.task('browser-sync', function () {
 		server: {
 			baseDir: './public',
 			middleware: [
+				function(req, res, next){
+					if (req.method == 'POST') {
+						res.setHeader('Location', req.url);
+						res.statusCode = 303;
+						res.end('');
+					} else {
+						next();
+					}
+				},
 				modRewrite([
-					'^[^\\.]+$ /index.html [L]'
+					'^[^\\.]*$ /index.html [L]'
 				])
 			]
 		},
@@ -185,7 +159,6 @@ gulp.task('watch', function () {
 	gulp.watch('assets/less/*.less', ['less']);
 	gulp.watch('app/**/*.js', ['jsConcat']);
 	gulp.watch('app/**/*.html', ['copyViews']);
-	gulp.watch('app/**/*.jade', ['jade']);
 	gulp.watch(['assets/**/*.*', '!assets/less/*.less'], ['copyAssets']);
 });
 

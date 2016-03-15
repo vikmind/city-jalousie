@@ -9,16 +9,23 @@
 		]);
 
 	function benefitsCtrl($scope, $log, BenefitsService) {
-		$log.log('benefits ctrl');
+		/*$log.log('benefits ctrl');*/
 
-		var url = $scope.url;
+		var url = $scope.url,
+			newParams = {};
+		;
+		if ($scope.idproduct){
+			newParams['productId'] = $scope.idproduct;
+		} else {
+			newParams['mainPage'] = true;
+		}
 
 		$scope.init = function () {
 			$scope.getBenefits(url);
 		};
 
 		$scope.getBenefits = function (url) {
-			BenefitsService.getBenefits(url)
+			BenefitsService.getBenefits(url, newParams)
 				.then(function (data) {
 					// Success
 					$scope.benefits = data;

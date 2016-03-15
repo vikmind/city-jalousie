@@ -1,0 +1,25 @@
+<div class="price-block">
+	<div class="price-block__container">
+		<!-- Old price -->
+		<div class="price-block__old" ng-show="!!product.sale">
+			<span ng-if="!product.priceExactly">от</span>
+			{{ product.price * (100 + product.sale)/100 | number:0 }}
+			р.<span ng-if="!product.priceExactly">/м<sup>2</sup></span>
+		</div>
+		<!-- New price -->
+		<div class="price-block__new">
+			<strong>
+				<span ng-if="!product.priceExactly">от</span>
+				{{product.price | number:0}} р.</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
+		</div>
+	</div>
+	<!-- Description -->
+	<p class="price-block__text">
+		Стоимость зависит от выбора материала и размеров
+	</p>
+	<div class="price-block__label" ng-if="!!product.sale">
+		<div class="price-block__label-text">
+			-{{product.sale}}%
+		</div>
+	</div>
+</div>

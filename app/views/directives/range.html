@@ -1,0 +1,31 @@
+<div class="range">
+	<!-- Slider -->
+	<rzslider
+		rz-slider-model="min"
+		rz-slider-high="max"
+		rz-slider-options="options">
+	</rzslider>
+	<div class="range__container">
+		<span class="range__text">
+			от
+		</span>
+		<input
+			class="input"
+			type="number"
+			ng-model="min"
+			ng-trim="true">
+		<span class="range__text">
+			до
+		</span>
+		<input
+			class="input"
+			type="number"
+			ng-model="max">
+		<span class="range__text hide-in-tablet">
+			руб.
+		</span>
+		<span class="range__text range__text_mobile show-in-tablet">
+			р.
+		</span>
+	</div>
+</div>

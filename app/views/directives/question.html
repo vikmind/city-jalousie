@@ -1,0 +1,36 @@
+<div class="question">
+	<!-- Img -->
+	<div
+		style="background: url(img/bg_our_advantages.jpg) center no-repeat; background-size: cover;"
+		class="question__img">
+	</div>
+	<div class="question__inner">
+		<!-- Number -->
+		<div class="question__number">
+			Вопрос&nbsp;№&nbsp;{{question.number}}
+		</div>
+		<!-- Avatar -->
+		<img src="#" alt="avatar" ng-src="{{question.avatarImage}}" class="question__avatar" ng-if="!!question.avatarImage">
+		<!-- New question -->
+		<a
+			href
+			ng-click="getQuestion(question.number)"
+			class="question__btn">
+			<svg class="icon icon-reload"><use xlink:href="icons/icons.svg#reload"></use></svg>
+		</a>
+		<!-- Title -->
+		<h2 class="question__title">
+			{{question.title}}
+		</h2>
+		<!-- Description -->
+		<div class="question__description">
+			{{question.description}}
+		</div>
+	</div>
+	<!-- Btn -->
+	<a
+		ng-href="{{question.link}}"
+		class="btn btn_red btn_size-2">
+		Читать статью
+	</a>
+</div>

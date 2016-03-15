@@ -1,0 +1,33 @@
+<div class="search" ng-controller="SearchCtrl">
+	<label for="search_input" class="search__label">Поиск на сайте</label>
+	<form class="search__form" ng-submit="search()">
+		<input id="search_input" type="text" class="search__input" placeholder="Введите запрос" ng-model="term">
+		<button class="search__button" type="submit">
+			<span class="search__loading-icon" ng-show="!!loading">
+				<svg class="circular" viewBox="25 25 50 50">
+					<circle class="path" cx="50" cy="50" r="20" fill="none" stroke="#fff" stroke-width="4" stroke-miterlimit="10"/>
+				</svg>
+			</span>
+			<span class="search__icon" ng-show="!loading">
+				<svg class="icon icon-search-big"><use xlink:href="icons/icons.svg#search-big"></use></svg>
+			</span>
+		</button>
+	</form>
+	<div class="search__links" ng-if="results" ng-click="clickResult()">
+		<ul class="article-set__list article-set__list_search">
+			<li
+			ng-repeat="(key, link) in results"
+			class="article-set_item">
+				<a href="{{link.url}}" class="article-set__link">
+					<span class="article-set__link-text">
+						{{link.title}}
+					</span>
+					<svg class="icon icon-shevron-right"><use xlink:href="icons/icons.svg#shevron-right"></use></svg>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="search__nothing" ng-if="nothing">
+		Ничего не найдено
+	</div>
+</div>

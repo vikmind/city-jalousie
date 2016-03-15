@@ -1,0 +1,18 @@
+{
+    "sale": "",
+    "image": "img/product3.jpg",
+    "rating": "3.4",
+    "reviews_count": "100",
+    "link": "product/zhaluzi/horizontalnye/aluminievye#roza-kolhoza",
+    "title": "Жалюзи Мираж",
+    "category_link": "catalog",
+    "category_title": "Рулонные тканевые",
+    "old_price": "",
+    "price": "1000",
+    "colors": [{
+        "title": "",
+        "image": "",
+        "color": "",
+        "price": 1000
+    }]
+}

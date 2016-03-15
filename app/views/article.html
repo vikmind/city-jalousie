@@ -1,0 +1,89 @@
+<!-- Article view -->
+<main class="main-content">
+	<!-- Image gradient -->
+	<div class="image-gradient">
+		<div
+		    class="image-gradient__image"
+		    ng-style="{'background-image': 'url(' + article.slider_img + ')'}"></div>
+	</div>
+	<div class="container container_tight">
+		<div class="column-3 article__main">
+			<!-- Article -->
+			<article class="article">
+				<!-- Header -->
+				<header class="article__header">
+					<!-- Rubric -->
+					<div class="article__rubric">
+						{{article.rubric}}
+					</div>
+					<!-- Title -->
+					<h1 class="article__title">
+						{{article.title}}
+					</h1>
+					<!-- Label -->
+					<div class="article__label" ng-if="article.label">
+						<div class="article__label-text">
+							{{article.label}}
+						</div>
+					</div>
+					<!-- Image -->
+					<div
+						class="article__img"
+						style="background-image: url({{article.main_img}});">
+					</div>
+					<!-- Socials -->
+					<div class="article__socials">
+						<!-- Text -->
+						<div class="article__socials-text">
+							Поделиться статьей в соцсетях
+						</div>
+						<ul class="article__socials-list">
+							<li class="article__socials-item" ng-repeat="share in socials">
+								<a href="{{share.url}}" target="_blank" class="article__socials-link">
+									<svg class="icon icon-{{share.name}}"><use xlink:href="{{share.icon}}"></use></svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- Date -->
+					<div class="article__date">
+						{{article.date}}
+					</div>
+				</header>
+				<div class="article__content" ng-bind-html="article.content"></div>
+			</article>
+		</div>
+		<div class="column-1 article__aside">
+			<!-- Article set -->
+			<div class="article-set">
+				<header class="article-set__header">
+					<!-- Title -->
+					<h2 class="article-set__title">
+						{{article.aside_title}}
+					</h2>
+					<ul class="article-set__list">
+						<li class="article-set_item" ng-repeat="aside_item in article.aside_links | limitTo: 5">
+							<a href="{{aside_item.url}}" class="article-set__link">
+								<span class="article-set__link-text">
+									{{aside_item.title}}
+								</span>
+								<svg class="icon icon-shevron-right"><use xlink:href="icons/icons.svg#shevron-right"></use></svg>
+							</a>
+						</li>
+					</ul>
+				</header>
+			</div>
+			<!-- Products set -->
+			<div class="products-set">
+				<h2 class="products-set__title">
+					Товары по теме
+				</h2>
+				<ul class="products-set__list">
+					<li class="products-set__item" ng-repeat="product in article.related_products">
+						<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</main>

@@ -1,0 +1,322 @@
+<!-- Product view -->
+<main class="main-content">
+	<div class="slider">
+		<div
+			ng-style="{'background-image': 'url(' + product.image_slider + ')'}"
+			class="slider__img">
+		</div>
+	</div>
+	<div class="container container_product-page">
+		<!-- Ribbon title -->
+		<div class="ribbon-title">
+			<div class="ribbon-title__text">
+				{{product.category_title}}
+			</div>
+		</div>
+		<!-- Left -->
+		<div class="column-2 product-page__main">
+			<!-- Gallery -->
+			<div ng-include="'includes/product/gallery.html'"></div>
+			<!-- Service Block Mobile -->
+			<div ng-if="mobile">
+				<!-- Price block -->
+				<div ng-include="'includes/product/price.html'"></div>
+				<!-- Textures -->
+				<div ng-include="'includes/product/textures.html'"></div>
+				<!-- Sizes -->
+				<div class="form form_sizes">
+					<h2 class="form__title">
+						Укажите размеры конструкции<span class="desktop-only"> для расчета стоимости</span>
+					</h2>
+					<div class="form__row">
+						<div class="form__cell">
+							<label class="label">
+								<span class="label__text">
+									Шир.
+								</span>
+								<span class="field" ng-if="!!product">
+									<input type="number" class="input" ng-model="product.dimensions.width" ng-change="calcPrice()" placeholder="0м">
+								</span>
+							</label>
+						</div>
+						<div class="form__cell" ng-show="product.allowHeight">
+							<label class="label">
+								<span class="label__text">
+									Выс.
+								</span>
+								<span class="field" ng-if="!!product">
+									<input type="number" class="input" ng-model="product.dimensions.height" ng-change="calcPrice()" placeholder="0м">
+								</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<!-- Carnice -->
+				<div class="form form_carnice">
+					<checkbox
+						model="product.withCornice"
+						label="Добавить к заказу {{ product.cornice.name }} + {{ product.cornice.price }} {{ product.cornice.currencySign}}"
+						name="type2">
+					</checkbox>
+				</div>
+				<!-- Buttons set -->
+				<div class="btn-set">
+					<button class="btn btn_red btn_big" ng-click="buyOneClick()">
+						Купить в 1 клик
+					</button>
+					<button class="btn btn_blue btn_big" ng-click="addToCart()">
+						Отложить в корзину
+					</button>
+				</div>
+				<!-- Features -->
+				<div class="features">
+					<!-- Title -->
+					<h2 class="features__title">
+						Свойства выбранного материала {{currentTexture.name}}
+					</h2>
+					<div class="features__column">
+						<!-- Translucent -->
+						<div
+							ng-if="currentTexture.translucent"
+							class="features__item">
+							<svg class="icon icon-sun"><use xlink:href="icons/icons.svg#sun"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.translucent}}
+							</div>
+						</div>
+						<!-- Country -->
+						<div
+							ng-if="currentTexture.country"
+							class="features__item">
+							<svg class="icon icon-country"><use xlink:href="icons/icons.svg#country"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.country}}
+							</div>
+						</div>
+						<!-- Width -->
+						<div
+							ng-if="currentTexture.width"
+							class="features__item">
+							<svg class="icon icon-width"><use xlink:href="icons/icons.svg#width"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.width}}
+							</div>
+						</div>
+					</div>
+					<div class="features__column">
+						<!-- Structure -->
+						<div
+							ng-if="currentTexture.structure"
+							class="features__item">
+							<svg class="icon icon-structure"><use xlink:href="icons/icons.svg#structure"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.structure}}
+							</div>
+						</div>
+						<!-- info -->
+						<div
+							ng-if="currentTexture.description"
+							class="features__item">
+							<svg class="icon icon-structure"><use xlink:href="icons/icons.svg#info"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.description}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Text block -->
+			<div class="text-block">
+				<div class="text-block__column text-block__column_padding">
+					<!-- Title -->
+					<h2 class="text-block__title">
+						{{product.description.title}}
+					</h2>
+					<p class="text-block__text" ng-bind-html="product.description.text"></p>
+				</div>
+			</div>
+			<div ng-if="!desktop" ng-include="'views/directives/construction.html'"></div>
+			<!-- Tablet video -->
+			<div class="text-block video" ng-if="!!product.video && !desktop">
+				<h2 class="video__title">
+					{{product.video_title}}
+				</h2>
+				<div class="video__frame-holder">
+					<youtube-video
+						video-id="getYoutubeId(product.video)">
+					</youtube-video>
+				</div>
+			</div>
+			<!-- Reviews -->
+			<reviews product-id="{{product.id}}" ng-if="!!product.id && !mobile"></reviews>
+		</div>
+		<!-- Right -->
+		<div class="column-2 product-page__aside">
+			<!-- Service Block Desktop -->
+			<div ng-if="!mobile">
+				<!-- Price block -->
+				<div ng-include="'includes/product/price.html'"></div>
+				<!-- Textures -->
+				<div ng-include="'includes/product/textures.html'"></div>
+				<!-- Sizes -->
+				<div class="form form_sizes">
+					<h2 class="form__title">
+						Укажите размеры конструкции<span class="desktop-only"> для расчета стоимости</span>
+					</h2>
+					<div class="form__row">
+						<div class="form__cell">
+							<label class="label">
+								<span class="label__text">
+									Ширина
+								</span>
+								<span class="field" ng-if="!!product">
+									<input type="number" class="input" ng-model="product.dimensions.width" ng-change="calcPrice()" placeholder="0м">
+								</span>
+							</label>
+						</div>
+						<div class="form__cell" ng-show="product.allowHeight">
+							<label class="label">
+								<span class="label__text">
+									Высота
+								</span>
+								<span class="field" ng-if="!!product">
+									<input type="number" class="input" ng-model="product.dimensions.height" ng-change="calcPrice()" placeholder="0м">
+								</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<!-- Carnice -->
+				<div class="form form_carnice">
+					<checkbox
+						model="product.withCornice"
+						label="Добавить к заказу {{ product.cornice.name }} + {{ product.cornice.price }} {{ product.cornice.currencySign}}"
+						name="type2">
+					</checkbox>
+				</div>
+				<!-- Buttons set -->
+				<div class="btn-set">
+					<button class="btn btn_red btn_big" ng-click="buyOneClick()">
+						Купить в 1 клик
+					</button>
+					<button class="btn btn_blue btn_big" ng-click="addToCart()">
+						Отложить в корзину
+					</button>
+				</div>
+				<!-- Features -->
+				<div class="features">
+					<!-- Title -->
+					<h2 class="features__title">
+						Свойства выбранного материала {{currentTexture.name}}
+					</h2>
+					<div class="features__column">
+						<!-- Translucent -->
+						<div
+							ng-if="currentTexture.translucent"
+							class="features__item">
+							<svg class="icon icon-sun"><use xlink:href="icons/icons.svg#sun"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.translucent}}
+							</div>
+						</div>
+						<!-- Country -->
+						<div
+							ng-if="currentTexture.country"
+							class="features__item">
+							<svg class="icon icon-country"><use xlink:href="icons/icons.svg#country"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.country}}
+							</div>
+						</div>
+						<!-- Width -->
+						<div
+							ng-if="currentTexture.width"
+							class="features__item">
+							<svg class="icon icon-width"><use xlink:href="icons/icons.svg#width"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.width}}
+							</div>
+						</div>
+					</div>
+					<div class="features__column">
+						<!-- Structure -->
+						<div
+							ng-if="currentTexture.structure"
+							class="features__item">
+							<svg class="icon icon-structure"><use xlink:href="icons/icons.svg#structure"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.structure}}
+							</div>
+						</div>
+						<!-- info -->
+						<div
+							ng-if="currentTexture.description"
+							class="features__item">
+							<svg class="icon icon-structure"><use xlink:href="icons/icons.svg#info"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.description}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Text block with img-->
+			<div ng-if="desktop" ng-include="'views/directives/construction.html'"></div>
+			<!-- Text block with benefits-->
+			<div class="text-block text-block_benefits">
+				<div class="text-block__column text-block__column_padding">
+					<div class="text-block__text-holder">
+						<h2 class="text-block__title">{{product.cornice.text}}</h2>
+						<p class="text-block__text" ng-bind-html="product.cornice.description"></p>
+					</div>
+					<!-- Price block -->
+					<div class="price-block price-block_inline">
+						<div class="price-block__text"></div>
+						<!-- New price -->
+						<div class="price-block__new">
+							<strong>{{product.cornice.price}}</strong> {{product.cornice.currencySign}}
+						</div>
+					</div>
+				</div>
+				<div class="text-block__column" ng-if="product.id">
+					<!-- Benefits -->
+					<benefits
+						idproduct="{{product.id}}"
+						title="Преимущества"
+						url="benefits.json"
+						>
+					</benefits>
+				</div>
+			</div>
+			<!-- Video -->
+			<div class="video" ng-if="!!product.video && desktop">
+				<h2 class="video__title">
+					{{product.video_title}}
+				</h2>
+				<div class="video__frame-holder" ng-if="product.video">
+					<youtube-video
+						video-id="getYoutubeId(product.video)">
+					</youtube-video>
+				</div>
+			</div>
+			<!-- Reviews -->
+			<reviews product-id="{{product.id}}" ng-if="!!product.id && !!mobile"></reviews>
+		</div>
+	</div>
+	<!-- Catalog -->
+	<div class="container container_product-page" ng-if="catalogItems.length > 0">
+		<div class="catalog">
+			<!-- Title -->
+			<h2 class="catalog__title">
+				Вам также может понравиться
+			</h2>
+			<ul class="catalog__list">
+				<li
+					ng-repeat="product in catalogItems"
+					class="catalog__item">
+					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</main>

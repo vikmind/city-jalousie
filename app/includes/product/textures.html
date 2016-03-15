@@ -1,0 +1,145 @@
+<div class="textures">
+	<header class="textures__header">
+		<h2 class="textures__title">
+			Выберите цвет или текстуру
+			<span class="textures__mobile-icon" ng-click="mobileFilterMenu(); refreshRange()" ng-class="{'active': $parent.toggleMobilePopup}" ng-show="totalColors.length > 1 || minPrice !== maxPrice">
+				<span class="textures__filter-mask" ng-click="toggleMobilePopup = false"></span>
+				<svg class="icon icon-filter"><use xlink:href="icons/icons.svg#filter"></use></svg>
+			</span>
+			<!-- Mobile Popup -->
+			<div class="popup" ng-show="$parent.toggleMobilePopup">
+				<div class="popup__inside">
+					<h2 class="popup__title" ng-show="minPrice !== maxPrice">
+						Стоимость материала за м<sup>2</sup>
+					</h2>
+					<div class="popup__content popup__content_mobile" ng-if="priceSlider" ng-show="minPrice !== maxPrice">
+						<!-- Price range -->
+						<range
+							min="priceSlider.min"
+							max="priceSlider.max"
+							options="{{priceSlider.options}}">
+						</range>
+					</div>
+					<h2 class="popup__title" ng-show="totalColors.length > 1">
+						Выберите цвет материала
+					</h2>
+					<div class="popup__content" ng-show="totalColors.length > 1">
+						<!-- Colors set -->
+						<ul class="colors-set">
+							<li class="colors-set__item" ng-repeat="color in product.colors">
+								<color
+									model="textureColors[color]"
+									name="color"
+									fill="{{color}}">
+								</color>
+							</li>
+						</ul>
+					</div>
+					<footer class="popup__footer">
+						<button class="popup__link" ng-click="clearMobileTextureColor()">
+							<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
+							Снять выделение
+						</button>
+					</footer>
+				</div>
+			</div>
+			<!-- Filters -->
+			<div class="textures__filters">
+				<h2 class="textures__filters-title">
+					фильтровать:
+				</h2>
+
+				<ul class="textures__filters-list" >
+					<!-- By price -->
+					<li class="textures__filters-item">
+						<button
+							ng-click="minPrice !== maxPrice ? onClickRange() : ''"
+							class="textures__filters-btn"
+							ng-class="{'active': $parent.togglePricePopup && minPrice !== maxPrice, 'disactive': minPrice === maxPrice}">
+							цена
+							<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
+						</button>
+						<!-- Popup -->
+						<div class="popup" ng-show="$parent.togglePricePopup">
+							<div class="popup__inside">
+								<h2 class="popup__title">
+									Стоимость материала за м<sup>2</sup>
+								</h2>
+								<div class="popup__content" ng-if="priceSlider">
+									<!-- Price range -->
+									<range
+										min="priceSlider.min"
+										max="priceSlider.max"
+										options="{{priceSlider.options}}">
+									</range>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- By color -->
+					
+					<li class="textures__filters-item">
+						<button
+							ng-click="totalColors.length > 0 ? onClickColor():''"
+							class="textures__filters-btn"
+							ng-class="{'active': $parent.toggleColorsPopup && totalColors.length > 1, 'disactive': $parent.totalColors.length === 0}">
+							цвет
+							<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
+						</button>
+						<!-- Popup -->
+						<div class="popup" ng-show="$parent.toggleColorsPopup">
+							<div class="popup__inside">
+								<h2 class="popup__title">
+									Выберите цвет материала
+								</h2>
+								<div class="popup__content">
+									<!-- Colors set -->
+									<ul class="colors-set">
+										<li class="colors-set__item" ng-repeat="color in product.colors">
+											<color
+												model="textureColors[color]"
+												name="color"
+												fill="{{color}}">
+											</color>
+										</li>
+									</ul>
+								</div>
+								<footer class="popup__footer">
+									<button class="popup__link" ng-click="clearTextureColor();">
+										<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
+										Снять выделение
+									</button>
+								</footer>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</h2>
+	</header>
+	<!-- Content -->
+	<ul class="textures__list">
+
+		<li
+			ng-repeat="(key,texture) in textures"
+			ng-show="(key<=12)||(showAllTextures)"
+			class="textures__item">
+			<div ng-mouseenter="$parent.$parent.$parent.previewTextureModel = texture.id;" ng-mouseleave="$parent.$parent.$parent.previewTextureModel = null">
+				<texture
+					title="{{texture.model}}"
+					model="$parent.$parent.$parent.textureModel"
+					name="texture"
+					checked="{{texture.id === textureModel || $first}}"
+					fill="{{texture.texture}}"
+					value="{{texture.id}}">
+				</texture>
+			</div>
+		</li>
+	</ul>
+	<button class="textures__show-all" ng-show="(textures.length > 12)" ng-click="showAllTextures=!showAllTextures;">
+		<span ng-if="!showAllTextures">развернуть</span>
+		<span ng-if="showAllTextures">свернуть</span>
+		<span class="hide-in-tablet">все </span>материалы ({{textures.length}})
+		<svg class="icon icon-shevron-down" ng-class="{'rotated': showAllTextures}"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
+	</button>
+</div>
