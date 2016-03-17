@@ -43,11 +43,11 @@
 		</div>
 			
 		<div class="column-1 column_pl0 column_pr0">
-			<!-- include includes/search-color -->
+			<div ng-include="'views/search-color.html'"></div>
 		</div>
 			
 		<div class="column-1 column_pl2">
-			<!-- include includes/room-type -->
+			<div ng-include="'views/room-type.html'"></div>
 		</div>
 	</div>
 
@@ -76,17 +76,19 @@
 	<div class="container">
 		<div class="catalog">
 			<ul class="catalog__list">
-				<li class="catalog__item" ng-repeat="(key, value) in catalogItems">
-					<div ng-include="'views/directives/product.html'", scope="", onload=""></div>
+				<li
+					ng-repeat="product in catalogItems"
+					class="catalog__item">
+					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
 				</li>
-			</ul>
-				
-					
+			</ul>	
 			<!-- More btn -->
 			<div class="more-btn">
-				<a href="" class="more-btn__link">
+				<a href class="more-btn__link" ng-click="getProductList()" ng-if="showLoadMoreBtn">
 					<span class="icon icon-more"></span>
-					<span class="more-btn__text">Показать больше новинок</span>
+					<span class="more-btn__text">
+						Показать больше новинок
+					</span>
 				</a>
 			</div>
 		</div>
