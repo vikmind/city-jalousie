@@ -1,0 +1,257 @@
+.textures {
+	background: #fff;
+	padding: 36px 40px 20px;
+	position: relative;
+	z-index: 3;
+	@media @tablet-mq{
+		padding: 26px 40px 0;
+	}
+	@media @mobile-mq{
+		padding: 24px;
+	}
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		left: 40px;
+		right: 40px;
+		height: 1px;
+		background: #eee;
+		@media @mobile-mq{
+			left: 24px;
+			right: 24px;
+		}
+	}
+	&:before {
+		top: 0;
+	}
+	&:after {
+		bottom: 0;
+	}
+	&__header {
+		.clearfix();
+	}
+	&__title {
+		margin: 0;
+		font-weight: @normal;
+		float: left;
+		color: #363537;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 20px;
+		width: 100%;
+		overflow: visible;
+		z-index: 2;
+		position: relative;
+		&_small{
+			color: fade(#b7b7b7, 0.89);
+			font-size: 12px;
+			width: 160px;
+			@media @tablet-mq{
+				.textures__mobile-icon + .popup{
+					left: 0;
+					right: auto;
+				}
+			}
+			@media @mobile-mq{
+				width: 100%;
+			}
+		}
+		@media @tablet-mq{
+			&_small{
+				color: fade(#b7b7b7, 0.89);
+			}
+			font-size: 12px;
+			text-transform: uppercase;
+			margin: 0 0 10px;
+		}
+		@media @mobile-mq{
+			margin-bottom: 0;
+			padding-bottom: 24px;
+		}
+	}
+	&__filters {
+		float: right;
+		position: relative;
+		@media @tablet-mq{
+			display: none;
+		}
+	}
+	&__filters-title {
+		float: left;
+		margin: 0 5px 0 0;
+		color: fade(#363537, 60%);
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 20px;
+	}
+	&__filters-list {
+		float: left;
+		list-style: none;
+		padding: 0;
+		margin: 0 31px 0 0;
+	}
+	&__filters-item {
+		float: left;
+
+		&+& {
+			margin-left: 2px;
+		}
+	}
+	&__filters-btn {
+		border: none;
+		background: none;
+		color: #363537;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 20px;
+		vertical-align: top;
+		padding: 0 10px;
+		.icon {
+			margin-left: 3px;
+			transition: transform @animation-time;
+		}
+		&:after {
+			content: '';
+			display: none;
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			background: #fff;
+			transform: rotate(45deg);
+			box-shadow: 0 0 13px rgba(0, 0, 1, 0.2);
+			margin: 5px 0 0 3px;
+			z-index: 6;
+		}
+		&.active {
+			color: fade(#3f3f3f, 70%);
+
+			&:after {
+				display: block;
+			}
+			.icon {
+				transform: rotate(180deg);
+			}
+		}
+		&.disactive{
+			opacity: 0.5;
+		}
+	}
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		margin: 25px 0 0;
+		.clearfix();
+		@media @tablet-mq{
+			margin: 15px 0 0;
+		}
+		@media @mobile-mq{
+			margin: 0;
+		}
+	}
+	&__item {
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+	&__show-all {
+		border: none;
+		background: none;
+		color: #a1a1a1;
+		font-size: 11px;
+		font-weight: 500;
+		line-height: 44px;
+		text-transform: uppercase;
+		padding: 0;
+		.icon {
+			margin-left: 3px;
+		}
+	}
+	&_dark {
+		background: none;
+		padding: 0;
+		&:after, &:before {
+			display: none;
+		}
+		.textures__title {
+			color: #afafaf;
+		}
+		.textures__filters-title {
+			color: #afafaf;
+		}
+		.textures__filters-btn {
+			color: #afafaf;
+		}
+		.texture__bg{
+			border-color: #2b3032;
+			&:before{
+				border-color: fade(#2b3032, 40%);
+			}
+		}
+	}
+	&__filter-mask{
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: fade(#c6d557, 80%);
+		z-index: 2;
+	}
+	&__mobile-icon{
+		display: none;
+		float: right;
+		cursor: pointer;
+		font-size: 0;
+		line-height: 0;
+		z-index: 100;
+		.icon{
+			z-index: 3;
+			position: relative;
+			opacity: 0.6;
+		}
+		&:after {
+			content: '';
+			display: none;
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			background: #fff;
+			transform: rotate(45deg);
+			box-shadow: 0 0 13px rgba(0, 0, 1, 0.2);
+			margin: 5px 0 0 0;
+			z-index: 4;
+		}
+		&.active {
+			&:after {
+				display: block;
+			}
+			.textures__filter-mask{
+				display: block;
+			}
+		}
+		& + .popup{
+			display: none;
+			right: -25px;
+			margin-top: 16px;
+			z-index: 100;
+		}
+		@media @tablet-mq{
+			display: inline-block;
+			& + .popup{
+				display: block;
+			}
+		}
+		@media @tablet-portrait-mq{
+			& + .popup{
+				right: -5px;
+			}
+		}
+		@media @mobile-mq{
+			& + .popup{
+				right: -20px;
+			}
+		}
+	}
+}

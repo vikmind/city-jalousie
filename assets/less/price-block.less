@@ -1,0 +1,77 @@
+.price-block{
+	background: #fff;
+	padding: 36px 40px 30px;
+	position: relative;
+	@media @tablet-mq{
+		padding: 36px 48px 10px;
+	}
+	@media @mobile-mq{
+		padding: 36px 24px 24px;
+	}
+	&_inline{
+		padding: 0;
+		margin: 18px 0 0;
+	}
+	&__container{
+		display: inline-block;
+	}
+	&__old{
+		color: #b25a4e;
+		font-size: 14px;
+		font-weight: 500;
+		text-decoration: line-through;
+		line-height: 1;
+		margin: 0 0 7px;
+	}
+	&__new{
+		font-size: 20px;
+		color: #ababab;
+		font-weight: @black;
+		.letter-spacing(50);
+		line-height: 1;
+		strong{
+			font-weight: @black;
+			color: #353535;
+		}
+	}
+	&__text{
+		opacity: 0.6;
+		color: #363537;
+		font-size: 12px;
+		font-weight: 400;
+		display: inline-block;
+		vertical-align: bottom;
+		margin: 0 0 3px 20px;
+		line-height: 1;
+		@media @tablet-mq{
+			margin: 10px 0 0;
+		}
+	}
+	&_inline &__text{
+		display: block;
+		margin: 0 0 10px;
+		line-height: 20px;
+	}
+	&__label {
+		position: absolute;
+		top: 0;
+		right: -13px;
+		width: 80px;
+		height: 50px;
+		background: url('../img/ribbon-red.svg') no-repeat;
+		text-align: center;
+		.no-select();
+		z-index: 5;
+		@media @mobile-mq{
+			top: -1px;
+		}
+	}
+	&__label-text {
+		line-height: 74px;
+		font-size: 12px;
+		font-weight: 400;
+		.letter-spacing(100);
+		color: #fff;
+		padding-left: 8px;
+	}
+}

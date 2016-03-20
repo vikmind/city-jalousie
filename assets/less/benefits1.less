@@ -1,0 +1,34 @@
+.benefits {
+	position: relative;
+	color: #fff;
+	position: relative;
+	background-size: cover;
+	height: 380px;
+	.stitch(@color: fade(#fff,90%), @padding: 3px);
+	&_services{
+		background-image: url(../img/slider_services.jpg);
+		margin-right: 0;
+		width: 300px;
+		.benefit__inner{
+			padding: 24px;
+		}
+	}
+	&_advantages{
+		background-image: url(../img/slider_advantages.jpg);
+	}
+	.text-block_benefits &{
+		height: 460px;
+	}
+	&__label {
+		position: absolute;
+		left: 30px;
+		top: 36px;
+		z-index: 5;
+		opacity: 0.5;
+		color: #000;
+		font-family: Roboto;
+		font-size: 13px;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+}

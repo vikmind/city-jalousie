@@ -1,14 +1,20 @@
 .product {
-	width: 100%;
 	position: relative;
-	&:hover {
-		.product__container {
-			transform: translateY(0);
-			bottom: 65px;
+	&.single{
+		width: 280px;
+		margin-right: 20px;
+		float: left;
+	}
+	@media @desktop-mq{
+		&:hover {
+			.product__container {
+				transform: translateY(0);
+				bottom: 65px;
+			}
 		}
 	}
 	&__wrapper {
-		padding: 0 10px;
+		// padding: 0 10px;
 	}
 	&__inner {
 		position: relative;
@@ -39,10 +45,10 @@
 		.clearfix();
 		&:hover {
 			.product__review-label {
-				opacity: .7;
+				opacity: 0.7;
 			}
 			.product__review-list {
-				opacity: .7;
+				opacity: 0.7;
 			}
 		}
 	}
@@ -55,19 +61,19 @@
 		opacity: .4;
 		transition: opacity @animation-time;
 		.clearfix();
-	}
-	&__review-item {
-		float: left;
-		margin-right: 4px;
-		&:last-child {
-			margin-right: 0;
+		li{
+			float: left;
+			margin-right: 4px;
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 	}
 	&__review-label {
 		float: left;
 		font-size: 10px;
 		color: #fff;
-		opacity: .2;
+		opacity: 0.2;
 		line-height: 20px;
 		padding: 0 20px;
 		border-radius: 10px;
@@ -79,7 +85,7 @@
 	&__cart-btn {
 		position: absolute;
 		left: 20px;
-		top: 18px;
+		top: 20px;
 		text-decoration: none;
 		line-height: 20px;
 		display: inline-block;
@@ -101,13 +107,13 @@
 	&__cart-label {
 		opacity: 0;
 		left: 15px;
-		top: 9px;
+		top: 7px;
 		letter-spacing: 0.5px;
 		font-weight: 400;
-		padding-left: 38px;
-		padding-right: 12px; 
+		padding-left: 30px;
+		padding-right: 19px;
 		border-radius: 10px;
-		background: @green;
+		background: @blue;
 		font-size: 10px;
 		color: #fff;
 		display: inline-block;
@@ -119,31 +125,30 @@
 	}
 	&__label {
 		position: absolute;
-		top: -4px;
-		right: 20px;
-		width: 65px;
-		height: 40px;
-		background: url('../icons/ribbon_number.svg') no-repeat;
+		top: 0;
+		right: -9px;
+		width: 76px;
+		height: 49px;
+		background: url('../img/ribbon-red.svg') no-repeat;
 		text-align: center;
 		.no-select();
 		z-index: 5;
+		background-size: 100% 100%;
 	}
 	&__label-text {
+		line-height: 74px;
+		font-size: 12px;
+		font-weight: 400;
+		.letter-spacing(100);
 		color: #fff;
-		font-family: Roboto;
-		font-size: 10px;
-		font-weight: 500;
-		line-height: 1;
-		.letter-spacing(200);
-		text-align: center;
-		padding: 14px 0;
+		padding-left: 8px;
 	}
 	&__container {
 		position: absolute;
 		width: 100%;
 		left: 0;
 		bottom: 65px+60px;
-		transform: translateY(103%);
+		transform: translateY(102%);
 		background: #fff;
 		transition: transform @animation-time, bottom @animation-time;
 	}
@@ -156,11 +161,19 @@
 	}
 	&__title {
 		margin: 0;
-		margin-bottom: 4px;
 		font-size: 14px;
 		font-weight: @medium;
 		color: #353535;
+		height: 38px;
+		display: block;
 		.letter-spacing(50);
+		width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		a{
+			color: #353535;
+			text-decoration: none;
+		}
 	}
 	&__subtitle {
 		margin: 0;
@@ -168,6 +181,10 @@
 		color: #a1a1a1;
 		font-weight: 300;
 		.letter-spacing(50);
+		a{
+			color: #353535;
+			text-decoration: none;
+		}
 	}
 	&__colors {
 		background: #f7f7f7;
@@ -191,6 +208,8 @@
 		padding: 10px;
 		padding-bottom: 0;
 		margin: 0;
+		max-height: 64px;
+		overflow: hidden;
 		.clearfix();
 	}
 	&__colors-item {
@@ -213,6 +232,7 @@
 	}
 	&__colors-label {
 		cursor: pointer;
+		display: block;
 	}
 	&__colors-dot {
 		background: orange;
@@ -221,12 +241,13 @@
 		border-radius: 50%;
 		border: solid 2px #fff;
 		position: relative;
+		background-size: cover;
 		&:before {
 			content: '';
 			opacity: 0;
 			display: inline-block;
-			width: 22px;
-			height: 22px;
+			width: 18px;
+			height: 18px;
 			border-radius: 50%;
 			border: solid 2px @blue;
 			position: absolute;
@@ -242,7 +263,7 @@
 		width: 100%;
 		height: 65px;
 		background: #fff;
-		padding: 15px 20px;
+		padding: 16px 20px;
 		.clearfix();
 		.btn {
 			float: right;
@@ -255,8 +276,7 @@
 	&__price-old {
 		font-size: 11px;
 		font-weight: 400;
-		font-family: Roboto;
-		color: #9e5a50;
+		color: #b25a4e;
 		text-decoration: line-through;
 		.letter-spacing(50);
 	}
@@ -264,7 +284,6 @@
 		font-size: 16px;
 		color: #b5b5b5;
 		font-weight: @black;
-		line-height: 1;
 		.letter-spacing(50);
 		&:only-child{
 			margin: 9px 0;

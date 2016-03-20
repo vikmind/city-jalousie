@@ -1,0 +1,92 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #eee;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+a, input, textarea, select, button {
+	&:focus {
+		outline: none;
+	}
+}
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
+	position: static;
+	.clearfix();
+	&__holder{
+		position: relative;
+		overflow: hidden;
+	}
+	&__inside{
+		margin: 0 -10px;
+		[class^="column-"]:first-child{
+			padding-left: 10px;
+		}
+		[class^="column-"]:last-child{
+			padding-right: 10px;
+		}
+	}
+	[class^="column-"] {
+		float: left;
+		padding: 0 10px;
+		.clearfix();
+		&.column_pl0{
+			padding-left: 0;
+		}
+		&.column_pr0{
+			padding-right: 0;
+		}
+		&.column_pl2{
+			padding-left: 20px;
+		}
+		&.column_pr2{
+			padding-right: 20px;
+		}
+		&:first-of-type {
+			padding-left: 0;
+		}
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+	&_menu {
+		position: absolute;
+		width: 100%;
+		top: 60px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
+	}
+	&_margin-bottom {
+		margin-bottom: 20px;
+	}
+	&_tight{
+		padding: 0 20px;
+	}
+	&_product-page {
+		margin-top: -30px;
+		margin-bottom: 100px;
+		position: relative;
+	}
+	&_relative {
+		position: relative;
+	}
+}
+.column-1 {
+	width: 100%/4;
+}
+.column-2 {
+	width: 100%/2;
+}
+.column-3 {
+	width: 100%/4*3;
+}
+.column-4 {
+	width: 100%;
+}

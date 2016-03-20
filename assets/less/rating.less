@@ -1,0 +1,38 @@
+/* <input-star></input-star> directive */
+.rating {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	float: left;
+	line-height: 1;
+	& > li {
+		font-size: 17px;
+		display: inline-block;
+		padding-right: 5px;
+		padding-left: 5px;
+		cursor: pointer;
+		&:first-child{
+			padding-left: 0;
+		}
+		@media @mobile-mq{
+			&:last-child{
+				padding-right: 0;
+			}
+		}
+		.active {
+			color: #FDE35E;
+			text-shadow: black 0 0 1px, 0 0 1px ;
+		}
+		&.angular-input-stars-hover {
+			text-shadow: black 0 0 3px;
+		}
+		@media @tablet-mq{
+			padding-right: 3px;
+			padding-left: 3px;
+		}
+	}
+	&[readonly]>li{
+		cursor: default;
+	}
+}

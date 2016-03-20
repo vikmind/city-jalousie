@@ -1,0 +1,58 @@
+.mobile-aside{
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	&__header{
+		background: #fff;
+		height: 56px;
+	}
+	&__close{
+		color: fade(#333234, 89);
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 20px;
+		text-transform: uppercase;
+		background: none;
+		width: 100%;
+		padding: 18px 20px;
+		border: none;
+		text-align: left;
+		.icon{
+			width: 6px;
+			fill: currentColor;
+			vertical-align: baseline;
+			height: 11px;
+			margin-left: 10px;
+		}
+	}
+	&__content{
+		background-color: #eee;
+		padding: 22px 20px;
+		position: relative;
+		.form__fieldset:last-child{
+			margin-bottom: 0;
+		}
+		&.filters{
+			padding: 22px 0 0;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 0;
+			// background: url('../img/aside-footer.png');
+			background-size: 100% 100%;
+			width: 100%;
+			height: 19px;
+		}
+	}
+	&:after{
+		content: '';
+		box-shadow: inset 2.5px 4.3px 122px rgba(0, 0, 1, 0.75);
+		display: block;
+		height: 20000px;
+		width: 200%;
+		margin-left: -50%;
+		margin-right: -50%;
+	}
+}

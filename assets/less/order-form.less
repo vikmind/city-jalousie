@@ -1,0 +1,127 @@
+.order-form{
+	&__title{
+		color: fade(#3c3c3c,90%);
+		font-size: 18px;
+		font-weight: 900;
+		line-height: 20px;
+		text-transform: uppercase;
+		.letter-spacing(100);
+		margin: 0 0 45px;
+		& svg{
+			float: left;
+			margin: -12px 15px 0 0;
+		}
+	}
+	&__list{
+		list-style: none;
+		padding: 0;
+		margin: -10px 0 28px;
+
+		opacity: 0.8;
+		color: #000;
+		font-size: 14px;
+		line-height: 30px;
+		font-weight: 400;
+		.letter-spacing(50);
+		strong{
+			font-weight: 500;
+		}
+	}
+	&__item{
+		line-height: 20px;
+		span.dimenstions{
+			display: inline-block;
+		}
+		&+&{
+			margin-top: 10px;
+		}
+	}
+	&__input{
+		color: fade(#4a4a4a, 70%);
+		font-size: 16px;
+		font-weight: 400;
+		background-color: #fff;
+		border: 2px solid #e6e6e6;
+		border-radius: 3px;
+		width: 100%;
+		padding: 7px 18px 8px;
+		margin-bottom: 30px;
+		.letter-spacing(50);
+		&:focus{
+			color: #4a4a4a;
+			border-color: #f1e281;
+		}
+	}
+	&__footer{
+		margin-top: -3px;
+		.clearfix();
+	}
+	&__text{
+		opacity: 0.8;
+		color: #4a4a4a;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 20px;
+		margin: 8px 0 34px;
+	}
+	&__call-title{
+		color: #4a4a4a;
+		font-size: 16px;
+		font-weight: 400;
+		margin: 8px 0 34px;
+	}
+	&__time{
+		float: left;
+		width: 25%;
+		padding-right: 20px;
+		.wrap-dd-select{
+			padding-top: 7px;
+			padding-bottom: 7px;
+			background: none;
+			border: 2px solid #e6e6e6;
+			box-shadow: none;
+			color: fade(#4a4a4a,70%);
+			font-size: 16px;
+			font-weight: 400;
+			text-transform: none;
+		}
+		.wrap-dd-select .dropdown{
+			background: #fff;
+		}
+		.wrap-dd-select .dropdown{
+			max-height: 200px;
+		}
+		.wrap-dd-select .dropdown li a{
+			border-bottom-color: #eee;
+		}
+	}
+	&__submit{
+		padding-left: 40px;
+		padding-right: 40px;
+		width: 50%;
+		&:only-child{
+			float: right;
+		}
+	}
+	@media @mobile-mq{
+		&__text{
+			margin-bottom: 20px;
+		}
+		&__call-title{
+			margin-bottom: 20px;
+		}
+		&__time{
+			width: 50%;
+			margin-bottom: 10px;
+			& + &{
+				padding-right: 0;
+				padding-left: 20px;
+			}
+		}
+		&__submit{
+			width: 100%;
+			text-align: center;
+			padding: 0;
+		}
+	}
+}

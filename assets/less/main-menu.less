@@ -1,0 +1,267 @@
+.main-menu {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	transition: transform @animation-time;
+	@media only screen and (min-width:1280px){
+		&.hidden{
+			&:hover{
+				transform: rotate(0) translateY(0);
+			}
+		}
+	}
+	&__title {
+		margin: 0;
+		transform: rotate(-2deg);
+		position: absolute;
+		.lobster();
+		color: #353535;
+		font-size: 20px;
+	}
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		.clearfix();
+	}
+	&__item {
+		float: left;
+		padding: 0 13px;
+		.main-menu__list {
+			position: absolute;
+			display: none;
+			.main-menu__link{
+				opacity: 0.8;
+				color: #373534;
+				font-size: 13px;
+				font-weight: 400;
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+		&:last-of-type {
+			margin-right: 0;
+		}
+		&:hover{
+			&.with-sub>.main-menu__link:after{
+				content: '';
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				border: 10px solid transparent;
+				border-bottom-color: white;
+				margin-left: -5px;
+			}
+			.main-menu__list {
+				display: inline-block;
+			}
+		}
+	}
+	&__link {
+		font-size: 13px;
+		font-weight: 400;
+		text-decoration: none;
+		line-height: 42px;
+		display: inline-block;
+		position: relative;
+		&.active {
+
+		}
+	}
+	&_green {
+		.img('menu_green.png');
+		top: 0;
+		@media only screen and (min-width:1280px){
+			&.hidden{
+				transform: rotate(2deg) translateY(-33px);
+			}
+		}
+		.main-menu__title {
+			margin-left: 70px;
+			transform: rotate(-2deg);
+			top: 12px;
+		}
+		.main-menu__list {
+			margin-top: 15px;
+			margin-left: 30px;
+			transform: rotate(-2deg);
+			top: 30px;
+		}
+		.main-menu__item {
+			.main-menu__list {
+				margin: 0;
+				padding-left: 30px;
+				transform: rotate(0deg);
+				left: -4px;
+				top: 37px;
+				width: 462px;
+				&:before{
+					transform: rotate(2deg);
+					left: 0;
+					top: -7px;
+					.img('submenu_green.png');
+					width: 100%;
+					position: absolute;
+				}
+				@media @tablet-mq{
+					left: -17px;
+					padding-left: 50px;
+					&:before{
+						left: 16px;
+						top: -5px;
+						.img('tablet_submenu_green.png');
+					}
+				}
+			}
+		}
+		.main-menu__link{
+			color: #3f4512;
+		}
+	}
+	&_blue {
+		top: 2px;
+		.img('menu_blue.png');
+		@media only screen and (min-width:1280px){
+			&.hidden{
+				transform: rotate(2.4deg) translateY(-38px);
+			}
+		}
+		.main-menu__title {
+			margin-top: 10px;
+			margin-left: 90px;
+			transform: rotate(-2.4deg);
+			top: 4px;
+		}
+		.main-menu__list {
+			margin-top: 15px;
+			margin-left: 20px;
+			transform: rotate(-2.4deg);
+			top: 32px;
+		}
+		.main-menu__item {
+			.main-menu__list {
+				margin: 0;
+				padding-left: 30px;
+				transform: rotate(0deg);
+				left: -11px;
+				top: 38px;
+				background-size: 100%;
+				width: 442px;
+				&:before{
+					transform: rotate(2.4deg);
+					left: 0;
+					top: -9px;
+					.img('submenu_blue.png');
+					width: 100%;
+					position: absolute;
+				}
+				@media @tablet-mq{
+					left: -17px;
+					&:before{
+						left: 6px;
+						top: -7px;
+						.img('tablet_submenu_blue.png');
+					}
+				}
+			}
+		}
+		.main-menu__link{
+			color: #2b3135;
+		}
+	}
+	&_left {
+		left: 0;
+	}
+	&_right {
+		right: 0;
+	}
+	@media @tablet-mq{
+		&__item {
+			padding: 0;
+			padding-left: 11px;
+		}
+		&_left {
+			left: 0;
+		}
+		&_right {
+			right: 0;
+		}
+		&_blue {
+			.img('menu_blue_small.png');
+		}
+		&_green {
+			.img('menu_green_small.png');
+		}
+	}
+	@media @tablet-portrait-mq{
+		position: static;
+		text-align: left;
+		&_blue{
+			background: none;
+		}
+		&_green{
+			background: none;
+		}
+		&_left, &_right{
+			width: 280px;
+			display: inline-block;
+			vertical-align: top;
+			height: auto;
+		}
+		&_left + &_right{
+			margin-left: 40px;
+		}
+		&__title,
+		&_green &__title,
+		&_blue &__title{
+			position: static;
+			margin: 0;
+			overflow: hidden;
+			width: 100%;
+			height: 48px;
+			transform: none;
+			padding: 10px 35px;
+			color: transparent;
+			text-align: left;
+		}
+		&_green &__title{
+			background: url('../img/ribbon_green_mobile.svg') top left no-repeat;
+		}
+		&_blue &__title{
+			background: url('../img/ribbon_blue_mobile.svg') top left no-repeat;
+		}
+		&__list,
+		&_green &__list,
+		&_blue &__list{
+			position: static;
+			transform: none;
+			margin: 0;
+		}
+		&__item{
+			display: block;
+			float: none;
+			background: #fff;
+			&+&{
+				margin-top: 6px;
+			}
+		}
+		&__link{
+			display: block;
+			padding: 15px 15px;
+			line-height: 1;
+		}
+		&_green &__item &__list,
+		&_blue &__item &__list{
+			display: none;
+		}
+
+	}
+	@media @mobile-mq{
+		&_left + &_right{
+			margin-left: 0;
+			margin-top: 20px;
+		}
+	}
+}

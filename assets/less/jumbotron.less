@@ -1,43 +1,63 @@
 .jumbotron {
-	height: 540px;
-	margin: 40px 0;
+	height: 480px;
+	margin-top: 20px;
+	margin-bottom: 50px;
 	color: #fff;
-	text-align: center;
 	.container{
 		padding: 0 40px;
+		position: relative;
+		height: 100%;
 	}
-	&__img {
-		height: 540px;
+	&__container {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&__bg {
+		height: 480px;
+		background-image: url('../img/jumbotron_eco.jpg');
 		background-size: cover;
+		background-position: center;
 		background-repeat: no-repeat;
 		position: absolute;
 		left: 0;
 		right: 0;
-		z-index: -1;
-	}
-	&__icon{
-		margin: 97px 0 40px;
+		will-change: transform;
 	}
 	&__title {
-		color: #fff;
-		font-family: Roboto;
-		font-size: 26px;
-		font-weight: 900;
-		line-height: 36px;
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 30px;
 		text-transform: uppercase;
-		margin: 0 0 34px;
-		letter-spacing: 0.1em;
+		margin-bottom: 30px;
+		margin-top: 40px;
+		.letter-spacing(100);
 	}
 	&__text {
-		color: #fff;
-		font-family: Roboto;
-		font-size: 17px;
-		font-weight: 400;
-		line-height: 20px;
-		margin: 0 auto 55px;
-		width: 80%;
+		font-size: 15px;
+		font-weight: 300;
+		line-height: 26px;
+		margin-bottom: 20px;
+		width: 56%;
+		letter-spacing: 0.02em;
 	}
-	.btn + .btn{
-		margin-left: 38px;
+	@media @tablet-mq{
+		height: 400px;
+	}
+	@media @tablet-portrait-mq{
+
+	}
+	@media @mobile-mq{
+		height: auto;
+		&__container {
+			width: auto;
+			position: static;
+			transform: none;
+			top: 0;
+			padding: 1px 0 30px;
+		}
+		&__text {
+			width: 100%;
+		}
 	}
 }

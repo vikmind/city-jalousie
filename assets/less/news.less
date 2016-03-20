@@ -1,16 +1,39 @@
 .news {
+	margin-right: -10px;
+	float: left;
+	width: 960px;
+	height: 380px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	transition: opacity @animation-time;
+	position: relative;
+	&__item{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		transition: opacity @animation-time;
+		&.active{
+			opacity: 1;
+			z-index: 1;
+		}
+	}
 	&__inner {
 		background: #fff;
+		position: relative;
 		.clearfix();
 	}
-	&__img-holder{
-		width: (100%/3*2);
-		height: 380px;
-		float: left;
-		padding: 10px;
-	}
 	&__img {
-		width: 100%;
+		width: (100%/3*2);
+		min-height: 380px;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-size: cover;
+		background-position: center;
 	}
 	&__img-inside{
 		position: absolute;
@@ -20,19 +43,21 @@
 	}
 	&__container {
 		float: right;
-		width: (100%/3);
+		width: 320px;
 		padding: 40px;
 		position: relative;
+		min-height: 380px;
 	}
 	&__label {
-		background: url('../icons/ribbon_text.svg');
-		width: 85px;
-		height: 40px;
+		// background: url('../img/ribbon.svg');
+		width: 110px;
+		height: 33px;
 		display: inline-block;
 		position: absolute;
-		top: -5px;
-		right: 12px;
+		top: 14px;
+		right: -10px;
 		text-align: center;
+		background-size: 100% 100%;
 	}
 	&__label-text {
 		line-height: 33px;
@@ -44,13 +69,14 @@
 		letter-spacing: 1.5px;
 	}
 	&__title {
+		opacity: 0.9;
 		color: #363537;
 		font-size: 20px;
-		font-weight: 700;
+		font-weight: 900;
 		line-height: 30px;
 		text-transform: uppercase;
-		margin: 23px 0 32px;
-		.letter-spacing(100);
+		margin: 23px 0 42px;
+		letter-spacing: 0.1em;
 	}
 	&__text {
 		opacity: 0.8;
@@ -58,7 +84,42 @@
 		font-size: 13px;
 		font-weight: 400;
 		line-height: 20px;
-		margin-right: 5px;
-		margin-bottom: 35px;
+		max-height: 130px;
+		overflow: hidden;
+		// margin-bottom: 45px;
+	}
+	.btn {
+		position: absolute;
+		left: 40px;
+		bottom: 40px;
+	}
+	@media @tablet-mq{
+		width: 100%;
+		&__container {
+			width: 320px;
+		}
+		&__img {
+			width: 640px;
+		}
+	}
+	@media @tablet-portrait-mq{
+		width: 280px;
+		margin-left: 20px;
+		&__img {
+			display: none;
+		}
+		&__container{
+			width: 280px;
+			padding: 40px 20px;
+		}
+	}
+	@media @mobile-mq{
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+		&__container {
+			width: 100%;
+			padding: 40px 24px;
+		}
 	}
 }

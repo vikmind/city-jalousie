@@ -40,6 +40,7 @@
 		display: block;
 	}
 	&__category{
+		display: block;
 		color: #fff;
 		font-size: 10px;
 		font-weight: 400;
@@ -48,6 +49,7 @@
 		text-transform: uppercase;
 	}
 	&__name{
+		display: block;
 		color: #fff;
 		font-size: 13px;
 		font-weight: 700;
@@ -59,7 +61,7 @@
 		display: inline-block;
 		vertical-align: middle;
 		margin-left: 3px;
-		.icon-arrow-down();
+		&:extend(.icon-arrow-down);
 	}
 	&__sub-list{
 		list-style: none;

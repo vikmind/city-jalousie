@@ -1,0 +1,50 @@
+.off-canvas{
+	overflow-x: hidden;
+	-webkit-backface-visibility: hidden;
+	position: relative;
+	width: 100%;
+	&.move-right, &.move-left {
+		min-height: 100%;
+		-webkit-overflow-scrolling: touch;
+	}
+}
+.off-canvas__menu{
+	width: @off-canvas-width;
+	transition: transform @animation-time;
+	background-color: #c77c96;
+	position: absolute;
+	height: 100%;
+	transfrom: translate3d(0,0,0);
+	will-change: transform;
+	overflow: hidden;
+	&.left{
+		left: 0;
+		.move-right &{
+			z-index: -1;
+		}
+	}
+	&.right{
+		right: 0;
+		.move-left &{
+			z-index: -1;
+			transform: translateX(260px);
+		}
+	}
+}
+.off-canvas__wrapper{
+	position: relative;
+	width: 100%;
+	transition: transform @animation-time;
+	z-index: 10;
+	.clearfix();
+	.off-canvas.move-left &{
+		transform: translateX(@off-canvas-width);
+	}
+	.off-canvas.move-right &{
+		transform: translateX(-@off-canvas-width);
+	}
+}
+.off-canvas__content{
+	background: #eee;
+	box-shadow: 0 0 62px rgba(0, 0, 1, 0.43);
+}

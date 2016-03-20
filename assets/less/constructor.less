@@ -1,0 +1,102 @@
+.constructor {
+	&__top{
+		position: relative;;
+		max-width: 1092px;
+		height: 0;
+	}
+	&__title{
+		background-color: #b47b94;
+		color: #fffeff;
+		font-size: 12px;
+		font-weight: 900;
+		line-height: 30px;
+		text-transform: uppercase;
+		position: absolute;
+		width: 300px;
+		height: 40px;
+		padding: 7px 20px;
+		top: 30px;
+		border-radius: 5px;
+		box-shadow: 1.5px 2.6px 8px rgba(0, 0, 1, 0.33);
+		z-index: 1;
+	}
+	&__upload-btn{
+		cursor: pointer;
+		position: absolute;
+		top: 30px;
+		right: 0;
+		z-index: 15;
+		font-weight: 500;
+		line-height: 1;
+		padding-top: 11px;
+		padding-bottom: 12px;
+		box-shadow: 1.5px 2.6px 8px rgba(0, 0, 1, 0.33);
+		>span,
+		&>.icon{
+			display: inline-block;
+			vertical-align: top;
+		}
+		&>.text{
+			margin-top: 3px;
+		}
+		input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+	}
+	&__preview-slide {
+		background: #333333;
+		width: 100%;
+		height: 700px;
+		background-size: cover;
+		background-position: 50% 50%;
+	}
+	&__mobile-top{
+		display: none;
+		position: absolute;
+		width: 100%;
+		overflow: hidden;
+		top: 56px;
+		height: 50px;
+	}
+
+	@media @tablet-mq{
+		&__upload-btn{
+			width: 300px;
+		}
+	}
+
+	@media @mobile-mq{
+		&__upload-btn,
+		&__title{
+			height: 50px;
+			line-height: 40px;
+			top: 0;
+			width: 50%;
+			border-radius: 0;
+		}
+		&__upload-btn{
+			padding-top: 18px;
+			padding-left: 50px;
+			&>.icon{
+				margin-right: 12px;
+			}
+			&>.text{
+				font-weight: 400;
+				font-size: 7px;
+				line-height: 10px;
+				margin-top: 0;
+				white-space: normal;
+				display: inline-block;
+				text-align: left;
+				width: 60px;
+			}
+		}
+		&__preview-slide {
+			padding-bottom: 111%;
+			height: auto;
+		}
+	}
+}

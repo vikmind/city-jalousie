@@ -1,6 +1,6 @@
 .more-btn {
-	padding-top: 10px;
-	padding-bottom: 50px;
+	padding-top: 30px;
+	padding-bottom: 15px;
 	text-align: center;
 	&__link {
 		display: inline-block;
@@ -11,15 +11,28 @@
 		text-decoration: none;
 		letter-spacing: 0.04em;
 		opacity: 0.75;
-		padding: 8px 25px 7px;
-		border: 2px solid fade(#7d7d7d,20%);
+		padding: 20px 0;
 		transition: opacity @animation-time;
 		&:hover {
 			opacity: 1;
 		}
-		
 	}
 	&__text {
 		margin-left: 10px;
+	}
+	&_red {
+		.more-btn__link {
+			opacity: 1;
+			padding: 10px 20px;
+			background: @red;
+			border-radius: 5px;
+		}
+		.more-btn__text {
+			color: #fff;
+		}
+		.icon {
+			background: #fff;
+			box-shadow: 9px 0 0 0 #fff, -9px 0 0 0 #fff;
+		}
 	}
 }

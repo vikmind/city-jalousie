@@ -5,17 +5,35 @@
 @bold: 700;
 @ultra-bold: 900;
 @black: 900;
-.lobster() {
-	font-family: 'Lobster', cursive;
-}
+
+// Colors
+@violet: #c77c96;
+@red: #df5442;
+@yellow: #f7e37c;
+@blue: #85c7e1;
+@green: #c1d64a;
+@text-color: #535354;
 
 // Animation
 @animation-time: .3s;
-// Colors
-@violet: #b47b94;
-@red: #c35545;
-@yellow: #c3c957;
-@olive: #acb246;
-@blue: #9ac6df;
-@green: #6eb393;
-@text-color: #535354;
+
+// Sizes
+@off-canvas-width: 260px;
+@desktop: 1280px;
+@desktop-small: 1092px;
+@tablet: 960px;
+@tablet-portrait: 640px;
+@mobile: 320px;
+@scrollbar: 30px;
+
+// Media
+@desktop-with-scrollbar: (@desktop + @scrollbar);
+@tablet-with-scrollbar: (@tablet + @scrollbar);
+@tablet-portrait-with-scrollbar: (@tablet-portrait + @scrollbar);
+@mobile-with-scrollbar: (@mobile + @scrollbar);
+
+@desktop-mq: ~"(min-width: @{desktop-with-scrollbar})";
+@tablet-mq: ~"(max-width: @{desktop-with-scrollbar})";
+@tablet-portrait-mq: ~"(max-width: @{tablet-with-scrollbar})";
+@mobile-mq: ~"(max-width: @{tablet-portrait-with-scrollbar})";
+@mobile-portrait-mq: ~"(max-width: @{mobile-with-scrollbar})";

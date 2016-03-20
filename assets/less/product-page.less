@@ -1,0 +1,31 @@
+.product-page{
+	&__main{
+		position: relative;
+		@media @tablet-mq{
+			width: 2*100/3%;
+		}
+		@media @tablet-portrait-mq {
+			width: 50%;
+		}
+	}
+	&__aside{
+		@media @tablet-mq{
+			width: 1*100/3%;
+		}
+		@media @tablet-portrait-mq {
+			width: 50%;
+		}
+	}
+	@media @mobile-mq{
+		&__main{
+			width: 100%;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+		&__aside{
+			width: 100%;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	}
+}

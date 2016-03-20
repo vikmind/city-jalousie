@@ -1,0 +1,23 @@
+.btn-set {
+	padding: 0 40px 30px;
+	background: #fff;
+	@media @mobile-mq{
+		padding: 0px 24px 30px;
+	}
+	.btn {
+		margin-right: 20px;
+		&:last-child {
+			margin-right: 0;
+		}
+		@media @tablet-mq{
+			width: 100%;
+			margin-right: 0;
+			& + .btn{
+				margin-top: 30px;
+			}
+		}
+	}
+	&_margin-bottom {
+		margin-bottom: 20px;
+	}
+}

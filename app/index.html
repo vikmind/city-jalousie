@@ -12,7 +12,7 @@
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 	<script>
 		WebFontConfig = {
-			google: { families: [ 'Open+Sans:400,700,600,800:latin,cyrillic', 'PT+Sans:400,700:latin,cyrillic', 'Roboto:400,500,700:latin,cyrillic' ] }
+			google: { families: [ 'Open+Sans:400,700,600,800:latin,cyrillic', 'PT+Sans:400,700:latin,cyrillic-ext', 'Roboto:400,500,700:latin,cyrillic' ] }
 		};
 		(function() {
 			var wf = document.createElement('script');
@@ -37,7 +37,7 @@
 <body ng-controller="MainCtrl" ng-class="filterOpened?'opened-filter':''">
 	<img src="/icons/icons.svg" alt='main-svg' style="display: none" />
 	<div class="main-wrapper off-canvas" off-canvas>
-		<!-- <div class="off-canvas__menu left show-in-portrait">
+		<div class="off-canvas__menu left show-in-portrait">
 			<div class="mobile-aside ">
 				<header class="mobile-aside__header">
 					<button class="mobile-aside__close" ng-click="toggleOffCanvas('left');">
@@ -50,7 +50,7 @@
 		</div>
 		<div class="off-canvas__menu right">
 			<div ng-include="'includes/mobile-menu.html'"></div>
-		</div> -->
+		</div>
 		<div class="off-canvas__wrapper">
 			<div class="off-canvas__content">
 				<responsive></responsive>

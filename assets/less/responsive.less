@@ -1,0 +1,170 @@
+// Desktop
+@media @desktop-mq {
+	.hide-in-desktop {
+		display: none !important;
+	}
+}
+// Tablet
+@media @tablet-mq {
+	.desktop-only{
+		display: none !important;
+	}
+	.container {
+		width: @tablet;
+	}
+	.call-me {
+		margin-right: 10px;
+	}
+	.hide-in-tablet {
+		display: none !important;
+	}
+	.tablet-hide {
+		display: none !important;
+	}
+	.site-header__container {
+		&:before, &:after {
+			display: none;
+		}
+	}
+	.links-set {
+		margin-left: 10px;
+		&__item {
+			.links-set__link {
+				&:first-child {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+	.cart {
+		padding-right: 0;
+		&:after {
+			display: none;
+		}
+	}
+	.main-menu {
+
+	}
+	.steps {
+		&__item {
+			padding-left: 80px;
+			padding-right: 15px;
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+		.icon {
+			left: 30px;
+			top: 45px;
+			width: 30px;
+		}
+		.icon-search-big {
+			width: 30px;
+		}
+		.icon-phone {
+			width: 25px;
+		}
+		.icon-worker {
+			width: 25px;
+		}
+	}
+	.product.single {
+		margin-right: 0;
+		margin-bottom: 20px;
+		width: 278px;
+		float: left;
+	}
+	.seo {
+		padding: 33px 0;
+		&__logo {
+			margin-top: 5px;
+			margin-left: 20px;
+		}
+		&__container {
+			padding-left: 120px;
+		}
+	}
+	.hide-in-tablet {
+		display: none !important;
+	}
+}
+// Portreit
+.show-in-portrait {
+	display: none;
+}
+@media @tablet-portrait-mq {
+	.hide-in-portrait {
+		display: none !important;
+	}
+	.show-in-portrait {
+		display: inherit;
+	}
+	.container {
+		width: @tablet-portrait;
+		&_margin-bottom {
+			margin-bottom: 0;
+		}
+	}
+	.slider {
+		margin-bottom: 20px;
+		&__img {
+			height: 320px;
+		}
+	}
+	.steps {
+		display: none;
+	}
+	.product.single {
+		margin-left: 15px;
+	}
+	.menu-vertical {
+		&__column {
+			width: 50%;
+			margin-bottom: 40px;
+		}
+	}
+	.vendor {
+		&__logo {
+			float: left;
+		}
+		&__text {
+			float: left;
+		}
+	}
+}
+// Mobile
+@media @mobile-mq {
+	.show-in-mobile {
+		display: block !important;
+	}
+	.hide-in-mobile {
+		display: none !important;
+	}
+	.container {
+		width: @mobile;
+		padding: 0 16px;
+	}
+	.product.single {
+		width: 100%;
+		margin-left: 0;
+	}
+	.article-preview {
+		width: 100%;
+		height: auto;
+		&__img {
+			width: 100%;
+		}
+		&__container {
+			width: 100%;
+		}
+	}
+	.seo {
+		&__container {
+			padding: 0;
+		}
+	}
+	.menu-vertical {
+		&__column {
+			width: 100%;
+		}
+	}
+}

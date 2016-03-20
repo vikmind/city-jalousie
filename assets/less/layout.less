@@ -1,24 +1,46 @@
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	background: #eee;
-	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
 }
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
+[ng-view]{
+	min-height: 760px;
+	.dis-loader{
+		display: block;
+
+	}
+	&.ng-scope{
+		background: none;
+		& + .dis-loader{
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
+	}
+	@media @mobile-mq{
+		min-height: 400px;
+	}
+}
+* {
+	box-sizing: border-box;
 }
 a, input, textarea, select, button {
 	&:focus {
 		outline: none;
 	}
 }
+textarea{
+	resize: vertical;
+}
+
 .container {
-	max-width: 1280px;
+	width: @desktop;
 	margin: 0 auto;
 	position: static;
 	.clearfix();
+	&_small{
+		width: @desktop-small;
+	}
 	&__holder{
 		position: relative;
 		overflow: hidden;
@@ -36,18 +58,6 @@ a, input, textarea, select, button {
 		float: left;
 		padding: 0 10px;
 		.clearfix();
-		&.column_pl0{
-			padding-left: 0;
-		}
-		&.column_pr0{
-			padding-right: 0;
-		}
-		&.column_pl2{
-			padding-left: 20px;
-		}
-		&.column_pr2{
-			padding-right: 20px;
-		}
 		&:first-of-type {
 			padding-left: 0;
 		}
@@ -68,15 +78,42 @@ a, input, textarea, select, button {
 	}
 	&_tight{
 		padding: 0 20px;
+		@media @tablet-mq{
+			padding: 0;
+		}
 	}
 	&_product-page {
 		margin-top: -30px;
 		margin-bottom: 100px;
 		position: relative;
+		z-index: 2;
+		@media @mobile-mq{
+			margin-top: -48px;
+			margin-bottom: 20px;
+		}
 	}
 	&_relative {
 		position: relative;
 	}
+	&_padding {
+		padding: 0 20px;
+	}
+
+	@media @tablet-portrait-mq{
+		&_menu{
+			display: none;
+		}
+		&_tablet-width{
+			width: 100% !important;
+		}
+	}
+	
+	@media @mobile-mq{
+		&_mobile-width{
+			width: 100% !important;
+		}
+	}
+	
 }
 .column-1 {
 	width: 100%/4;

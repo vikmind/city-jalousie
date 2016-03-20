@@ -6,7 +6,8 @@
 	color: #fff;
 	line-height: 1.3;
 	text-decoration: none;
-	padding: 9px 24px 7px;
+	padding: 9px 30px 7px;
+	border-radius: 3px;
 	font-size: 11px;
 	text-align: center;
 	transition: background @animation-time;
@@ -25,18 +26,6 @@
 		background: @blue;
 		&:hover {
 			background: darken(@blue, 10%);
-		}
-	}
-	&_olive{
-		background: @olive;
-		&:hover {
-			background: darken(@olive, 10%);
-		}
-	}
-	&_yellow{
-		background: @yellow;
-		&:hover {
-			background: darken(@yellow, 10%);
 		}
 	}
 	&_red {
@@ -66,17 +55,5 @@
 		width: 180px;
 		padding-left: 10px;
 		padding-right: 10px;
-	}
-	&_constructor {
-		position: absolute;
-		top: 100px;
-		right: 0;
-		z-index: 15;
-		input {
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0;
-		}
 	}
 }

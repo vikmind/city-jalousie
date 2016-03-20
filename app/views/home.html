@@ -1,60 +1,33 @@
+<!-- Home view -->
 <main class="home" ng-controller="HomeCtrl">
-	<section class="container-holder">
+	<section class="container__holder">
 		<div class="container container_margin-bottom">
-			<div class="column-3 column_pr0">
-				<div class="news">
-					<div class="news__inner">
-						<div class="news__img-holder">
-							<img src="img/news_constructor.jpg" alt="Constructor" class="news__img">
-						</div>
-							
-						<div class="news__container">
-							<div class="news__label">
-								<div class="news__label-text">акция</div>
-							</div>
-							<h2 class="news__title">Конструктор жалюзи и штор</h2>
-							<p class="news__text">Затрудняетесь с выбором  материала для штор или жалюзи? Вам поможет наш конструктор! Загрузите фото своего окна и  прикладывайте шторы прямо  на фото.</p>
-							<a href="#" class="btn btn_green">Перейти в конструктор</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="column-1 column_pl2">
-				<benefits
+			<!-- News -->
+			<news></news>
+			<!-- Benefits -->
+			<benefits
 				title="Услуги"
 				url="services.json"
-				id="services">
-				</benefits>
-			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<div class="column-1 column_pr0">
+				class="benefits_services">
+			</benefits>
 			<benefits
 				title="Преимущества"
 				url="advantages.json"
-				id="advantages"
+				class="benefits_advantages"
 			></benefits>
-		</div>
-			
-		<div class="column-1">
-			<div ng-include="'includes/product.html'"></div>
-		</div>
-			
-		<div class="column-1 column_pl0 column_pr0">
+			<!-- Product -->
+			<div ng-repeat="product in [featuredProduct]">
+				<div ng-init="product.single = true;" ng-include="'views/directives/product.html'"></div>
+			</div>
 			<div ng-include="'includes/search-color.html'"></div>
-		</div>
-			
-		<div class="column-1 column_pl2">
 			<div ng-include="'includes/room-type.html'"></div>
-		</div>
 	</div>
 
 	<!-- Jumbotron -->
 	<section class="jumbotron container__holder">
+		<div class="jumbotron__bg"></div>
 		<div class="container">
-			<div class="jumbotron__img" style="background-image: url('img/jumbotron_eco.jpg')"></div>
+			<!-- Img -->
 			<svg class='icon icon-leaves jumbotron__icon'>
 				<use xlink:href="icons/icons.svg#leaves"></use>
 			</svg>
@@ -71,8 +44,7 @@
 			<a href="#" class="btn btn_olive">жалюзи из бамбука</a>
 		</div>
 	</section>
-		
-			
+	<!-- Catalog -->
 	<div class="container">
 		<div class="catalog">
 			<ul class="catalog__list">
@@ -81,7 +53,7 @@
 					class="catalog__item">
 					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
 				</li>
-			</ul>	
+			</ul>
 			<!-- More btn -->
 			<div class="more-btn">
 				<a href class="more-btn__link" ng-click="getProductList()" ng-if="showLoadMoreBtn">

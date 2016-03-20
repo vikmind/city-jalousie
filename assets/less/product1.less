@@ -1,0 +1,42 @@
+.product {
+	&__cart-label {
+		opacity: 0;
+		left: 15px;
+		top: 9px;
+		letter-spacing: 0.5px;
+		font-weight: 400;
+		padding-left: 38px;
+		padding-right: 12px; 
+		border-radius: 10px;
+		background: @green;
+		font-size: 10px;
+		color: #fff;
+		display: inline-block;
+		text-transform: uppercase;
+		position: absolute;
+		transition: opacity @animation-time;
+		.letter-spacing(50);
+		.no-break();
+	}
+	&__label {
+		position: absolute;
+		top: -4px;
+		right: 20px;
+		width: 65px;
+		height: 40px;
+		background: url('../icons/ribbon_number.svg') no-repeat;
+		text-align: center;
+		.no-select();
+		z-index: 5;
+	}
+	&__label-text {
+		color: #fff;
+		font-family: Roboto;
+		font-size: 10px;
+		font-weight: 500;
+		line-height: 1;
+		.letter-spacing(200);
+		text-align: center;
+		padding: 14px 0;
+	}
+}

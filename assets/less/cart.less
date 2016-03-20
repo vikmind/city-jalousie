@@ -1,0 +1,157 @@
+.cart {
+	display: inline-block;
+	position: relative;
+	padding-right: 25px;
+	vertical-align: top;
+	padding-bottom: 35px;
+	@media @mobile-mq{
+		padding-bottom: 0;
+	}
+	&:after{
+		content: '';
+		display: block;
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-bottom: 15px solid #fff;
+		position: absolute;
+		top: 30px;
+		left: 5px;
+		opacity: 0;
+	}
+	&:hover{
+		&:after{
+			opacity: 0.99;
+			top: 45px;
+			transition: all @animation-time;
+		}
+	}
+	&__container {
+		float: left;
+		position: relative;
+		padding-right: 10px;
+	}
+	&__counter {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: @green;
+		position: absolute;
+		bottom: 0;
+		left: 23px;
+		color: #fff;
+		font-size: 10px;
+		font-weight: 900;
+		line-height: 1;
+		padding: 5px 0;
+		text-align: center;
+		.no-select();
+	}
+	&__text {
+		float: left;
+		line-height: 35px;
+		font-size: 13px;
+		color: #fff;
+		@media @mobile-mq{
+			display: none;
+		}
+	}
+	&__dropdown{
+		position: absolute;
+		top: 50px;
+		left: 50%;
+		margin-left: 100px;
+		background: #fff;
+		z-index: 23;
+		width: 370px;
+		// opacity: 0.99;
+		background-color: #fff;
+		box-shadow: 2.5px 4.3px 13px rgba(0, 0, 1, 0.2);
+		transform: translate3d(0,0,0);
+		-webkit-backface-visibility: hidden;
+		transition: all @animation-time;
+		.stitch(@color: fade(#000,90%), @padding: 3px);
+		max-height: 0;
+		padding: 0 40px 0;
+		overflow: hidden;
+		opacity: 0;
+		&.expanded{
+			opacity: 0.99;
+			top: 70px;
+			max-height: 500px;
+			padding: 52px 40px 30px;
+		}
+		@media @tablet-portrait-mq{
+			right: 0;
+			left: auto;
+			margin-left: 0;
+			box-shadow: none;
+		}
+		@media @mobile-mq{
+			max-width: 370px;
+			width: 100%;
+			padding: 82px 20px 30px;
+		}
+	}
+	&__title{
+		color: fade(#363537, 90%);
+		font-size: 13px;
+		font-weight: 700;
+		line-height: 20px;
+		margin-bottom: 7px;
+		.letter-spacing(50);
+		position: relative;
+		z-index: 2;
+	}
+	&__list-wrapper{
+		max-height: 240px;
+		overflow: auto;
+		position: relative;
+		z-index: 2;
+	}
+	&__list{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		padding-right: 30px;
+	}
+	&__list-holder{
+		max-height: 240px;
+	}
+	&__footer{
+		padding: 20px 0 0;
+		position: relative;
+		overflow: hidden;
+		z-index: 2;
+	}
+	&__description{
+		opacity: 0.9;
+		color: #363537;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		margin: 0 0 10px;
+	}
+	&__phone-holder{
+		padding-right: 130px;
+	}
+	&__phone-input{
+		float: left;
+		width: 100%;
+		background-color: fade(#fff, 50%);
+		border: 1px solid #bebebe;
+		border-radius: 3px;
+		line-height: 1;
+		padding: 3px 10px 4px;
+	}
+	&__phone-button{
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	&__phone-holder + &__phone-button{
+		float: left;
+		width: 110px;
+		margin-left: 20px;
+	}
+}

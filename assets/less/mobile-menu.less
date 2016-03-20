@@ -1,0 +1,88 @@
+.mobile-menu{
+	&__title{
+		margin: 0 6px 14px;
+		&.jalousie,
+		&.blinds{
+			// background-image: url('../img/jalousie_text.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 132px/2;
+			height: 20px;
+			font-size: 16px;
+			color: transparent;
+		}
+		&.blinds{
+			// background-image: url('../img/blinds_text.svg');
+			width: 122px/2;
+		}
+	}
+	&__list{
+		list-style: none;
+		margin: 0 0 33px;
+		padding: 0;
+	}
+	&__item{
+		background: #fff;
+		margin: 0 0 3px;
+		position: relative;
+	}
+	&__link{
+		display: block;
+		color: #353231;
+		font-size: 12px;
+		font-weight: 500;
+		padding: 13px 25px;
+		text-decoration: none;
+	}
+	&__expander{
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 42px;
+		height: 42px;
+		text-align: center;
+		padding: 10px;
+		cursor: pointer;
+	}
+	&__expander-input{
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		right: 0;
+	}
+	&__expander-input:checked ~ &__expander>span{
+		.icon-minus();
+	}
+	&__item>&__list{
+		margin-bottom: 0;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height @animation-time, margin-bottom @animation-time;
+	}
+	&__expander-input:checked ~ &__list{
+		max-height: 300px;
+		margin-bottom: 13px;
+	}
+	&__item>&__list>&__item{
+		margin: 0;
+		background: #f6f6f6;
+		border-bottom: 1px solid #eee;
+	}
+	&__item>&__list>&__item>&__link{
+		position: relative;
+		font-weight: 400;
+		&:hover{
+			background: #f2e479;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			right: 17px;
+			top: 17px;
+			background: url('../icons/shevron-right.svg') no-repeat;
+			width: 6px;
+			height: 11px;
+			opacity: .7;
+		}
+	}
+}

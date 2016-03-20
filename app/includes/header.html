@@ -1,4 +1,26 @@
-<header class="site-header" style="background-image: url('img/header.jpg');">
+<header class="site-header">
+	<section class="slider slider_big">
+		<!-- pagination="true" -->
+		<div
+			id="bigCarousel"
+			single-item="true"
+			pagination="false"
+			transition-style="'fade'"
+			mouse-drag="false"
+			touch-drag="false"
+			auto-play="true"
+			single-item="true"
+			responsive="true"
+			responsive-refresh-rate="200"
+			owl-carousel="['img/header.jpg','img/header.jpg','img/header.jpg','img/header.jpg','img/header.jpg']">
+			<div class="item">
+				<div
+					ng-style="{'background-image': 'url({{item}})'}"
+					class="slider__img">
+				</div>
+			</div>
+		</div>
+	</section>
 	<div class="site-header__tools">
 		<div class="container">
 			<div class="site-header__phone-callme phone-top">
@@ -9,25 +31,47 @@
 				<button class="phone-top__button">перезвоните мне</button> 
 			</div>
 			<div class="site-header__logo">
-				<img src='img/logo.png' alt='Сити Жалюзи' class="site-header__logo-img">
+				<a class="site-header__logo-link" href="/">
+					<img src='img/logo.png' alt='Сити Жалюзи' class="site-header__logo-img">
+				</a>
 			</div>
 				
+
 			<div class="site-header__cart-search">
-				<div class="site-header__cart cart-top">
-					<div class="cart-top__icon-holder">
-						<span class="cart-top__icon icon icon-cart">
-						</span>
-						<span class="cart-top__count">12</span>
+				<!-- Cart -->
+				<cart></cart>
+				<!-- Search -->
+				<div class="search site-header__search" ng-controller="SearchCtrl">
+					<form  class="search-top" ng-submit="search()">
+						<input type="text" class="search-top__input" placeholder='Поиск' ng-model="term">
+						<button type='submit' class="search-top__submit">
+							<span class="search__loading-icon" ng-show="!!loading">
+								<svg class="circular" viewBox="25 25 50 50">
+									<circle class="path" cx="50" cy="50" r="20" fill="none" stroke="#fff" stroke-width="4" stroke-miterlimit="10"/>
+								</svg>
+							</span>
+							<span class="icon icon-search" ng-show="!loading">
+							</span>
+						</button>
+					</form>
+					<div class="search__links" ng-if="results" ng-click="clickResult()">
+						<ul class="article-set__list article-set__list_search">
+							<li
+							ng-repeat="(key, link) in results"
+							class="article-set_item">
+								<a href="{{link.url}}" class="article-set__link">
+									<span class="article-set__link-text">
+										{{link.title}}
+									</span>
+									<svg class="icon icon-shevron-right"><use xlink:href="icons/icons.svg#shevron-right"></use></svg>
+								</a>
+							</li>
+						</ul>
 					</div>
-					<div class="cart-top__text">Корзина</div>
+					<div class="search__nothing" ng-if="nothing">
+						Ничего не найдено
+					</div>
 				</div>
-				<form action="" class="site-header__search search-top" action='/#search'>
-					<input type="text" class="search-top__input" placeholder='Поиск'>
-					<button type='submit' class="search-top__submit">
-						<span class="icon icon-search">
-						</span>
-					</button>
-				</form>	
 			</div>
 		</div>
 	</div>
@@ -35,43 +79,43 @@
 		<div class="container">
 			<ul class="nav-top__list">
 				<li class="nav-top__item withsub ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category">жалюзи</div>
-						<div class="nav-top__name">Вертикальные</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category">жалюзи</span>
+						<span class="nav-top__name">Вертикальные</span>
 					</a>
 					<ul class="nav-top__sub-list">
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu1.jpg" alt="Классические" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Классические</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu2.jpg" alt="Декоративные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Декоративные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu3.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu4.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu5.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu6.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
@@ -79,43 +123,43 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category">жалюзи</div>
-						<div class="nav-top__name">горизонтальные</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category">жалюзи</span>
+						<span class="nav-top__name">горизонтальные</span>
 					</a>
 					<ul class="nav-top__sub-list">
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu1.jpg" alt="Классические" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Классические</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu2.jpg" alt="Декоративные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Декоративные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu3.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu4.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu5.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu6.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
@@ -123,43 +167,43 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category">жалюзи</div>
-						<div class="nav-top__name">Мираж</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category">жалюзи</span>
+						<span class="nav-top__name">Мираж</span>
 					</a>
 					<ul class="nav-top__sub-list">
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu1.jpg" alt="Классические" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Классические</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu2.jpg" alt="Декоративные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Декоративные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu3.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu4.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu5.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu6.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
@@ -167,49 +211,49 @@
 					</ul>
 				</li>
 				<li class="nav-top__item  ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category"></div>
-						<div class="nav-top__name">Шторы</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">Шторы</span>
 					</a>
 				</li>
 				<li class="nav-top__item withsub active">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category">Шторы</div>
-						<div class="nav-top__name">Римские</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category">Шторы</span>
+						<span class="nav-top__name">Римские</span>
 					</a>
 					<ul class="nav-top__sub-list">
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu1.jpg" alt="Классические" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Классические</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu2.jpg" alt="Декоративные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Декоративные</span>
 						</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu3.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu4.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu5.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu6.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
@@ -217,43 +261,43 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category">Шторы</div>
-						<div class="nav-top__name">Рулонные</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category">Шторы</span>
+						<span class="nav-top__name">Рулонные</span>
 					</a>
 					<ul class="nav-top__sub-list">
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu1.jpg" alt="Классические" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Классические</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu2.jpg" alt="Декоративные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Декоративные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu3.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu4.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu5.jpg" alt="Нитяные" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Нитяные</span>
 							</a>
 						</li>
 						<li class="nav-top__sub-item">
-							<a href="#" class="nav-top__sub-link">
+							<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__sub-link">
 								<img src="img/menu6.jpg" alt="Кисея" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Кисея</span>
 							</a>
@@ -261,33 +305,33 @@
 					</ul>
 				</li>
 				<li class="nav-top__item  ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category">Шторы</div>
-						<div class="nav-top__name">Плиссе</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category">Шторы</span>
+						<span class="nav-top__name">Плиссе</span>
 					</a>
 				</li>
 				<li class="nav-top__item  ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category"></div>
-						<div class="nav-top__name">Карнизы</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">Карнизы</span>
 						</a>
 				</li>
 				<li class="nav-top__item  ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category"></div>
-						<div class="nav-top__name">Рольставни</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">Рольставни</span>
 					</a>
 				</li>
 				<li class="nav-top__item  ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category"></div>
-						<div class="nav-top__name">Ворота</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">Ворота</span>
 					</a>
 				</li>
 				<li class="nav-top__item  ">
-					<a href="#" class="nav-top__link">
-						<div class="nav-top__category"></div>
-						<div class="nav-top__name">одежда сцены</div>
+					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">одежда сцены</span>
 					</a>
 				</li>
 			</ul>

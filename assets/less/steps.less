@@ -1,0 +1,45 @@
+.steps {
+	background: #fff;
+	margin-top: -24px;
+	margin-bottom: 20px;
+	position: relative;
+	z-index: 5;
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		.clearfix();
+	}
+	&__item {
+		float: left;
+		width: 100%/4;
+		padding: 40px 30px 40px 100px;
+		position: relative;
+		color: lighten(#373534,20%);
+		font-size: 13px;
+		line-height: 20px;
+		font-weight: 400;
+		letter-spacing: 0.02em;
+		&:last-child{
+			padding-left: 85px;
+		}
+		&+&{
+			border-left: 1px solid #ebebeb;
+		}
+		.icon {
+			position: absolute;
+			left: 40px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	&__counter {
+
+	}
+	&__text {
+	}
+	&__link {
+		color: lighten(#373534,20%);
+		text-decoration: underline;
+	}
+}

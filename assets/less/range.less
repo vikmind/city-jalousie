@@ -1,0 +1,19 @@
+.range {
+	&__text {
+		color: #373534;
+		font-size: 13px;
+		font-weight: 400;
+		display: inline-block;
+		vertical-align: middle;
+		&_mobile{
+			display: none;
+			@media @tablet-mq{
+				display: inline-block;
+			}
+		}
+	}
+	.input {
+		width: 70px;
+		margin: 0 5px;
+	}
+}

@@ -1,0 +1,27 @@
+.ribbon-title {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, -100%);
+	.img('product_category_title.png');
+	&__text {
+		text-align: center;
+		line-height: 50px;
+		color: fade(#5b5633, 90%);
+		font-size: 22px;
+		font-weight: 700;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+	@media @tablet-portrait-mq{
+		background: #F2E479;
+		.img('product_category_title_mobile.svg');
+		transform: translate(-50%, -65%);
+
+		&__text{
+			font-size: 13px;
+			line-height: 40px;
+			letter-spacing: 1px;
+		}
+	}
+}

@@ -1,0 +1,42 @@
+.texture {
+	position: relative;
+	display: inline-block;
+	&__bg {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		border: solid 3px #fff;
+		border-radius: 50%;
+		position: relative;
+		cursor: pointer;
+		transition: transform @animation-time;
+		background-size: cover;
+		&:before {
+			content: '';
+			transition: border-color @animation-time;
+			position: absolute;
+			box-sizing: content-box;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			border: solid 1px #e6e6e6;
+			width: 30px;
+			height: 30px;
+		}
+		&:hover {
+			transform: scale(1.1, 1.1);
+		}
+	}
+	input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		&:checked + .texture__bg {
+			&:before {
+				border: solid 3px @blue;
+			}
+		}
+	}
+}

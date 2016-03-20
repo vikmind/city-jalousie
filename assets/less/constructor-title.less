@@ -1,0 +1,23 @@
+.constructor-title {
+	.img('constructor_ribbon_top.png');
+	position: absolute;
+	top: 10px;
+	left: 76px;
+	text-align: center;
+	&__text {
+		text-transform: uppercase;
+		color: #fff;
+		line-height: 40px;
+		.no-select();
+	}
+	&:before{
+		content: '';
+		position: absolute;
+		.img('constructor_ribbon_buttom.png');
+		background-position: right bottom;
+		height: 43px;
+		left: -86px;
+		bottom: 1px;
+		z-index: -1;
+	}
+}

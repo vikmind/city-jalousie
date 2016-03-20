@@ -1,0 +1,34 @@
+.products-set {
+	margin-right: 20px;
+	@media @tablet-mq{
+		margin-left: 10px;
+	}
+	@media @mobile-mq{
+		margin: 0;
+	}
+	&__title {
+		margin: 0;
+		padding: 44px 0 23px;
+		opacity: 0.8;
+		color: #353535;
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+	}
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	&__item {
+		margin-bottom: 20px;
+		.clearfix();
+		.product__wrapper {
+			padding: 0;
+		}
+		.product__label{
+			right: -10px;
+		}
+	}
+}

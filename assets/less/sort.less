@@ -1,0 +1,55 @@
+.sort {
+	float: right;
+	margin: 0 0 40px;
+	&__text {
+		color: #363537;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 20px;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 20px;
+	}
+	&__list {
+		display: inline-block;
+		vertical-align: middle;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		.clearfix();
+	}
+	&__item {
+		float: left;
+		.icon{
+			background: none;
+		}
+		&+&{
+			margin-left: 20px;
+		}
+	}
+	@media @mobile-mq{
+		float: none;
+		&__text{
+			margin-bottom: 10px;
+		}
+		&__list{
+			display: block;
+			overflow: hidden;
+		}
+		&__item{
+			width: 50%;
+			.btn{
+				width: 100%;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			&:first-child{
+				padding-right: 10px;
+			}
+			&+&{
+				padding-left: 10px;
+				margin-left: 0;
+			}
+		}
+	}
+}

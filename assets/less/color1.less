@@ -1,0 +1,52 @@
+.color {
+	position: relative;
+	display: inline-block;
+	&__bg {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		position: relative;
+		cursor: pointer;
+		transition: opacity @animation-time, background-color @animation-time;
+		opacity: 0.8;
+		border-radius: 2px;
+		background: #fff;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			box-sizing: content-box;
+			width: 26px;
+			height: 26px;
+			margin: 2px;
+			border-radius: 2px;
+			background: #fff;
+		}
+		&:after{
+			content: '';
+			display: block;
+			position: relative;
+			width: 20px;
+			height: 20px;
+			margin: 5px;
+			background: currentColor;
+			border-radius: 2px;
+			box-sizing: border-box;
+		}
+		&[data-fill='#ffffff']:after{
+			border: 1px solid #d1d1d1;
+		}
+		&:hover {
+			opacity: 1;
+		}
+	}
+	input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		&:checked + .color__bg {
+			background-color: @blue;
+		}
+	}
+}
