@@ -20,6 +20,7 @@
 		$scope.init = function(){
 			$scope.responsive = ResponsiveService;
 			$scope.$parent.constructorHeader = false;
+			$scope.$parent.productHeader = false;
 			$scope.catalogItems = [];
 			$scope.categoryChecks = {};
 			$scope.priceSlider = null;

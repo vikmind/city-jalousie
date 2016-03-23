@@ -27,6 +27,7 @@
 			$scope.toggleMobilePopup = false;
 			$scope.priceSlider = null;
 			$scope.$parent.constructorHeader = false;
+			$scope.$parent.productHeader = true;
 			$scope.catalogItems = [];
 			$scope.product = {};
 			$scope.product.dimensions = {};

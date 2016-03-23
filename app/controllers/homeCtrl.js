@@ -15,6 +15,7 @@
 
 		$scope.init = function() {
 			$scope.$parent.constructorHeader = false;
+			$scope.$parent.productHeader = false;
 			$scope.showLoadMoreBtn = true;
 			$scope.catalogItems = [];
 			$scope.featuredProduct = {};

@@ -4,6 +4,9 @@ body {
 }
 [ng-view]{
 	min-height: 760px;
+	&.view-constructor{
+		min-height: 164px;
+	}
 	.dis-loader{
 		display: block;
 
@@ -84,10 +87,10 @@ textarea{
 		}
 	}
 	&_product-page {
-		margin-top: -30px;
+		margin-top: -90px;
 		margin-bottom: 100px;
 		position: relative;
-		z-index: 2;
+		z-index: 21;
 		@media @mobile-mq{
 			margin-top: -48px;
 			margin-bottom: 20px;
@@ -114,7 +117,6 @@ textarea{
 			width: 100% !important;
 		}
 	}
-	
 }
 .column-1 {
 	width: 100%/4;
@@ -127,4 +129,16 @@ textarea{
 }
 .column-4 {
 	width: 100%;
+}
+.top-stripe{
+	position: relative;
+	&:before{
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: '';
+		display: block;
+		.stripes();
+		z-index: 10;
+	}
 }

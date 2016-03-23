@@ -1,67 +1,46 @@
 <header class="site-header site-header_constructor">
-	<div class="site-header__inner">
+	<section class="slider slider_constructor" ng-controller="ConstructorPageCtrl">
+		<!-- Constructor preview -->
+		<constructor-preview
+			ng-if="constructorBgImg.base64"
+			background="{{constructorBgImg.base64}}"
+			blind="{{texture.preview}}">
+		</constructor-preview>
+		<div
+			ng-if="!constructorBgImg.base64"
+			ng-style="{'background-color': '#333', 'background-image': 'url(' + texture.counstructorImage + ')'}"
+			class="constructor__preview-slide">
+		</div>
+	</section>
+	<div class="site-header__tools">
 		<div class="container">
-			<div class="site-header__container site-header__container_left">
-				<!-- Links set -->
-				<div class="links-set">
-					<ul class="links-set__list">
-						<li class="links-set__item show-in-portrait">
-							<button class="links-set__link" ng-click="openCallme()">
-								<svg class="icon icon-callme"><use xlink:href="icons/icons.svg#callme"></use></svg>
-								<span class="links-set__text">
-									Звонок
-								</span>
-							</button>
-						</li>
-						<li class="links-set__item show-in-portrait">
-							<button class="links-set__link" ng-click="openSearch()">
-								<svg class="icon icon-search"><use xlink:href="icons/icons.svg#search"></use></svg>
-								<span class="links-set__text">
-									Поиск
-								</span>
-							</button>
-						</li>
-						<li class="links-set__item hide-in-portrait">
-							<a href="/" class="links-set__link">
-								<svg class="icon icon-gt"><use xlink:href="icons/icons.svg#gt"></use></svg>
-								<span class="links-set__text">
-									Назад
-								</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<!-- Constructor title -->
-				<div class="constructor-title hide-in-portrait">
-					<div class="constructor-title__text">
-						Конструктор жалюзи и штор
-					</div>
+			<!-- Links set -->
+			<a href="/" class="link-back">
+				<svg class="icon icon-shevron-left-white link-back__icon"><use xlink:href="icons/icons.svg#shevron-left-white"></use></svg>
+				<span class="link-back__text">
+					назад
+				</span>
+			</a>
+			<!-- Constructor title -->
+			<div class="constructor-title">
+				<svg class="icon icon-constructor constructor-title__icon"><use xlink:href="icons/icons.svg#cons"></use></svg>
+				<div class="constructor-title__text">
+					Конструктор жалюзи
 				</div>
 			</div>
-			<!-- Logo -->
-			<h1 class="logo">
-				<a href="/#" class="logo__link">
-					<img src="img/logo.svg" alt="logo" class="logo__img">
+			<!-- LOGO -->
+			<div class="site-header__logo">
+				<a class="site-header__logo-link" href="/">
+					<img src='img/logo.png' alt='Сити Жалюзи' class="site-header__logo-img">
 				</a>
-				<div class="logo__shadow"></div>
-			</h1>
-			<div class="site-header__container site-header__container_right">
-				<!-- Cart -->
-				<cart></cart>
-				<!-- Call me -->
-				<div class="call-me hide-in-portrait">
-					<svg class="icon icon-operator"><use xlink:href="icons/icons.svg#operator"></use></svg>
-					<button class="call-me__link" ng-click="openCallme()">
-						<span class="ya-phone">+7 (495) 542-64-84</span>
-					</button>
-					<div class="call-me__time">
-						{{workingHours}}
-					</div>
-				</div>
-				<button class="site-header__menu-toggle" ng-click="toggleOffCanvas('right');">
-					<div class="icon-menu" ng-class="{'active':(offCanvasSide === 'right')}"><span></span></div>
-				</button>
 			</div>
+			<!-- Constructor Button -->
+			<label
+				class="constructor__upload-btn btn btn_lightRed btn_big">
+				<input type="file" ng-model="constructorBgImg" ng-click="constructorBgImg.base64 = null" base-sixty-four-input>
+				<svg class="icon icon-camera"><use xlink:href="icons/icons.svg#upload_photo"></use></svg>
+				<span class="text">Загрузить фото своего окна</span>
+			</label>
 		</div>
 	</div>
 </header>

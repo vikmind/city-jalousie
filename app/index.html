@@ -60,7 +60,7 @@
 				<div ng-if="!!constructorHeader">
 					<div ng-include="'includes/header-constructor.html'"></div>
 				</div>
-				<div ng-view autoscroll></div>
+				<div ng-view autoscroll ng-class="!!constructorHeader?'view-constructor':''"></div>
 				<div class="dis-loader" ng-class="{'active': showLoader}"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
 				<div ng-include="'includes/footer.html'"></div>
 				<script src="https://www.youtube.com/iframe_api"></script>

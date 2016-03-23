@@ -1,4 +1,4 @@
-<div class="cart" ng-mouseenter="showDropdown()" ng-mouseleave="hideDropdown()" ng-touchend="touchTogle()">
+<div class="cart" ng-mouseenter="showDropdown()" ng-mouseleave="hideDropdown()" ng-touchend="touchTogle()" ng-class="{expanded : (items.length>0 && dropdownVisible)}">
 	<div>
 		<div class="cart__container" ng-class="{'pulse': items.length>0}">
 			<svg class="icon icon-cart" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#cart"></use></svg>

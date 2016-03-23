@@ -3,10 +3,8 @@
 	display: inline-block;
 	&__bg {
 		display: inline-block;
-		width: 30px;
-		height: 30px;
-		border: solid 3px #fff;
-		border-radius: 50%;
+		width: 24px;
+		height: 24px;
 		position: relative;
 		cursor: pointer;
 		transition: transform @animation-time;
@@ -19,10 +17,9 @@
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
-			border-radius: 50%;
 			border: solid 1px #e6e6e6;
-			width: 30px;
-			height: 30px;
+			width: 28px;
+			height: 28px;
 		}
 		&:hover {
 			transform: scale(1.1, 1.1);
@@ -35,7 +32,7 @@
 		opacity: 0;
 		&:checked + .texture__bg {
 			&:before {
-				border: solid 3px @blue;
+				border: solid 2px #36b493;
 			}
 		}
 	}

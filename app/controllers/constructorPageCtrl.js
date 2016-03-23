@@ -41,6 +41,7 @@
 				console.log(err);
 			});
 			$scope.$parent.constructorHeader = true;
+			$scope.$parent.productHeader = false;
 		};
 
 		$scope.prepareTypes = function(withModels) {

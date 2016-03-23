@@ -17,6 +17,7 @@
 		var networks = ['vk', 'ok', 'fb'];
 		$scope.init = function(){
 			$scope.$parent.constructorHeader = false;
+			$scope.$parent.productHeader = false;
 			$scope.article = {};
 			$scope.socials = [];
 			$scope.getArticle();

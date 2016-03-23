@@ -4,11 +4,23 @@
 	height: 625px;
 	margin-bottom: 20px;
 	position: relative;
+	&_constructor{
+		height: 760px;
+		margin-bottom: 0;
+		.site-header__tools{
+			height: 59px;
+		}
+	}
 	&:after{
 		content: '';
 		position: absolute;
 		top: 100%;
 		.stripes();
+	}
+	&_product{
+		&:after{
+			display: none;
+		}
 	}
 	&__tools{
 		height: 213px;

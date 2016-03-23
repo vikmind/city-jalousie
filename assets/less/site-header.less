@@ -6,12 +6,9 @@
 	top: 0;
 	backface-visibility: hidden;
 	z-index: 20;
-	&_constructor{
-		position: absolute;
-	}
 	&:before{
 		content: '';
-		background: url(../img/logo_shadow.png);
+		// background: url(../img/logo_shadow.png);
 		position: absolute;
 		display: block;
 		width: 156px;
@@ -57,15 +54,6 @@
 		position: relative;
 		.btn {
 			margin-top: -10px/4;
-		}
-		&:before {
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 1px;
-			height: 63px;
-			background: linear-gradient(to bottom, rgba(204,204,204,1) 0%,rgba(204,204,204,1) 1%,rgba(204,204,204,0.79) 92%,rgba(204,204,204,0) 100%);
 		}
 		&:after {
 			content: '';
