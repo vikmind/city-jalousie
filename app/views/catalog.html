@@ -19,7 +19,7 @@
 			</div>
 			<ul class="sort__list">
 				<li class="sort__item">
-					<button class="btn" ng-click="toggleSort('price')" ng-class="{btn_red: (searchOptions.sort == 'price')}">
+					<button class="btn" ng-click="toggleSort('price')" ng-class="{btn_olive: (searchOptions.sort == 'price')}">
 						<svg class="icon icon-rouble"><use xlink:href="icons/icons.svg#rouble"></use></svg>
 						<span class="btn__text">
 							Стоимости
@@ -27,7 +27,7 @@
 					</button>
 				</li>
 				<li class="sort__item active">
-					<button class="btn" ng-click="toggleSort('rating')" ng-class="{btn_red: (searchOptions.sort == 'rating')}">
+					<button class="btn" ng-click="toggleSort('rating')" ng-class="{btn_olive: (searchOptions.sort == 'rating')}">
 						<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
 						<span class="btn__text">
 							Рейтингу
@@ -73,10 +73,8 @@
 					</fieldset>
 				</form>
 			</div>
-			<!-- Question -->
-			<div class="catalog__question">
-			<question></question>
-			</div>
+			<!-- Colors -->
+			<div ng-include="'includes/search-color-little.html'"></div>
 		</aside><!-- Catalog -->
 		<div class="catalog catalog_3">
 			<ul class="catalog__list">
@@ -87,7 +85,7 @@
 				</li>
 			</ul>
 			<!-- More btn -->
-			<div class="more-btn more-btn_red">
+			<div class="more-btn more-btn_olive">
 				<a href class="more-btn__link" ng-click="addProductList()" ng-if="showLoadMoreBtn">
 					<span class="icon icon-more"></span>
 					<span class="more-btn__text">

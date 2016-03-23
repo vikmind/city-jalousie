@@ -18,6 +18,7 @@
 		$scope.filterOpened = false;
 		$scope.showLoader = true;
 		$scope.constructorHeader = false;
+		$scope.productHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();
 		$scope.blockContent = '';
 		$scope.touchElement = ResponsiveService.getState('tabletPortrait');

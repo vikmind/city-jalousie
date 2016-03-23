@@ -82,6 +82,9 @@ textarea{
 	}
 	&_tight{
 		padding: 0 20px;
+		margin-top: -90px;
+		z-index: 21;
+		position: relative;
 		@media @tablet-mq{
 			padding: 0;
 		}
@@ -135,6 +138,18 @@ textarea{
 	&:before{
 		position: absolute;
 		top: 0;
+		left: 0;
+		content: '';
+		display: block;
+		.stripes();
+		z-index: 10;
+	}
+}
+.bottom-stripe{
+	position: relative;
+	&:after{
+		position: absolute;
+		bottom: 0;
 		left: 0;
 		content: '';
 		display: block;
