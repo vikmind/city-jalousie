@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g>
+	<circle fill="#CED55A" cx="50" cy="50" r="49"/>
+</g>
+<g>
+	<path fill="#E7ECA1" d="M1.516,42.919C1.181,45.232,1,47.594,1,50c0,0.216,0.013,0.428,0.016,0.643l54.168,48.081
+		c2.601-0.274,5.138-0.757,7.601-1.421L1.516,42.919z"/>
+	<path fill="#E7ECA1" d="M19.954,11.307c-1.973,1.534-3.823,3.215-5.539,5.027l73.242,65.012c1.594-1.913,3.046-3.949,4.338-6.093
+		L19.954,11.307z"/>
+	<path fill="#E7ECA1" d="M8.297,24.275c-1.527,2.47-2.833,5.087-3.908,7.823L73.192,93.17c2.58-1.389,5.014-3.009,7.291-4.82
+		L8.297,24.275z"/>
+	<path fill="#E7ECA1" d="M36.965,2.767c-2.825,0.778-5.552,1.791-8.147,3.037l67.57,59.978c0.924-2.715,1.626-5.532,2.063-8.438
+		L36.965,2.767z"/>
+	<path fill="#E7ECA1" d="M3.873,66.55c5.582,15.556,18.808,27.457,35.149,31.2L3.873,66.55z"/>
+	<path fill="#E7ECA1" d="M61.884,2.459c-3.794-0.945-7.759-1.455-11.845-1.458l48.6,43.139c-0.481-4.032-1.448-7.913-2.847-11.583
+		L61.884,2.459z"/>
+</g>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M94,85"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M14,4"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M100,80"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M20,0"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M104,74"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M24-6"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M40,0"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M124,74"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M44-6"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M144,74"/>
+<path fill="#CED55A" stroke="#E7ECA1" stroke-width="4" stroke-miterlimit="10" d="M64-6"/>
+<polygon fill="#DF8273" points="18,29 18,63 82.264,62.73 82,29 "/>
+<path fill="#DF8273" d="M83.971,35.945H16.086l-1.412,47.992C23.59,93.216,36.116,99,50,99c14.051,0,26.711-5.923,35.646-15.398
+	L83.971,35.945z"/>
+<polygon fill="#A5444B" points="26,31.5 16,36 84,36.029 73.833,31.5 82,29 18,29 "/>
+<circle fill="#BA5045" cx="32.125" cy="45.042" r="1.875"/>
+<circle fill="#BA5045" cx="68.125" cy="45.042" r="1.875"/>
+<path fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M32.125,45.042c0,0-2.125,26.875,17.875,26.875
+	s18.125-26.875,18.125-26.875"/>
+</svg>
