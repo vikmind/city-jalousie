@@ -1,4 +1,4 @@
-<header class="site-header" ng-class="!!productHeader?'site-header_product':''">
+<header class="site-header" ng-class="'site-header_' + titleHeaderClass">
 	<section class="slider slider_big">
 		<!-- pagination="true" -->
 		<div
@@ -335,5 +335,40 @@
 				</li>
 			</ul>
 		</div>
-	</nav>	
+	</nav>
+	<!-- if catalog -->
+	<div class="catalog-header" ng-if="titleHeaderClass === 'catalog'">
+		<div class="container" ng-controller="CatalogCtrl">
+			<!-- Search info -->
+			<div class="search-info">
+				<span>По заказу {{pageOptions.title}} найдено {{catalogItems.length}} предложений</span>
+				<button class="search-info__filters-toggle btn btn_green" ng-click="toggleOffCanvas('left')">Фильтровать</button>
+				<!-- <span class="hide-in-tablet">По запросу </span><strong>{{pageOptions.title}}</strong> найдено 35 предложений -->
+			</div>
+			<!-- Sort -->
+			<div class="sort">
+				<div class="sort__text">
+					Сортировать по:
+				</div>
+				<ul class="sort__list">
+					<li class="sort__item">
+						<button class="btn btn_transparent" ng-click="toggleSort('price')" ng-class="{btn_lightRed: (searchOptions.sort == 'price')}">
+							<svg class="icon icon-rouble"><use xlink:href="icons/icons.svg#rouble"></use></svg>
+							<span class="btn__text">
+								Стоимости
+							</span>
+						</button>
+					</li>
+					<li class="sort__item active">
+						<button class="btn btn_transparent" ng-click="toggleSort('rating')" ng-class="{btn_lightRed: (searchOptions.sort == 'rating')}">
+							<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
+							<span class="btn__text">
+								Рейтингу
+							</span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </header>

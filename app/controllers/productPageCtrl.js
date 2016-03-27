@@ -23,6 +23,7 @@
 		TexturesService, ProductService, CartService, DialogService, ConfigService,
 		$sce, $timeout, ResponsiveService) {
 		/*$log.log('product page ctrl');*/
+		$scope.$parent.titleHeaderClass = 'product';
 		$scope.init = function () {
 			$scope.toggleMobilePopup = false;
 			$scope.priceSlider = null;

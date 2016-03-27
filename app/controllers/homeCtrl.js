@@ -12,7 +12,7 @@
 
 	function homeCtrl($rootScope, $scope, $log, ProductService, ConfigService) {
 		/*$log.log('home ctrl');*/
-
+		$scope.$parent.titleHeaderClass = 'home';
 		$scope.init = function() {
 			$scope.$parent.constructorHeader = false;
 			$scope.$parent.productHeader = false;

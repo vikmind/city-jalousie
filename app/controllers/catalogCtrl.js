@@ -17,6 +17,7 @@
 
 	function catalogCtrl(ngMeta, $scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService, ResponsiveService, $timeout) {
 		/*$log.log('catalog ctrl');*/
+		$scope.$parent.titleHeaderClass = 'catalog';
 		$scope.init = function(){
 			$scope.responsive = ResponsiveService;
 			$scope.$parent.constructorHeader = false;

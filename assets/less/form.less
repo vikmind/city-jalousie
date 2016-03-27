@@ -25,13 +25,13 @@
 	}
 	&__column {
 		float: left;
-		width: 50%;
-		&:first-child {
-			padding-right: 10px;
-		}
-		&:last-child {
-			padding-left: 10px;
-		}
+		width: 100%;
+		// &:first-child {
+		// 	padding-right: 10px;
+		// }
+		// &:last-child {
+		// 	padding-left: 10px;
+		// }
 	}
 	&__cell {
 		float: left;
@@ -186,7 +186,17 @@
 		}
 	}
 	&_constructor{
-		padding-left: 60px;
+		.field{
+			width: 236px;
+			float: right;
+		}
+		.form__column{
+			margin-bottom: 20px;
+			& + .form__column{
+				margin-bottom: 0;
+			}
+		}
+		padding-left: 27px;
 		@media (max-width: (@desktop + @scrollbar)){
 			padding-left: 10px;
 		}

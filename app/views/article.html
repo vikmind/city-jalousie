@@ -31,6 +31,9 @@
 						class="article__img"
 						style="background-image: url({{article.main_img}});">
 					</div>
+				</header>
+				<div class="article__content" ng-bind-html="article.content"></div>
+				<div class="article__info">
 					<!-- Socials -->
 					<div class="article__socials">
 						<!-- Text -->
@@ -49,8 +52,7 @@
 					<div class="article__date">
 						{{article.date}}
 					</div>
-				</header>
-				<div class="article__content" ng-bind-html="article.content"></div>
+				</div>
 			</article>
 		</div>
 		<div class="column-1 article__aside">

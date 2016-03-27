@@ -29,6 +29,7 @@
 	}
 	&__header {
 		.clearfix();
+		float: left;
 	}
 	&__title {
 		margin: 0;
@@ -45,7 +46,9 @@
 		&_small{
 			color: fade(#b7b7b7, 0.89);
 			font-size: 12px;
-			width: 160px;
+			width: 85px;
+			line-height: 28px;
+			vertical-align: middle;
 			@media @tablet-mq{
 				.textures__mobile-icon + .popup{
 					left: 0;
@@ -142,6 +145,11 @@
 		margin: 0;
 		margin: 25px 0 0;
 		.clearfix();
+		&_small{
+			margin-top: 0;
+			width: 100%;
+			padding-left: 85px;
+		}
 		@media @tablet-mq{
 			margin: 15px 0 0;
 		}
@@ -163,6 +171,9 @@
 		line-height: 44px;
 		text-transform: uppercase;
 		padding: 0;
+		&_small{
+			margin-left: 85px;
+		}
 		.icon {
 			margin-left: 3px;
 		}

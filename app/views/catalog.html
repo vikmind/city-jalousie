@@ -1,42 +1,6 @@
 <!-- Main content -->
-<main class="main-content">
+<main class="main-content main-content_catalog">
 	<!-- Image gradient -->
-	<!-- <div
-		class="image-gradient"
-		style="background: url(img/slide-1.jpg) center no-repeat; -webkit-background-size: cover; background-size: cover;">
-	</div> -->
-	<div class="container container_padding">
-		<!-- Search info -->
-		<div class="search-info">
-			<strong>{{pageOptions.title}}</strong>
-			<button class="search-info__filters-toggle btn btn_green" ng-click="toggleOffCanvas('left')">Фильтровать</button>
-			<!-- <span class="hide-in-tablet">По запросу </span><strong>{{pageOptions.title}}</strong> найдено 35 предложений -->
-		</div>
-		<!-- Sort -->
-		<div class="sort">
-			<div class="sort__text">
-				Сортировать по:
-			</div>
-			<ul class="sort__list">
-				<li class="sort__item">
-					<button class="btn" ng-click="toggleSort('price')" ng-class="{btn_olive: (searchOptions.sort == 'price')}">
-						<svg class="icon icon-rouble"><use xlink:href="icons/icons.svg#rouble"></use></svg>
-						<span class="btn__text">
-							Стоимости
-						</span>
-					</button>
-				</li>
-				<li class="sort__item active">
-					<button class="btn" ng-click="toggleSort('rating')" ng-class="{btn_olive: (searchOptions.sort == 'rating')}">
-						<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
-						<span class="btn__text">
-							Рейтингу
-						</span>
-					</button>
-				</li>
-			</ul>
-		</div>
-	</div>
 	<div class="container container_padding">
 		<aside class="catalog__aside">
 			<!-- Filter -->

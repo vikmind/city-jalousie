@@ -15,6 +15,7 @@
 	function articleCtrl(ngMeta, $scope, $log, $sce, $routeParams, ArticleService, SocialShareService) {
 		/*$log.log('article ctrl');*/
 		var networks = ['vk', 'ok', 'fb'];
+		$scope.$parent.titleHeaderClass = 'article';
 		$scope.init = function(){
 			$scope.$parent.constructorHeader = false;
 			$scope.$parent.productHeader = true;
