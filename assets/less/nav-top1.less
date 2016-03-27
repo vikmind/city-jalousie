@@ -8,6 +8,9 @@
 		width: 100%;
 		background-color: fade(#36b493, 95%);
 		padding: 0 10px;
+		@media @tablet-mq{
+			padding: 0 10px;
+		}
 	}
 	&__item{
 		display: table-cell;
@@ -19,6 +22,9 @@
 		text-decoration: none;
 		height: 100%;
 		position: relative;
+		@media @tablet-mq{
+			padding: 15px 7px 20px;
+		}
 	}
 	&__item:hover &__link{
 		background-color: fade(#008466, 95%);
@@ -55,6 +61,15 @@
 		font-weight: 700;
 		line-height: 20px;
 		text-transform: uppercase;
+		@media @tablet-mq{
+			font-size: 12px;
+			letter-spacing: -0.03em
+		}
+	}
+	&__other-text{
+		@media @tablet-mq{
+			display: none;
+		}
 	}
 	&__item.withsub &__name:after{
 		content: '';
@@ -92,6 +107,9 @@
 		transition: color @animation-time;
 		&:hover{
 			color: #61a083;
+		}
+		@media @tablet-mq{
+			padding: 20px 12px;
 		}
 	}
 	&__sub-image{}

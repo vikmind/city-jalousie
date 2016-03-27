@@ -29,13 +29,16 @@
 		box-shadow: 2.5px 4.3px 18px rgba(0, 0, 1, 0.21);
 		z-index: 5;
 		top:0;
-		@media @tablet-portrait-mq{
+		@media @tablet-mq{
 			height: 56px;
 		}
 	}
 	.container {
 		min-width: 1280px;
 		position: relative;
+		@media @tablet-mq{
+			min-width: 960px;
+		}
 	}
 	&__inner {
 		background: url('../img/menu_bg.png') 0 bottom repeat-x;

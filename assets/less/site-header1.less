@@ -47,6 +47,17 @@
 			display: none;
 		}
 	}
+	&_home{
+		@media @tablet-mq{
+			height: 496px;
+			.site-header__nav{
+				top: 280px;
+			}
+			.slider__img{
+				height: 496px;
+			}
+		}
+	}
 	&_constructor{
 		height: auto;
 		margin-bottom: 0;
@@ -102,6 +113,9 @@
 		float: left;
 		width: 50%;
 		padding-left: 129px;
+		@media @tablet-mq{
+			padding-left: 138px;
+		}
 	}
 	&__cart{
 		display: inline-block;
@@ -111,6 +125,9 @@
 		display: inline-block;
 		vertical-align: top;
 		margin: 5px 0 0 10px;
+		@media @tablet-mq{
+			margin: 5px 0 0 47px;
+		}
 	}
 	&__nav{
 		position: absolute;

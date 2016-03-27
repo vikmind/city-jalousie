@@ -24,7 +24,7 @@
 	<div class="site-header__tools">
 		<div class="container">
 			<div class="site-header__phone-callme phone-top">
-				<svg class="icon phone-top__icon icon-phone" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#mobile"></use></svg>
+				<svg class="icon phone-top__icon icon-phone" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#mobile" ng-click="openCallme()"></use></svg>
 				<div href="tel:+74955426484" class="phone-top__link" ng-click="openCallme()">+7 (495) 542-64-84</div>
 				<div class="phone-top__time">9-21ч</div> 
 				<button class="phone-top__button" ng-click="openCallme()">перезвоните мне</button> 
@@ -330,7 +330,7 @@
 				<li class="nav-top__item  ">
 					<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="nav-top__link">
 						<span class="nav-top__category"></span>
-						<span class="nav-top__name">одежда сцены</span>
+						<span class="nav-top__name"><span class="nav-top__other-text">одежда</span> сцены</span>
 					</a>
 				</li>
 			</ul>

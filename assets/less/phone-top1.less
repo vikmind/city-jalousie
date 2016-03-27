@@ -1,5 +1,9 @@
 .phone-top{
 	text-align: right;
+	@media @tablet-mq{
+		text-align: left;
+		padding-left: 30px;
+	}
 	&__icon{
 
 	}
@@ -43,5 +47,8 @@
 		border: 1px solid #ced55a;
 		padding: 7px 16px 8px 17px;
 		margin: 5px 0 0 42px;
+		@media @tablet-mq{
+			display: none;
+		}
 	}
 }
