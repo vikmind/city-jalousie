@@ -1,6 +1,8 @@
 {
   "title": "Горизонтальные жалюзи",
   "filter_title": "Тип горизональных жалюзи",
+  "title": "title",
+  "description": "desription",
   "subcategories": [
   {
     "slug": "Alyuminievye",

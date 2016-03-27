@@ -98,8 +98,9 @@
 			ProductService.getList($scope.searchOptions)
 				.then(function (data) {
 					// Success
+					console.log(data.title);
 					ngMeta.setTag('description', data.description);
-					ngMeta.setTag('title', data.title + '. Дизайн окна.');
+					ngMeta.setTitle(data.title + '. Сити жалюзи.');
 					var maxPrice = parseInt(data.maxPrice);
 					if (maxPrice !== $scope.maxPrice){
 						$scope.priceSlider = null;

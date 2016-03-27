@@ -148,7 +148,7 @@
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.product = data;
 				ngMeta.setTag('description', data.description.text);
-				ngMeta.setTag('title', data.title + '. Дизайн окна.');
+				ngMeta.setTitle(data.title + '. Сити жалюзи.');
 				$scope.product.allowHeight = data.isHeightVisible;
 				$scope.totalColors = data.colors;
 				$scope.product.cornice.cartText = data.cornice.text;
