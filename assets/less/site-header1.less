@@ -4,6 +4,13 @@
 	height: 625px;
 	margin-bottom: 20px;
 	position: relative;
+	@media @tablet-portrait-mq{
+		height: 276px;
+		margin-bottom: 18px;
+		.slider__img{
+			height: 276px;
+		}
+	}
 	&:after{
 		content: '';
 		position: absolute;
@@ -57,6 +64,12 @@
 				height: 496px;
 			}
 		}
+		@media @tablet-portrait-mq{
+			height: 276px;
+			.slider__img{
+				height: 276px;
+			}
+		}
 	}
 	&_constructor{
 		height: auto;
@@ -79,6 +92,20 @@
 		position: absolute;
 		z-index: 22;
 		top:0;
+		.container {
+			min-width: 1280px;
+			position: relative;
+			height: 100%;
+			@media @tablet-mq{
+				min-width: 960px;
+			}
+			@media @tablet-portrait-mq{
+				width: 100%;
+				max-width: 340px;
+				min-width: 0;
+				padding: 0 16px;
+			}
+		}
 	}
 	&__logo-link{
 		position: absolute;
@@ -87,6 +114,9 @@
 		width: 100%;
 		display: block;
 		height: 100%;
+		@media @tablet-portrait-mq{
+			padding: 0 18px;
+		}
 	}
 	&__logo{
 		position: absolute;
@@ -99,15 +129,43 @@
 		background: linear-gradient(to bottom left, #fff 0%,#fff 50%, #f5f5f5 50%, #f5f5f5 100%);
 		border: 2px solid #fff;
 		.stitch();
+		@media @tablet-portrait-mq{
+			width: 98px;
+			height: 98px;
+			margin-left: -49px;
+		}
 	}
 	&__logo-img{
 		position: relative;
 		margin: 18px 0;
+		@media @tablet-portrait-mq{
+			margin: 13px 0;
+			width: 100%;
+		}
 	}
 	&__phone-callme{
 		float: left;
 		width: 50%;
 		padding-right: 110px;
+		@media @tablet-portrait-mq{
+			width: 40px;
+			padding: 0;
+			cursor: pointer;
+		}
+	}
+	&__mobile-search{
+		display: none;
+		float: left;
+		margin-left: 20px;
+		cursor: pointer;
+		@media @tablet-portrait-mq{
+			margin-left: 10px;
+			display: block;
+			width: 40px;
+			height: 40px;
+			position: relative;
+			padding: 0;
+		}
 	}
 	&__cart-search{
 		float: left;
@@ -115,6 +173,11 @@
 		padding-left: 129px;
 		@media @tablet-mq{
 			padding-left: 138px;
+		}
+		@media @tablet-portrait-mq{
+			padding-left: 0;
+			float: right;
+			width: 40px;
 		}
 	}
 	&__cart{
@@ -128,6 +191,21 @@
 		@media @tablet-mq{
 			margin: 5px 0 0 47px;
 		}
+		@media @tablet-portrait-mq{
+			display: none;
+		}
+	}
+	&__mobile-menu{
+		display: none;
+		cursor: pointer;
+		@media @tablet-portrait-mq{
+			display: block;
+			padding-left: 0;
+			float: right;
+			margin-left: 10px;
+			width: 40px;
+			height: 40px;
+		}
 	}
 	&__nav{
 		position: absolute;
@@ -135,5 +213,9 @@
 		left: 0;
 		z-index: 100;
 		width: 100%;
+		@media @tablet-portrait-mq{
+			display:none;
+		}
 	}
+
 }

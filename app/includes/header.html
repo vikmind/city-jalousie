@@ -29,13 +29,18 @@
 				<div class="phone-top__time">9-21ч</div> 
 				<button class="phone-top__button" ng-click="openCallme()">перезвоните мне</button> 
 			</div>
+			<div class="site-header__mobile-search" ng-click="openSearch()">
+				<svg class="icon phone-top__icon icon-phone" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#search_mobile"></use></svg>
+			</div>
 			<div class="site-header__logo">
 				<a class="site-header__logo-link" href="/">
 					<img src='img/logo.png' alt='Сити Жалюзи' class="site-header__logo-img">
 				</a>
 			</div>
 				
-
+			<div class="site-header__mobile-menu" ng-click="toggleOffCanvas('right');">
+				<svg class="icon phone-top__icon icon-phone" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#menu_mobile"></use></svg>
+			</div>
 			<div class="site-header__cart-search">
 				<!-- Cart -->
 				<cart></cart>
@@ -72,6 +77,7 @@
 					</div>
 				</div>
 			</div>
+			<button class="search-info__filters-toggle btn btn_green" ng-click="toggleOffCanvas('left')">Фильтровать</button>
 		</div>
 	</div>
 	<nav class="site-header__nav nav-top">
@@ -342,8 +348,6 @@
 			<!-- Search info -->
 			<div class="search-info">
 				<span>По заказу {{pageOptions.title}} найдено {{catalogItems.length}} предложений</span>
-				<button class="search-info__filters-toggle btn btn_green" ng-click="toggleOffCanvas('left')">Фильтровать</button>
-				<!-- <span class="hide-in-tablet">По запросу </span><strong>{{pageOptions.title}}</strong> найдено 35 предложений -->
 			</div>
 			<!-- Sort -->
 			<div class="sort">
@@ -370,5 +374,41 @@
 				</ul>
 			</div>
 		</div>
+	</div>
+</header>
+<header class="mobile-site-header" ng-class="'mobile-site-header_' + titleHeaderClass">
+	<div class="container">
+		<ul class="mobile-site-header__list">
+			<li class="mobile-site-header__item">
+				<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="mobile-site-header__link">
+					Жалюзи
+				</a>
+			</li>
+			<li class="mobile-site-header__item">
+				<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="mobile-site-header__link">
+					Ролставни
+				</a>
+			</li>
+			<li class="mobile-site-header__item">
+				<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="mobile-site-header__link">
+					Шторы
+				</a>
+			</li>
+			<li class="mobile-site-header__item">
+				<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="mobile-site-header__link">
+					Ворота
+				</a>
+			</li>
+			<li class="mobile-site-header__item">
+				<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="mobile-site-header__link">
+					Карнизы
+				</a>
+			</li>
+			<li class="mobile-site-header__item">
+				<a href="/catalog/gorizontalnye_zhalyuzi/alyuminevye" class="mobile-site-header__link">
+					Одежда сцены
+				</a>
+			</li>
+		</ul>
 	</div>
 </header>

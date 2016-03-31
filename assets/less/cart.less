@@ -5,7 +5,7 @@
 	vertical-align: top;
 	padding-bottom: 35px;
 	@media @mobile-mq{
-		padding-bottom: 0;
+		padding-bottom: 35px;
 	}
 	
 	// &:after{
@@ -59,7 +59,7 @@
 	}
 	&__dropdown{
 		position: absolute;
-		top: 50px;
+		top: -500px;
 		left: 50%;
 		margin-left: 100px;
 		background: #fff;
@@ -81,12 +81,17 @@
 			top: 70px;
 			max-height: 500px;
 			padding: 52px 40px 30px;
+
 		}
 		@media @tablet-portrait-mq{
 			right: 0;
 			left: auto;
 			margin-left: 0;
 			box-shadow: none;
+			padding: 0 24px 0;
+			&.expanded{
+				padding: 52px 24px 30px;
+			}
 		}
 		@media @mobile-mq{
 			max-width: 370px;

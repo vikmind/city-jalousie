@@ -4,6 +4,9 @@
 		text-align: left;
 		padding-left: 30px;
 	}
+	@media @tablet-portrait-mq{
+		padding-left: 0;
+	}
 	&__icon{
 
 	}
@@ -19,6 +22,9 @@
 		padding: 12px 0;
 		margin-left: 8px;
 		cursor: pointer;
+		@media @tablet-portrait-mq{
+			display: none;
+		}
 	}
 	&__time{
 		color: fade(#000,70%);
@@ -33,6 +39,9 @@
 		border-radius: 3px;
 		padding: 3px 10px 5px;
 		margin: 10px 0 0 7px;
+		@media @tablet-portrait-mq{
+			display: none;
+		}
 	}
 	&__button{
 		color: #fff;
