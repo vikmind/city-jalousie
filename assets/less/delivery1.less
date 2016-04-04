@@ -6,6 +6,10 @@
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
+	@media @mobile-mq {
+		text-align: center;
+		height: 400px;
+	}
 	&:before{
 		content: '';
 		position: absolute;
@@ -28,6 +32,13 @@
 		right: 0;
 		z-index: -1;
 		margin-left: -5%;
+		@media @tablet-mq{
+		    background-position: 50% 0;
+		}
+		@media @mobile-mq {
+			height: 400px;
+			background-position: 0 0;
+		}
 	}
 	&__icon{
 		margin: 97px 0 40px;
@@ -41,6 +52,11 @@
 		text-transform: uppercase;
 		margin: 92px 0 21px;
 		letter-spacing: 0.1em;
+		@media @mobile-mq {
+			margin-top: 30px;
+			font-size: 18px;
+			line-height: 30px;
+		}
 	}
 	&__text {
 		color: #fff;
@@ -50,8 +66,23 @@
 		line-height: 24px;
 		margin: 0 0 31px;
 		width: 73%;
+		@media @mobile-mq {
+			width: 100%;
+			font-size: 14px;
+			line-height: 20px;
+		}
+	}
+	@media @mobile-mq {
+		.btn{
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 30px;
+		}
 	}
 	.btn + .btn{
 		margin-left: 20px;
+		@media @mobile-mq {
+			margin-left: 0;
+		}
 	}
 }

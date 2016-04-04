@@ -7,10 +7,11 @@
 			'$log',
 			'ProductService',
 			'ConfigService',
+			'ResponsiveService',
 			homeCtrl
 		]);
 
-	function homeCtrl($rootScope, $scope, $log, ProductService, ConfigService) {
+	function homeCtrl($rootScope, $scope, $log, ProductService, ConfigService, ResponsiveService) {
 		/*$log.log('home ctrl');*/
 		$scope.$parent.titleHeaderClass = 'home';
 		$scope.init = function() {
@@ -20,7 +21,7 @@
 			$scope.catalogItems = [];
 			$scope.featuredProduct = {};
 			$scope.featuredArticle = ConfigService.homeArticleSlug;
-
+			$scope.desktop = ResponsiveService.getState('desktop');
 			$scope.getFeaturedProduct();
 			$scope.getProductList();
 		};
@@ -49,6 +50,12 @@
 					$log.log(err)
 				});
 		};
+
+		$scope.$on('ResponsiveService.updateState', function(){
+			$scope.$apply(function(){
+				$scope.desktop = ResponsiveService.getState('desktop');
+			});
+		});
 
 		$scope.init();
 	}

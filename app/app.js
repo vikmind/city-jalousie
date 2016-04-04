@@ -39,7 +39,7 @@ var app = angular.module('myApp', [
 		'$locationProvider',
 		function ($routeProvider, $locationProvider, ngMeta) {
 			'use strict';
-			$locationProvider.html5Mode({enabled: true, requireBase: false});
+			$locationProvider.html5Mode(false);
 			$locationProvider.hashPrefix('!');
 			$routeProvider
 				.when('/', {

@@ -3,8 +3,20 @@
 	height: 380px;
 	background: #fff;
 	padding: 30px 40px 20px;
+	position: relative;
 	float: left;
-	margin-right: 20px;
+	margin: 0 20px 20px 0;
+	@media @tablet-mq{
+		margin-right: 0;
+	}
+	@media @tablet-portrait-mq {
+		width: 280px;
+		margin: 0 20px 20px;
+	}
+	@media @mobile-mq{
+		margin: 0 0 20px;
+		width: 100%;
+	}
 	&_little{
 		padding: 40px 20px;
 		width: 280px;
