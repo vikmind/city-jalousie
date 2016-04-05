@@ -14,8 +14,14 @@
 	</section>
 	<div class="site-header__tools">
 		<div class="container">
+			<div class="site-header__phone-callme phone-top show-in-portrait hide-in-desktop">
+				<svg class="icon phone-top__icon icon-phone" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#mobile" ng-click="openCallme()"></use></svg>
+			</div>
+			<div class="site-header__mobile-search show-in-portrait hide-in-desktop" ng-click="openSearch()">
+				<svg class="icon phone-top__icon icon-phone" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#search_mobile"></use></svg>
+			</div>
 			<!-- Links set -->
-			<a href="/#!" class="link-back">
+			<a href="/#!/" class="link-back hide-in-tablet">
 				<svg class="icon icon-shevron-left-white link-back__icon"><use xlink:href="icons/icons.svg#shevron-left-white"></use></svg>
 				<span class="link-back__text">
 					назад
@@ -23,14 +29,14 @@
 			</a>
 			<!-- Constructor title -->
 			<div class="constructor-title">
-				<svg class="icon icon-constructor constructor-title__icon"><use xlink:href="icons/icons.svg#cons"></use></svg>
+				<svg class="icon icon-constructor constructor-title__icon hide-in-portrait"><use xlink:href="icons/icons.svg#cons"></use></svg>
 				<div class="constructor-title__text">
-					Конструктор жалюзи
+					Конструктор <span class="hide-in-portrait">жалюзи</span>
 				</div>
 			</div>
 			<!-- LOGO -->
 			<div class="site-header__logo">
-				<a class="site-header__logo-link" href="/">
+				<a class="site-header__logo-link" href="/#!/">
 					<img src='img/logo.png' alt='Сити Жалюзи' class="site-header__logo-img">
 				</a>
 			</div>
@@ -39,8 +45,16 @@
 				class="constructor__upload-btn btn btn_lightRed btn_big">
 				<input type="file" ng-model="constructorBgImg" ng-click="constructorBgImg.base64 = null" base-sixty-four-input>
 				<svg class="icon icon-camera"><use xlink:href="icons/icons.svg#upload_photo"></use></svg>
-				<span class="text">Загрузить фото своего окна</span>
+				<span class="text">Загрузить фото <span class="hide-in-portrait">своего</span> окна</span>
 			</label>
+
+			<div class="site-header__mobile-menu show-in-portrait hide-in-desktop" ng-click="toggleOffCanvas('right');">
+				<svg class="icon phone-top__icon icon-phone" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#menu_mobile"></use></svg>
+			</div>
+			<div class="site-header__cart-search show-in-portrait hide-in-desktop">
+				<!-- Cart -->
+				<cart></cart>
+			</div>
 		</div>
 	</div>
 </header>

@@ -92,6 +92,21 @@
 	.container{
 		z-index: 11;
 	}
+	@media @tablet-mq{
+		&__column {
+			&-1{
+				width: 50%;
+				padding: 26px 40px;
+			}
+			&-2{
+				width: 50%;
+				padding: 26px 20px;
+			}
+		}
+		.textures__list{
+			margin-top: 0;
+		}
+	}
 	@media @tablet-portrait-mq{
 		&__content{
 			padding-top: 50px;
@@ -131,8 +146,16 @@
 			}
 		}
 		&__column {
-			width: 100%;
 			padding: 10px 0 0;
+		}
+	}
+	@media @mobile-mq{
+		&__column {
+			width: 100%;
+			padding: 0;
+		}
+		.textures__list{
+			margin-top: 30px;
 		}
 	}
 }

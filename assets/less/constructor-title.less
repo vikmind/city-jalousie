@@ -5,6 +5,16 @@
 	margin-right: 110px;
 	white-space: nowrap;
 	width: 290px;
+	@media @tablet-portrait-mq{
+		right: auto;
+		left: -140px;
+		margin: 0;
+		width: auto;
+	}
+	@media @mobile-mq{
+		left: 18px;
+		top: 50px;
+	}
 	&__icon{
 		position: relative;
 		float: left;
@@ -16,5 +26,8 @@
 		line-height: 40px;
 		font-size: 19px;
 		.no-select();
+		@media @mobile-mq{
+			font-size: 13px;
+		}
 	}
 }
