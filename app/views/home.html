@@ -115,15 +115,14 @@
 			</div>
 
 			<!-- Product -->
-			<div class="product-inside" ng-if="!desktop" ng-repeat="product in [featuredProduct]">
+			<div class="product-inside hide-in-desktop show-in-tablet" ng-repeat="product in [featuredProduct]">
 				<div ng-init="product.single = true;" ng-include="'views/directives/product.html'"></div>
 			</div>
 
 			<benefits
-				ng-if="!desktop"
 				title="Услуги"
 				url="services.json"
-				class="benefits_services">
+				class="benefits_services hide-in-desktop show-in-tablet">
 			</benefits>
 	</div>
 
