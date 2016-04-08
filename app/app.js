@@ -46,8 +46,8 @@ var app = angular.module('myApp', [
 					controller: 'HomeCtrl',
 					templateUrl: 'views/home.html',
 					meta: {
-						title: 'Дизайн окна. Мастерская по изготовлению жалюзи и штор в Москве.',
-						description: 'Современное оформление окон: жалюзи, карнизы, шторы, текстиль, рольставни в Москве.'
+						title: 'Сити Жалюзи: Производство и продажа жалюзи, штор, ворот.',
+						description: 'Все, что вы бы хотели спросить о жалюзи: где купить жалюзи в Москве на 18% дешевле?'
 					}
 				})
 				.when('/article/:slug', {
@@ -84,7 +84,7 @@ var app = angular.module('myApp', [
 					controller: 'ConstructorPageCtrl',
 					templateUrl: 'views/constructor.html',
 					meta: {
-						title: 'Конструктор жалюзи и штор онлайн. Дизайн окна.',
+						title: 'Конструктор жалюзи и штор онлайн. Сити Жалюзи.',
 						description: 'При помощи нашего конструктора вы можете легко подобрать шторы или жалюзи не выходя из дома.'
 					}
 				})

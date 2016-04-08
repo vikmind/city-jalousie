@@ -11,15 +11,22 @@
 	&__item{
 		display: table-cell;
 		vertical-align: bottom;
+		&:first-child{
+			.nav-top__link{
+				@media @tablet-mq{
+					padding: 15px 0 20px 15px;
+				}
+			}
+		}
 	}
 	&__link{
 		display: block;
-		padding: 15px 15px 20px;
+		padding: 15px 20px 20px;
 		text-decoration: none;
 		height: 100%;
 		position: relative;
 		@media @tablet-mq{
-			padding: 15px 7px 20px;
+			padding: 15px 7px 20px 15px;
 		}
 	}
 	&__item:hover &__link{
@@ -46,7 +53,7 @@
 		font-size: 9.5px;
 		font-weight: 400;
 		line-height: 20px;
-		height: 15px;
+		max-height: 15px;
 		text-transform: uppercase;
 	}
 	&__name{
