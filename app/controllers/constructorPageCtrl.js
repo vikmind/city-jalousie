@@ -32,6 +32,7 @@
 			$scope.typesModel = {};
 			$scope.textureModel = null;
 			$scope.textureId = null;
+			$scope.texture = null;
 			MenuService.getMenu()
 			.then(function(data){
 				menu = data.items;
@@ -98,6 +99,7 @@
 					$scope.textures = data;
 					$scope.$watch('textureId', function (newVal) {
 						if (!!newVal){
+							$rootScope.texture = TexturesService.getTextureById(newVal);
 							$scope.texture = TexturesService.getTextureById(newVal);
 							$scope.product = {
 								image: $scope.texture.product_image,

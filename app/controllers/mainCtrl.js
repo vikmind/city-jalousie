@@ -24,6 +24,7 @@
 		$scope.blockContent = '';
 		$scope.touchElement = ResponsiveService.getState('tabletPortrait');
 		$scope.blockContentHtml = '';
+		$rootScope.texture = null;
 		$scope.$watch('blockContent', function(){
 			$scope.blockContentHtml = $sce.trustAsHtml($scope.blockContent);
 		});

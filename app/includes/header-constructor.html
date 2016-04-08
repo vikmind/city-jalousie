@@ -1,6 +1,7 @@
 <header class="site-header site-header_constructor">
-	<section class="slider slider_constructor" ng-controller="ConstructorPageCtrl">
+	<section class="slider slider_constructor">
 		<!-- Constructor preview -->
+		<span></span>
 		<constructor-preview
 			ng-if="constructorBgImg.base64"
 			background="{{constructorBgImg.base64}}"
@@ -51,7 +52,7 @@
 			<div class="site-header__mobile-menu show-in-portrait hide-in-desktop" ng-click="toggleOffCanvas('right');">
 				<svg class="icon phone-top__icon icon-phone" xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="icons/icons.svg#menu_mobile"></use></svg>
 			</div>
-			<div class="site-header__cart-search show-in-portrait hide-in-desktop">
+			<div class="site-header__cart-search">
 				<!-- Cart -->
 				<cart></cart>
 			</div>

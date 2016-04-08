@@ -77,6 +77,21 @@
 		.site-header__tools{
 			height: 59px;
 		}
+		.site-header__cart-search{
+			position: absolute;
+			right: 0;
+			left: auto;
+			@media @tablet-mq{
+				right: 50px;
+				.cart__text{
+					display: none;
+				}
+			}
+			@media @tablet-portrait-mq{
+				position: relative;
+				right: auto;
+			}
+		}
 	}
 	&_product{
 		&:after{
