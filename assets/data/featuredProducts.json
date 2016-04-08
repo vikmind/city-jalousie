@@ -1,0 +1,46 @@
+[
+	{
+		"id":20,
+		"image":"vertikalnye_zhaluzi\/verevochnye\/briz\/preview.jpg",
+		"rating":"4.0000",
+		"reviews_count":1,
+		"link":"product\/vertikalnye_zhalyuzi\/verevochnye\/verevochnye_vertikalnye_zhalyuzi_briz",
+		"title":"\u0412\u0435\u0440\u0435\u0432\u043e\u0447\u043d\u044b\u0435 \u0432\u0435\u0440\u0442\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u0436\u0430\u043b\u044e\u0437\u0438 \u0411\u0440\u0438\u0437","category_link":"vertikalnye_zhalyuzi","category_title":"\u0412\u0435\u0440\u0442\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u0436\u0430\u043b\u044e\u0437\u0438",
+		"sale":0,
+		"textures":[
+			{"id":315,"url":"double_0190__bezhevyy","model":"Double 0190 - \u0431\u0435\u0436\u0435\u0432\u044b\u0439","price":6585,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/1.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":316,"url":"multi_2746__bezhevyy","model":"Multi 2746 - \u0431\u0435\u0436\u0435\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/2.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":317,"url":"classic_2801__korichnevyy","model":"Classic 2801 - \u043a\u043e\u0440\u0438\u0447\u043d\u0435\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/3.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":318,"url":"classic_2853__oranzhevyy","model":"Classic 2853 - \u043e\u0440\u0430\u043d\u0436\u0435\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/4.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":319,"url":"classic_4240__persikovyy","model":"Classic 4240 - \u043f\u0435\u0440\u0441\u0438\u043a\u043e\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/5.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":320,"url":"double_4096__oranzhevyy","model":"Double 4096 - \u043e\u0440\u0430\u043d\u0436\u0435\u0432\u044b\u0439","price":6585,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/6.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":321,"url":"multi_7013__seryy","model":"Multi 7013 - \u0441\u0435\u0440\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/7.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":322,"url":"double_1606__serogoluboy","model":"Double 1606 - \u0441\u0435\u0440\u043e-\u0433\u043e\u043b\u0443\u0431\u043e\u0439","price":8510,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/8.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":323,"url":"classic_5252__goluboy","model":"Classic 5252 - \u0433\u043e\u043b\u0443\u0431\u043e\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/9.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":324,"url":"classic_5850__salatovyy","model":"Classic 5850 - \u0441\u0430\u043b\u0430\u0442\u043e\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/10.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":325,"url":"classic_4082__rozovyy","model":"Classic 4082 - \u0440\u043e\u0437\u043e\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/11.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"}
+		]
+	},
+	{
+		"id":21,
+		"image":"vertikalnye_zhaluzi\/verevochnye\/briz\/preview.jpg",
+		"rating":"4.0000",
+		"reviews_count":1,
+		"link":"product\/vertikalnye_zhalyuzi\/verevochnye\/verevochnye_vertikalnye_zhalyuzi_briz",
+		"title":"dadawdaw",
+		"sale":0,
+		"textures":[
+			{"id":315,"url":"double_0190__bezhevyy","model":"Double 0190 - \u0431\u0435\u0436\u0435\u0432\u044b\u0439","price":6585,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/1.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":316,"url":"multi_2746__bezhevyy","model":"Multi 2746 - \u0431\u0435\u0436\u0435\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/2.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":317,"url":"classic_2801__korichnevyy","model":"Classic 2801 - \u043a\u043e\u0440\u0438\u0447\u043d\u0435\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/3.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":318,"url":"classic_2853__oranzhevyy","model":"Classic 2853 - \u043e\u0440\u0430\u043d\u0436\u0435\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/4.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":319,"url":"classic_4240__persikovyy","model":"Classic 4240 - \u043f\u0435\u0440\u0441\u0438\u043a\u043e\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/5.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":320,"url":"double_4096__oranzhevyy","model":"Double 4096 - \u043e\u0440\u0430\u043d\u0436\u0435\u0432\u044b\u0439","price":6585,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/6.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":321,"url":"multi_7013__seryy","model":"Multi 7013 - \u0441\u0435\u0440\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/7.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":322,"url":"double_1606__serogoluboy","model":"Double 1606 - \u0441\u0435\u0440\u043e-\u0433\u043e\u043b\u0443\u0431\u043e\u0439","price":8510,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/8.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":323,"url":"classic_5252__goluboy","model":"Classic 5252 - \u0433\u043e\u043b\u0443\u0431\u043e\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/9.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":324,"url":"classic_5850__salatovyy","model":"Classic 5850 - \u0441\u0430\u043b\u0430\u0442\u043e\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/10.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"},
+			{"id":325,"url":"classic_4082__rozovyy","model":"Classic 4082 - \u0440\u043e\u0437\u043e\u0432\u044b\u0439","price":5780,"img":"vertikalnye_zhaluzi\/verevochnye\/texture\/11.jpg","translucent":"","country":"\u041a\u0438\u0442\u0430\u0439","width":"89 \u043c\u043c","structure":"\u0422\u043a\u0430\u043d\u044c"}
+		]
+	}
+]

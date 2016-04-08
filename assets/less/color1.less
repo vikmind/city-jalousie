@@ -9,8 +9,9 @@
 		cursor: pointer;
 		transition: opacity @animation-time, background-color @animation-time;
 		opacity: 0.8;
-		border-radius: 2px;
+		border-radius: 1px;
 		background: #fff;
+		background-color: #ebebeb;
 		&:before {
 			content: '';
 			display: block;
@@ -46,6 +47,7 @@
 		top: 0;
 		opacity: 0;
 		&:checked + .color__bg {
+			border-radius: 2px;
 			background-color: @green;
 		}
 	}

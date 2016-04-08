@@ -17,7 +17,7 @@
 				class="benefits_advantages"
 			></benefits>
 			<!-- Product -->
-			<div class="product-inside" ng-repeat="product in [featuredProduct]">
+			<div class="product-inside" ng-repeat="product in featuredProduct.slice(0,1)">
 				<div ng-init="product.single = true;" ng-include="'views/directives/product.html'"></div>
 			</div>
 
@@ -115,7 +115,7 @@
 			</div>
 
 			<!-- Product -->
-			<div class="product-inside hide-in-desktop show-in-tablet" ng-repeat="product in [featuredProduct]">
+			<div class="product-inside hide-in-desktop show-in-tablet" ng-repeat="product in featuredProduct.slice(1)">
 				<div ng-init="product.single = true;" ng-include="'views/directives/product.html'"></div>
 			</div>
 
@@ -143,8 +143,8 @@
 			<p class="jumbotron__text">
 				За здоровье своих детей можно не волноваться, так как мы выбираем только тех производителей материалов, которые не используют в производстве вредные химикаты.
 			</p>
-			<a href="#!/article/123" class="btn btn_green">о нашем контроле</a>
-			<a href="#!/article/132" class="btn btn_olive">жалюзи из бамбука</a>
+			<a href="#!/article/ecocontrol" class="btn btn_green">о нашем контроле</a>
+			<a href="#!/catalog/gorizontalnye_zhalyuzi/bambukovye" class="btn btn_olive">жалюзи из бамбука</a>
 		</div>
 	</section>
 	<!-- Catalog -->

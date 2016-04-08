@@ -12,7 +12,7 @@
 			single-item="true"
 			responsive="true"
 			responsive-refresh-rate="200"
-			owl-carousel="['img/header.jpg','img/header.jpg','img/header.jpg','img/header.jpg','img/header.jpg']">
+			owl-carousel="['img/slider/1.jpg','img/slider/2.jpg','img/slider/3.jpg','img/slider/4.jpg','img/slider/5.jpg']">
 			<div class="item">
 				<div
 					ng-style="{'background-image': 'url({{item}})'}"
@@ -61,7 +61,7 @@
 					<div class="search__links" ng-if="results" ng-click="clickResult()">
 						<ul class="article-set__list article-set__list_search">
 							<li
-							ng-repeat="(key, link) in results"
+							ng-repeat="(key, link) in results | limitTo:-4"
 							class="article-set_item">
 								<a href="#!/{{link.url}}" class="article-set__link">
 									<span class="article-set__link-text">
@@ -135,7 +135,7 @@
 						</li>
 						<li class="nav-top__sub-item">
 							<a href="#!/catalog/gorizontalnye_zhalyuzi/plastikovye" class="nav-top__sub-link">
-								<img src="img/menu/horizontal_volna.jpg" alt="Пластиковые" class="nav-top__sub-image">
+								<img src="img/menu/horizontal_plastic.jpg" alt="Пластиковые" class="nav-top__sub-image">
 								<span class="nav-top__sub-name">Пластиковые</span>
 							</a>
 						</li>

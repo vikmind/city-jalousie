@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Avocode 2.4.5 - http://avocode.com -->
-<svg height="40" width="85" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 40">
-    <path fill="#ca575b" fill-rule="evenodd" d="M 0 0 C 0 0 80 0 80 0 C 80 0 80 40 80 40 C 80 40 59.08 35 38.63 35 C 19.1 35 0 40 0 40 C 0 40 0 0 0 0 Z" />
-    <path stroke-linejoin="miter" stroke-linecap="butt" stroke-dasharray="4,2" stroke-width="1" stroke="#ffffff" fill="none" opacity="0.3" fill-rule="evenodd" d="M 3 3 C 3 3 77 3 77 3 C 77 3 77 37 77 37 C 77 37 59.08 32 38.63 32 C 19.1 32 3 37 3 37 C 3 37 3 3 3 3 Z" />
-    <path fill="#ffffff" opacity="0.1" fill-rule="evenodd" d="M 0 0 C 0 0 80 0 80 0 C 80 0 80 40 80 40 C 80 40 0 0 0 0 Z" />
-    <path fill="#7d3031" fill-rule="evenodd" d="M 80 0 C 80 0 85 5 85 5 C 85 5 80 5 80 5 C 80 5 80 0 80 0 Z" />
-</svg>
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 40"><defs><style>.cls-1{fill:#e7565b;}.cls-2{fill:none;stroke:#fff;stroke-dasharray:4 2;opacity:0.3;}.cls-2,.cls-3{isolation:isolate;}.cls-3{fill:#fff;opacity:0.1;}.cls-4{fill:#912c2d;}</style></defs><title>ribbon_text</title><path class="cls-1" d="M0,0H80V40s-20.92-5-41.37-5C19.1,35,0,40,0,40V0Z"/><path class="cls-2" d="M3,3H77V37a160.37,160.37,0,0,0-38.37-5A133.85,133.85,0,0,0,3,37V3Z"/><path class="cls-3" d="M0,0H80V40Z"/><path class="cls-4" d="M80,0l5,5H80V0Z"/></svg>

@@ -7,10 +7,6 @@
 		position: relative;
 		width: 100%;
 		background-color: fade(#36b493, 95%);
-		padding: 0 10px;
-		@media @tablet-mq{
-			padding: 0 10px;
-		}
 	}
 	&__item{
 		display: table-cell;
@@ -33,22 +29,21 @@
 		content: '';
 		display: none;
 		position: absolute;
-		width: 20px;
-		height: 20px;
+		width: 0;
 		left: 50%;
-		top: 100%;
-		background: #fff;
-		transform: rotate(45deg);
-		margin: -2px 0 0 -10px;
+		bottom: -2px;
+		border: 10px solid transparent;
+		border-bottom: 10px solid #fff;
 		z-index: 6;
+		opacity: 0.95;
 	}
 	&__item.withsub:hover &__link:after{
 		display: block;
 	}
 	&__category{
 		display: block;
-		color: #fff;
-		font-size: 10px;
+		color: #cfe4da;
+		font-size: 9.5px;
 		font-weight: 400;
 		line-height: 20px;
 		height: 15px;
@@ -57,8 +52,8 @@
 	&__name{
 		display: block;
 		color: #fff;
-		font-size: 13px;
-		font-weight: 700;
+		font-size: 12.5px;
+		font-weight: 500;
 		line-height: 20px;
 		text-transform: uppercase;
 		@media @tablet-mq{
@@ -88,6 +83,8 @@
 		width: 100%;
 		background: #fff;
 		display: none;
+		opacity: 0.95;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	}
 	&__item:hover &__sub-list{
 		display: block;

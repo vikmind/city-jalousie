@@ -19,7 +19,7 @@
 			$scope.$parent.productHeader = false;
 			$scope.showLoadMoreBtn = true;
 			$scope.catalogItems = [];
-			$scope.featuredProduct = {};
+			$scope.featuredProduct = [];
 			$scope.featuredArticle = ConfigService.homeArticleSlug;
 			$scope.desktop = ResponsiveService.getState('desktop');
 			$scope.getFeaturedProduct();

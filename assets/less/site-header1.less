@@ -129,6 +129,7 @@
 		background: linear-gradient(to bottom left, #fff 0%,#fff 50%, #f5f5f5 50%, #f5f5f5 100%);
 		border: 2px solid #fff;
 		.stitch();
+		box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
 		@media @tablet-portrait-mq{
 			width: 98px;
 			height: 98px;
@@ -188,6 +189,9 @@
 		display: inline-block;
 		vertical-align: top;
 		margin: 5px 0 0 10px;
+		.article-set__list_search{
+			padding-bottom: 0;
+		}
 		@media @tablet-mq{
 			margin: 5px 0 0 47px;
 		}
@@ -211,7 +215,7 @@
 		position: absolute;
 		top: 310px;
 		left: 0;
-		z-index: 100;
+		z-index: 21;
 		width: 100%;
 		@media @tablet-portrait-mq{
 			display:none;

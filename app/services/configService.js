@@ -7,7 +7,7 @@
 
 	function configService() {
 		var config = angular.extend({}, {
-			featuredProductPath: 'featuredProduct.json',
+			featuredProductPath: 'featuredProducts.json',
 			productListPath: 'productList.json',
 			productHomeListPath: 'productList.json',
 			productSeeAlsoListPath: 'similarGoods.json',
