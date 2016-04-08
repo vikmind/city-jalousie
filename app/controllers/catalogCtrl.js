@@ -19,6 +19,7 @@
 		/*$log.log('catalog ctrl');*/
 		$scope.$parent.titleHeaderClass = 'catalog';
 		$scope.init = function(){
+			$scope.$parent.headerImage = '';
 			$scope.responsive = ResponsiveService;
 			$scope.$parent.constructorHeader = false;
 			$scope.$parent.productHeader = false;
@@ -99,7 +100,6 @@
 			ProductService.getList($scope.searchOptions)
 				.then(function (data) {
 					// Success
-					console.log(data.title);
 					ngMeta.setTag('description', data.description);
 					ngMeta.setTitle(data.title + '. Сити жалюзи.');
 					var maxPrice = parseInt(data.maxPrice);

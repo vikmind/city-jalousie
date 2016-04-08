@@ -162,7 +162,7 @@
 				$scope.product.priceExactly = false;
 				$scope.gallery.currentImage = 0;
 				$scope.getTextures();
-
+				$scope.$parent.headerImage = data['image_slider'];
 			}, function (err) {
 				// Error
 				$log.log(err);

@@ -14,6 +14,7 @@
 	function homeCtrl($rootScope, $scope, $log, ProductService, ConfigService, ResponsiveService) {
 		/*$log.log('home ctrl');*/
 		$scope.$parent.titleHeaderClass = 'home';
+		$scope.$parent.headerImage = '';
 		$scope.init = function() {
 			$scope.$parent.constructorHeader = false;
 			$scope.$parent.productHeader = false;

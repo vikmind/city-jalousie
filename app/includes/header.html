@@ -1,5 +1,5 @@
 <header class="site-header" ng-class="'site-header_' + titleHeaderClass">
-	<section class="slider slider_big">
+	<section class="slider slider_big" ng-style="{'background-image': 'url(' + headerImage + ')'}">
 		<!-- pagination="true" -->
 		<div
 			id="bigCarousel"
@@ -84,7 +84,11 @@
 		<div class="container">
 			<ul class="nav-top__list">
 				<li class="nav-top__item withsub ">
-					<a href="#!/catalog/vertikalnye_zhalyuzi" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
+						<span class="nav-top__category">жалюзи</span>
+						<span class="nav-top__name">Вертикальные</span>
+					</span>
+					<a href="#!/catalog/vertikalnye_zhalyuzi" class="nav-top__link hide-in-tablet">
 						<span class="nav-top__category">жалюзи</span>
 						<span class="nav-top__name">Вертикальные</span>
 					</a>
@@ -122,7 +126,11 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub ">
-					<a href="#!/catalog/gorizontalnye_zhalyuzi" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
+						<span class="nav-top__category">жалюзи</span>
+						<span class="nav-top__name">горизонтальные</span>
+					</span>
+					<a href="#!/catalog/gorizontalnye_zhalyuzi" class="nav-top__link hide-in-tablet">
 						<span class="nav-top__category">жалюзи</span>
 						<span class="nav-top__name">горизонтальные</span>
 					</a>
@@ -160,13 +168,21 @@
 					</ul>
 				</li>
 				<li class="nav-top__item">
-					<a href="#!/catalog/mirazh" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
+						<span class="nav-top__category">жалюзи</span>
+						<span class="nav-top__name">Мираж</span>
+					</span>
+					<a href="#!/catalog/mirazh" class="nav-top__link hide-in-tablet">
 						<span class="nav-top__category">жалюзи</span>
 						<span class="nav-top__name">Мираж</span>
 					</a>
 				</li>
 				<li class="nav-top__item withsub">
-					<a href="#!/catalog/klassicheskie_shtory" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">Шторы</span>
+					</span>
+					<a href="#!/catalog/klassicheskie_shtory" class="nav-top__link hide-in-tablet">
 						<span class="nav-top__category"></span>
 						<span class="nav-top__name">Шторы</span>
 					</a>
@@ -192,7 +208,11 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub withsub">
-					<a href="#!/catalog/rulonnye_zhalyuzi" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
+						<span class="nav-top__category">Шторы</span>
+						<span class="nav-top__name">Рулонные</span>
+					</span>
+					<a href="#!/catalog/rulonnye_zhalyuzi" class="nav-top__link hide-in-tablet">
 						<span class="nav-top__category">Шторы</span>
 						<span class="nav-top__name">Рулонные</span>
 					</a>
@@ -230,7 +250,11 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub">
-					<a href="#!/catalog/plisse" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
+						<span class="nav-top__category">Шторы</span>
+						<span class="nav-top__name">Плиссе</span>
+					</span>
+					<a href="#!/catalog/plisse" class="nav-top__link hide-in-tablet">
 						<span class="nav-top__category">Шторы</span>
 						<span class="nav-top__name">Плиссе</span>
 					</a>
@@ -256,7 +280,11 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub">
-					<a href="#!/catalog/rolstavni" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">Рольставни</span>
+					</span>
+					<a href="#!/catalog/rolstavni" class="nav-top__link hide-in-tablet">
 						<span class="nav-top__category"></span>
 						<span class="nav-top__name">Рольставни</span>
 					</a>
@@ -276,7 +304,11 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub">
-					<a href="#!/catalog/karnizy" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">Карнизы</span>
+					</span>
+					<a href="#!/catalog/karnizy" class="nav-top__link hide-in-tablet">
 						<span class="nav-top__category"></span>
 						<span class="nav-top__name">Карнизы</span>
 					</a>
@@ -308,7 +340,11 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub">
-					<a href="#!/catalog/vorota" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">Ворота</span>
+					</span>
+					<a href="#!/catalog/vorota" class="nav-top__link hide-in-tablet">
 						<span class="nav-top__category"></span>
 						<span class="nav-top__name">Ворота</span>
 					</a>
@@ -340,9 +376,13 @@
 					</ul>
 				</li>
 				<li class="nav-top__item withsub">
-					<a href="#!/catalog/stsena" class="nav-top__link">
+					<span class="nav-top__link hide-in-desktop show-in-tablet">
 						<span class="nav-top__category"></span>
-						<span class="nav-top__name"><span class="nav-top__other-text">одежда</span> сцены</span>
+						<span class="nav-top__name">сцена</span>
+					</span>
+					<a href="#!/catalog/stsena" class="nav-top__link hide-in-tablet">
+						<span class="nav-top__category"></span>
+						<span class="nav-top__name">одежда сцены</span>
 					</a>
 					<ul class="nav-top__sub-list">
 						<li class="nav-top__sub-item">

@@ -86,7 +86,6 @@
 			} else if (params.context === 'order'){
 				data.text = _.reduce(products, function(result, product, key){
 					result += (key+1) + '. ' + formatProduct(product) + '\n';
-					console.log(formatProduct(product));
 					return result;
 				}, '');
 

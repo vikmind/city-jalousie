@@ -34,6 +34,7 @@
 					$scope.article = data;
 					$scope.article.content = $sce.trustAsHtml(data.text);
 					$scope.prepareShareUrls();
+					$scope.$parent.headerImage = data['slider_img'];
 				}, function(err){
 					$log.log(err);
 				});

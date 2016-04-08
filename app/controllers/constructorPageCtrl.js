@@ -25,6 +25,7 @@
 		};
 		
 		$scope.infoExpand = false;
+		$scope.$parent.headerImage = '';
 
 		var menu = {};
 		$scope.init = function () {

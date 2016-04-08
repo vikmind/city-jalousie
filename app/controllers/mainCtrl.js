@@ -15,6 +15,7 @@
 
 	function mainCtrl($rootScope, $scope, $log, $timeout, $sce, DialogService, TimeService, ResponsiveService) {
 		/*$log.log('main ctrl');*/
+		$scope.headerImage = '';
 		$scope.filterOpened = false;
 		$scope.showLoader = true;
 		$scope.constructorHeader = false;
