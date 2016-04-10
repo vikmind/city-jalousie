@@ -7,7 +7,8 @@
 		name="{{name}}"
 		value="{{value}}">
 	<span
-		ng-style="{'color': '{{fill}}'}"
 		data-fill="{{fill}}"
-		class="color__bg"></span>
+		class="color__bg">
+		<span class="color__bg-inside" ng-style="{'background-color': '{{fill}}'}"></span>
+	</span>
 </label>

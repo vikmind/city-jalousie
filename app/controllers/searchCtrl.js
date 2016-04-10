@@ -7,10 +7,11 @@
 			'$log',
 			'SearchService',
 			'DialogService',
+			'$document',
 			searchCtrl
 		]);
 
-	function searchCtrl($rootScope, $scope, $log, SearchService, DialogService) {
+	function searchCtrl($rootScope, $scope, $log, SearchService, DialogService, $document) {
 		/*$log.log('search ctrl');*/
 
 		$scope.init = function () {
@@ -46,6 +47,14 @@
 		$scope.clickResult = function(){
 			DialogService.setState(false);
 		};
+
+		angular.element($document[0].body).on('click',function(e) {
+			if (!_.isEmpty($scope.results) && !$(e.target).closest('.site-header__search')[0]) {
+				$scope.$apply(function(){
+					$scope.term = '';
+				});
+			}
+		});
 
 		$scope.init();
 	}

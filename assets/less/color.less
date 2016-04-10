@@ -25,23 +25,22 @@
 			top: -1px;
 			left: -1px;
 		}
-		&:after{
-			content: '';
-			display: block;
-			position: relative;
-			width: 20px;
-			height: 20px;
-			margin: 5px;
-			background: currentColor;
-			border-radius: 2px;
-			box-sizing: border-box;
-		}
 		&[data-fill='#ffffff']:after{
 			border: 1px solid #d1d1d1;
 		}
 		&:hover {
 			opacity: 1;
 		}
+	}
+	&__bg-inside{
+		display: block;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		margin: 5px;
+		border-radius: 2px;
+		box-sizing: border-box;
+		z-index: 10;
 	}
 	input {
 		position: absolute;

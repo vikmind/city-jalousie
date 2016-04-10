@@ -92,6 +92,16 @@
 		display: none;
 		opacity: 0.95;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		&:before{
+			content: '';
+			height: 3px;
+			width: 100%;
+			display: block;
+			top: -2px;
+			left: 0;
+			position: absolute;
+			z-index: 2;
+		}
 	}
 	&__item:hover &__sub-list{
 		display: block;
