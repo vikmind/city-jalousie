@@ -47,10 +47,11 @@
 		}
 	}
 	&_transparent{
-		border: 1px solid #fff;
+		border: 1px solid rgba(255, 255, 255, 0.4);
 		background: transparent;
+		transition: all @animation-time;
 		&:hover {
-			background: fade(@lightRed, 50%);
+			border: 1px solid rgba(255, 255, 255, 1);
 		}
 	}
 	&_lightRed {
@@ -58,6 +59,9 @@
 		background: @lightRed;
 		&:hover {
 			background: darken(@lightRed, 10%);
+			&.btn_transparent{
+				border: 1px solid darken(@lightRed, 10%);
+			}
 		}
 	}
 	&_green {

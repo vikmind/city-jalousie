@@ -65,7 +65,16 @@
 					<div ng-include="'includes/header-constructor.html'"></div>
 				</div>
 				<div ng-view autoscroll ng-class="!!constructorHeader?'view-constructor':''"></div>
-				<div class="dis-loader" ng-class="{'active': showLoader}"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+				<div class="dis-loader" ng-class="{'active': showLoader}">
+					<div class="inner">
+						<div class="ball"></div>
+						<div class="ball"></div>
+					</div>
+					<div class="mid">
+						<div class="ball"></div>
+						<div class="ball"></div>
+					</div>
+				</div>
 				<div ng-include="'includes/footer.html'"></div>
 				<script src="https://www.youtube.com/iframe_api"></script>
 				<script src="js/plugins.min.js"></script>

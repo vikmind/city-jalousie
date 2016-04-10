@@ -46,6 +46,7 @@
 
 		$scope.clickResult = function(){
 			DialogService.setState(false);
+			$scope.term = '';
 		};
 
 		angular.element($document[0].body).on('click',function(e) {

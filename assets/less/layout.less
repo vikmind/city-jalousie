@@ -82,19 +82,20 @@ textarea{
 		.clearfix();
 	}
 	&_tight{
-		padding: 0 10px;
 		margin-top: -80px;
 		z-index: 20;
 		position: relative;
 		@media @tablet-mq{
 			padding: 0;
 		}
+		@media @tablet-portrait-mq{
+			margin-top: -30px;
+		}
 	}
 	&_product-page {
-		margin-top: -90px;
+		margin-top: -30px;
 		margin-bottom: 100px;
 		position: relative;
-		z-index: 21;
 		@media @mobile-mq{
 			margin-top: -48px;
 			margin-bottom: 20px;
