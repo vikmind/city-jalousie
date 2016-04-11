@@ -25,6 +25,7 @@
 		text-decoration: none;
 		height: 100%;
 		position: relative;
+		text-align: center;
 		@media @tablet-mq{
 			padding: 15px 7px 20px 15px;
 		}
@@ -46,6 +47,10 @@
 	}
 	&__item.withsub:hover &__link:after{
 		display: block;
+	}
+	&__container{
+		display: inline-block;
+		text-align: left;
 	}
 	&__category{
 		display: block;
@@ -121,6 +126,9 @@
 		transition: color @animation-time;
 		&:hover{
 			color: #61a083;
+			.nav-top__sub-image{
+				border-color: @green;
+			}
 		}
 		@media @tablet-mq{
 			padding: 20px 12px;
@@ -128,8 +136,10 @@
 	}
 	&__sub-image{
 		border-radius: 50%;
-		width: 50px;
-		height: 50px;
+		width: 56px;
+		height: 56px;
+		border: 2px solid #fff;
+		transition: border-color @animation-time;
 	}
 	&__sub-name{
 		line-height: 20px;
