@@ -3,66 +3,63 @@
 	top: 50%;
 	left: 50%;
 	transform: translate3d(-50%, -50%, 0);
-	display: none;
-	&.active{
-		display: block;
-		.inner {
-			width: 50px;
-			height: 50px;
-			border-radius: 100%;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			margin: -25px 0 0 -25px;
-			-webkit-animation: clockwise 1.5s infinite linear;
-			animation: clockwise 1.5s infinite linear;
-		}
-		.inner .ball {
-			width: 20px;
-			height: 20px;
-			background: #4285f4;
-			border-radius: 100%;
-			position: absolute;
-			-webkit-animation: scale-up 1.5s infinite;
-			animation: scale-up 1.5s infinite;
-		}
-		.inner .ball + .ball {
-			top: 100%;
-			left: 100%;
-			background: #34a853;
-			margin: -20px 0 0 -20px;
-			-webkit-animation: scale-down 1.5s infinite;
-			animation: scale-down 1.5s infinite;
-		}
+	display: block;
+	.inner {
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -25px 0 0 -25px;
+		-webkit-animation: clockwise 1.5s infinite linear;
+		animation: clockwise 1.5s infinite linear;
+	}
+	.inner .ball {
+		width: 20px;
+		height: 20px;
+		background: #4285f4;
+		border-radius: 100%;
+		position: absolute;
+		-webkit-animation: scale-up 1.5s infinite;
+		animation: scale-up 1.5s infinite;
+	}
+	.inner .ball + .ball {
+		top: 100%;
+		left: 100%;
+		background: #34a853;
+		margin: -20px 0 0 -20px;
+		-webkit-animation: scale-down 1.5s infinite;
+		animation: scale-down 1.5s infinite;
+	}
 
-		.mid {
-			width: 100px;
-			height: 100px;
-			border-radius: 100%;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			margin: -50px 0 0 -50px;
-			-webkit-animation: counter-clockwise 1.5s infinite linear;
-			animation: counter-clockwise 1.5s infinite linear;
-		}
-		.mid .ball {
-			width: 20px;
-			height: 20px;
-			background: #fbbc05;
-			border-radius: 100%;
-			position: absolute;
-			-webkit-animation: scale-up 1.5s infinite;
-			animation: scale-up 1.5s infinite;
-		}
-		.mid .ball + .ball {
-			top: 100%;
-			left: 100%;
-			background: #ea4335;
-			margin: -20px 0 0 -20px;
-			-webkit-animation: scale-down 1.5s infinite;
-			animation: scale-down 1.5s infinite;
-		}
+	.mid {
+		width: 100px;
+		height: 100px;
+		border-radius: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -50px 0 0 -50px;
+		-webkit-animation: counter-clockwise 1.5s infinite linear;
+		animation: counter-clockwise 1.5s infinite linear;
+	}
+	.mid .ball {
+		width: 20px;
+		height: 20px;
+		background: #fbbc05;
+		border-radius: 100%;
+		position: absolute;
+		-webkit-animation: scale-up 1.5s infinite;
+		animation: scale-up 1.5s infinite;
+	}
+	.mid .ball + .ball {
+		top: 100%;
+		left: 100%;
+		background: #ea4335;
+		margin: -20px 0 0 -20px;
+		-webkit-animation: scale-down 1.5s infinite;
+		animation: scale-down 1.5s infinite;
 	}
 }
 

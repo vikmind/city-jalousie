@@ -6,6 +6,9 @@
 		@media @tablet-mq{
 			padding: 52px 0 20px;
 		}
+		@media @mobile-mq{
+			padding: 36px 0 0;
+		}
 	}
 
 	&__bottom-menu{
@@ -14,6 +17,14 @@
 		@media @tablet-mq{
 			padding: 62px 0 0;
 		}
+		@media @mobile-mq{
+			padding-top: 0;
+			background: #36b493;
+			.site-footer__column_right{
+				padding-top: 52px;
+				padding-bottom: 4px;
+			}
+		}
 	}
 	&__bottom-color-menu{
 		display: none;
@@ -21,6 +32,19 @@
 		padding: 62px 0 20px;
 		@media @tablet-mq{
 			display: block;
+		}
+		@media @mobile-mq{
+			padding: 52px 0 28px;
+			background: #499982;
+			.site-footer__column_left{
+				padding: 0 20px;
+			}
+			.site-footer__title{
+				margin-bottom: 14px;
+			}
+			.site-footer__text{
+				margin-bottom: 26px;
+			}
 		}
 	}
 	&__row {

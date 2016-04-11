@@ -129,10 +129,28 @@
 		}
 		&__column {
 			width: 100% !important;
-			padding: 0;
+			padding: 0 20px;
 			.socials{
 				margin-bottom: 30px;
 			}
+			&_right{
+				position: relative;
+				padding-top: 45px;
+				&:before{
+					content: '';
+					position: absolute;
+					top:0;
+					left: -18px;
+					right: -18px;
+					border: 1px solid #4ebc9f;
+				}
+			}
+		}
+		.menu-vertical{
+			margin-bottom: 8px;
+		}
+		.btn{
+			width: 100%;
 		}
 	}
 }
