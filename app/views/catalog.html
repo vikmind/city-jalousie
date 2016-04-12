@@ -1,3 +1,36 @@
+<!-- if catalog -->
+<div class="catalog-header">
+	<div class="container">
+		<!-- Search info -->
+		<div class="search-info">
+			<span>{{pageOptions.title}}. Найдено {{catalogItems.length}} предложений</span>
+		</div>
+		<!-- Sort -->
+		<div class="sort">
+			<div class="sort__text">
+				Сортировать по:
+			</div>
+			<ul class="sort__list">
+				<li class="sort__item">
+					<button class="btn btn_transparent" ng-click="toggleSort('price')" ng-class="{btn_lightRed: (searchOptions.sort == 'price')}">
+						<svg class="icon icon-rouble"><use xlink:href="icons/icons.svg#rouble"></use></svg>
+						<span class="btn__text">
+							Стоимости
+						</span>
+					</button>
+				</li>
+				<li class="sort__item active">
+					<button class="btn btn_transparent" ng-click="toggleSort('rating')" ng-class="{btn_lightRed: (searchOptions.sort == 'rating')}">
+						<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
+						<span class="btn__text">
+							Рейтингу
+						</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
 <!-- Main content -->
 <main class="main-content main-content_catalog">
 	<!-- Image gradient -->
