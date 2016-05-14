@@ -1,12 +1,13 @@
 (function () {
 	'use strict';
-	angular.module('catalogCtrl', ['productCtrl', 'productService', 'catalogService', 'configService', 'catalogResponsiveDirective'])
+	angular.module('catalogCtrl', ['productCtrl', 'productService', 'catalogHashService', 'catalogService', 'configService', 'catalogResponsiveDirective'])
 		.controller('CatalogCtrl', [
 			'ngMeta',
 			'$scope',
 			'$log',
 			'$routeParams',
 			'$location',
+			'CatalogHashService',
 			'ProductService',
 			'CatalogService',
 			'ConfigService',
@@ -15,7 +16,7 @@
 			catalogCtrl
 		]);
 
-	function catalogCtrl(ngMeta, $scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService, ResponsiveService, $timeout) {
+	function catalogCtrl(ngMeta, $scope, $log, $routeParams, $location, CatalogHashService, ProductService, CatalogService, ConfigService, ResponsiveService, $timeout) {
 		/*$log.log('catalog ctrl');*/
 		$scope.$parent.titleHeaderClass = 'catalog';
 		$scope.init = function(){
@@ -27,6 +28,19 @@
 			$scope.categoryChecks = {};
 			$scope.priceSlider = null;
 			$scope.maxPrice = ConfigService.maxPrice;
+
+			$scope.colorCollection = JSON.parse(JSON.stringify(window.oStaticData['colors']));
+			$scope.selectedColors = CatalogHashService.getSelectedColors($location.hash());
+			if ($scope.selectedColors && !_.isEmpty($scope.selectedColors))
+			{
+				_.each($scope.colorCollection, function(oColor){
+					if (_.contains($scope.selectedColors, oColor['id'].toString()))
+					{
+						oColor.checked = true;
+					}
+				});
+			}
+			
 			if ($routeParams.subcategory){
 				$scope.categoryChecks[$routeParams.subcategory] = true;
 			}
@@ -36,6 +50,8 @@
 				min_price: ConfigService.minPrice,
 				max_price: ConfigService.maxPrice,
 				category: $routeParams.category,
+				colors: $scope.selectedColors,
+				room_type: $location.hash().split('room=(')[1] ? $location.hash().split('room=(')[1].split(');')[0] : '',
 				'subcategory[]': $routeParams.subcategory ? [$routeParams.subcategory] : []
 			};
 			$scope.$watchCollection('searchOptions', function(oldVal, newVal){
@@ -51,13 +67,14 @@
 					});
 					$scope.searchOptions['subcategory[]'] = arr;
 					if ($scope.searchOptions['subcategory[]'].length === 1){
-						$location.path('catalog/' + $scope.searchOptions.category + '/' +
-							$scope.searchOptions['subcategory[]'], false);
+						$location.url('catalog/' + $scope.searchOptions.category + '/' +
+							$scope.searchOptions['subcategory[]'] + $location.hash());
 					} else {
-						$location.path('catalog/' + $scope.searchOptions.category, false);
+						$location.url('catalog/' + $scope.searchOptions.category + $location.hash());
 					}
 				}
 			});
+
 			$scope.getCatalog();
 		};
 
@@ -148,7 +165,28 @@
 			});
 		};
 
+		$scope.baseValueChange = function(baseValue) {
+			$scope.selectedColors = CatalogHashService.getColors($scope.colorCollection);
+			$scope.searchOptions.colors = $scope.selectedColors;
+			var roomLink = $location.hash().split('room=(')[1] ? 'room=(' + $location.hash().split('room=(')[1].split(');')[0] + ');' : '';
+			if (!_.isEmpty($scope.selectedColors))
+			{
+				$scope.hash = roomLink + 'colors=(' + $scope.selectedColors.toString() + ');';
+			} else {
+				$scope.hash = roomLink + '';
+			}
+			$location.hash($scope.hash);
+		}
+
 		$scope.init();
+
+		
+
+		// if ($scope.selectedColors.length > 0){
+		// 	_.each($scope.selectedColors, function(oColor){
+		// 		$scope.filterColor[oColor]['selected'] = true;
+		// 	});
+		// }
 	}
 
 })();

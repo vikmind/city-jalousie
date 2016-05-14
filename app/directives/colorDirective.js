@@ -24,6 +24,6 @@
 	}
 
 	function colorDirectiveLink(scope, el, attr) {
-
+		
 	}
 })();

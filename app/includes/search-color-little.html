@@ -1,58 +1,20 @@
 <div class="search-color__set">
-	<ul class="colors-set">
-	<li class="colors-set__item">
-		<color model="filterColor.red" name="color" fill="red"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.green" name="color" fill="green"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.orange" name="color" fill="orange"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.brown" name="color" fill="brown"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.purple" name="color" fill="purple"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.red" name="color" fill="red"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.green" name="color" fill="green"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.orange" name="color" fill="orange"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.brown" name="color" fill="brown"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.purple" name="color" fill="purple"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.red" name="color" fill="red"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.green" name="color" fill="green"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.orange" name="color" fill="orange"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.brown" name="color" fill="brown"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.purple" name="color" fill="purple"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.red" name="color" fill="red"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.green" name="color" fill="green"></color>
-	</li>
-	<li class="colors-set__item">
-		<color model="filterColor.orange" name="color" fill="orange"></color>
-	</li>
+	<ul class="colors-set" >
+		<li class="colors-set__item" ng-repeat="model in colorCollection track by $index">
+			<label class="color">
+				<input
+					type="checkbox"
+					ng-model="model.checked"
+					name="catalogColor"
+					value="colorCatalog-{{model.id}}"
+					ng-change="baseValueChange(model.checked)"
+					>
+				<span
+					data-fill="{{model.color}}"
+					class="color__bg">
+					<span class="color__bg-inside" ng-style="{'background-color': '{{model.color}}'}"></span>
+				</span>
+			</label>
+		</li>
 	</ul>
 </div>

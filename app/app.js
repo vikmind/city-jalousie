@@ -60,15 +60,18 @@ var app = angular.module('myApp', [
 				})
 				.when('/catalog', {
 					controller: 'CatalogCtrl',
-					templateUrl: 'views/catalog.html'
+					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false
 				})
 				.when('/catalog/:category', {
 					controller: 'CatalogCtrl',
-					templateUrl: 'views/catalog.html'
+					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false
 				})
 				.when('/catalog/:category/:subcategory', {
 					controller: 'CatalogCtrl',
-					templateUrl: 'views/catalog.html'
+					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false
 				})
 				.when('/product/:category/:subcategory/:product', {
 					controller: 'ProductPageCtrl',

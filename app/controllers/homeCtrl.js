@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('homeCtrl', ['benefitsDirective', 'productService', 'productCtrl', 'newsDirective', 'configService', 'ngMeta'])
+	angular.module('homeCtrl', ['benefitsDirective', 'productService', 'productCtrl', 'newsDirective', 'configService', 'catalogHashService', 'ngMeta'])
 		.controller('HomeCtrl', [
 			'$rootScope',
 			'$scope',
@@ -8,11 +8,13 @@
 			'ProductService',
 			'ConfigService',
 			'ResponsiveService',
+			'CatalogHashService',
 			homeCtrl
 		]);
 
-	function homeCtrl($rootScope, $scope, $log, ProductService, ConfigService, ResponsiveService) {
+	function homeCtrl($rootScope, $scope, $log, ProductService, ConfigService, ResponsiveService, CatalogHashService) {
 		/*$log.log('home ctrl');*/
+		$scope.colorCollection = [];
 		$scope.init = function() {
 			$scope.$parent.titleHeaderClass = 'home';
 			$scope.$parent.headerImage = '';
@@ -25,6 +27,8 @@
 			$scope.desktop = ResponsiveService.getState('desktop');
 			$scope.getFeaturedProduct();
 			$scope.getProductList();
+			$scope.colorHash = [];
+			$scope.colorCollection = JSON.parse(JSON.stringify(window.oStaticData['colors']));
 		};
 
 		$scope.getProductList = function () {
@@ -57,6 +61,16 @@
 				$scope.desktop = ResponsiveService.getState('desktop');
 			});
 		});
+
+		$scope.baseValueChange = function(baseValue) {
+			$scope.selectedColors = CatalogHashService.getColors($scope.colorCollection);
+			if (!_.isEmpty($scope.selectedColors))
+			{
+				$scope.colorHash = '#colors=(' + $scope.selectedColors.toString() + ');';
+			} else {
+				$scope.colorHash = '';
+			}
+		}
 
 		$scope.init();
 	}
