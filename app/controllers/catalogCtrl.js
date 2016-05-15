@@ -50,7 +50,7 @@
 				min_price: ConfigService.minPrice,
 				max_price: ConfigService.maxPrice,
 				category: $routeParams.category,
-				colors: [$scope.selectedColors],
+				colors: $scope.selectedColors.toString(),
 				room_type: $location.hash().split('room=(')[1] ? $location.hash().split('room=(')[1].split(');')[0] : '',
 				'subcategory[]': $routeParams.subcategory ? [$routeParams.subcategory] : []
 			};
@@ -167,7 +167,7 @@
 
 		$scope.baseValueChange = function(baseValue) {
 			$scope.selectedColors = CatalogHashService.getColors($scope.colorCollection);
-			$scope.searchOptions.colors = [$scope.selectedColors];
+			$scope.searchOptions.colors = $scope.selectedColors.toString();
 			var roomLink = $location.hash().split('room=(')[1] ? 'room=(' + $location.hash().split('room=(')[1].split(');')[0] + ');' : '';
 			if (!_.isEmpty($scope.selectedColors))
 			{
