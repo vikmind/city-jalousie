@@ -15,7 +15,6 @@
 			return function(params) {
 				var url = API_PATH + path,
 					defer = $q.defer();
-
 				$http.get(url, {params: params})
 					.success(function (data) {
 						callback(defer, data);
