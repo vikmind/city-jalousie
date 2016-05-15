@@ -4,6 +4,7 @@
 		.controller('HomeCtrl', [
 			'$rootScope',
 			'$scope',
+			'$location',
 			'$log',
 			'ProductService',
 			'ConfigService',
@@ -12,7 +13,7 @@
 			homeCtrl
 		]);
 
-	function homeCtrl($rootScope, $scope, $log, ProductService, ConfigService, ResponsiveService, CatalogHashService) {
+	function homeCtrl($rootScope, $scope, $location, $log, ProductService, ConfigService, ResponsiveService, CatalogHashService) {
 		/*$log.log('home ctrl');*/
 		$scope.colorCollection = [];
 		$scope.init = function() {
@@ -70,7 +71,12 @@
 			} else {
 				$scope.colorHash = '';
 			}
-		}
+		};
+
+		$scope.goToHref = function(e, link){
+			e.preventDefault();
+			$location.url('/catalog' + link);
+		};
 
 		$scope.init();
 	}

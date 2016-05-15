@@ -29,7 +29,7 @@
 				</p>
 				<ng-include src="'includes/search-color-little.html'"></ng-include>
 				<div class="search-color__btn-set">
-					<a ng-href="{{'#!/catalog/' + colorHash}}" class="btn btn_green">Найти по цвету</a>
+					<a href="#" ng-click="goToHref($event, colorHash)" class="btn btn_green">Найти по цвету</a>
 				</div>
 			</section>
 
@@ -39,7 +39,7 @@
 				</h3>
 				<ul class="room-type__list">
 					<li class="room-type__item">
-						<a href="/#!/catalog#room=(school);" class="room-type__link">
+						<a href="#" ng-click="goToHref($event, '#room=(school);')" class="room-type__link">
 							<svg class="icon icon-school room-type__icon">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/icons/icons.svg#school"></use>
 							</svg>
