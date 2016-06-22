@@ -1,11 +1,12 @@
 <!-- Article view -->
-<main class="main-content">
+<main class="main-content" itemscope itemtype="http://schema.org/NewsArticle">
 	<!-- Image gradient -->
 	<!-- <div class="image-gradient">
 		<div
 		    class="image-gradient__image"
 		    ng-style="{'background-image': 'url(' + article.slider_img + ')'}"></div>
 	</div> -->
+	<img style="display:none;" itemprop="image" src="{{article.slider_img}}">
 	<div class="container container_tight">
 		<div class="column-3 article__main">
 			<!-- Article -->
@@ -13,7 +14,7 @@
 				<!-- Header -->
 				<header class="article__header">
 					<!-- Rubric -->
-					<div class="article__rubric">
+					<div class="article__rubric"  itemprop="genre">
 						{{article.rubric}}
 					</div>
 					<!-- Title -->
@@ -32,7 +33,7 @@
 						style="background-image: url({{article.main_img}});">
 					</div>
 				</header>
-				<div class="article__content" ng-bind-html="article.content"></div>
+				<div class="article__content" ng-bind-html="article.content" itemprop="description"></div>
 				<div class="article__info">
 					<!-- Socials -->
 					<div class="article__socials">

@@ -120,7 +120,7 @@
 					<h2 class="text-block__title">
 						{{product.description.title}}
 					</h2>
-					<p class="text-block__text" ng-bind-html="product.description.text"></p>
+					<p class="text-block__text" itemprop="description" ng-bind-html="product.description.text"></p>
 				</div>
 			</div>
 			<div class="top-stripe" ng-if="!desktop" ng-include="'views/directives/construction.html'"></div>

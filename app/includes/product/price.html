@@ -1,4 +1,4 @@
-<div class="price-block">
+<div class="price-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 	<div class="price-block__container">
 		<!-- Old price -->
 		<div class="price-block__old" ng-show="!!product.sale">
@@ -12,6 +12,8 @@
 				<span ng-if="!product.priceExactly">от</span>
 				{{product.price | number:0}} р.</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
 		</div>
+		<span style="display:none;" itemprop="price">{{product.price}}</span>
+		<span style="display:none;" itemprop="priceCurrency">RUB</span>
 	</div>
 	<!-- Description -->
 	<p class="price-block__text">

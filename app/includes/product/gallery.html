@@ -1,7 +1,7 @@
 <div class="gallery">
 	<!-- Title -->
 	<h1 class="gallery__title">
-		{{product.title}} <span class="gallery__model-title">модель {{currentTexture.model}}</span>
+		<span itemprop="name">{{product.title}}</span> <span class="gallery__model-title">модель {{currentTexture.model}}</span>
 	</h1>
 	<!-- Main img -->
 	<div class="gallery__container">
@@ -12,6 +12,7 @@
 				<div class="gallery__texture-img" ng-style="{'background-image': 'url(' + (gallery.previewImage) + ')'}" alt="texture"> </div>
 			</div>
 		</div>
+		<img ng-if="product.gallery[0]" ng-src="{{product.gallery[0].src}}" alt="product image" itemprop="image" style="display: none"/>
 		<div class="gallery__controls">
 			<button class="gallery__button left" ng-click="moveGallery(-1)">
 				<svg class="icon icon-shevron-left">
