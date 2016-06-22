@@ -60,9 +60,9 @@
 					if (!!p.dimensions.width && !!p.dimensions.height){
 						p.priceExactly = true;
 						if (p.withCornice){
-							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * p.dimensions.height + parseInt(p.cornice.price);
+							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * 0.0001 * p.dimensions.height + parseInt(p.cornice.price);
 						} else {
-							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * p.dimensions.height;
+							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * 0.0001 * p.dimensions.height;
 						}
 					} else {
 						p.priceExactly = false;
@@ -76,9 +76,9 @@
 					if (!!p.dimensions.width){
 						p.priceExactly = true;
 						if (p.withCornice){
-							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width + parseInt(p.cornice.price);
+							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * 0.01 + parseInt(p.cornice.price);
 						} else {
-							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width;
+							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * 0.01;
 						}
 					} else {
 						p.priceExactly = false;

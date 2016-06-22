@@ -15,10 +15,10 @@
 				<span ng-if="!!product.texture">модель {{product.texture}}</span>
 				<span ng-if="product.withCornice && product.cornice.cartText" ng-bind="' + ' + product.cornice.cartText"></span>
 				<span class="dimenstions" ng-if="!!product.allowHeight && !!product.dimensions.width && !!product.dimensions.height">
-					({{product.dimensions.width}} м x {{product.dimensions.height}} м)
+					({{product.dimensions.width}} см x {{product.dimensions.height}} см)
 				</span>
 				<span class="dimenstions" ng-if="!product.allowHeight && !!product.dimensions.width">
-					({{product.dimensions.width}} м)
+					({{product.dimensions.width}} cм)
 				</span>
 				- <strong>
 					{{product.price | number:0}} р.
