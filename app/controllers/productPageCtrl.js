@@ -129,7 +129,7 @@
 						_.each(aLinks, function(slink){
 							fullLink += slink + '/';
 						});
-						$location.path(fullLink + 'texture=' + $scope.currentTexture.slug);
+						$location.path(fullLink + 'texture=' + $scope.currentTexture.slug, false);
 						$scope.gallery.previewImage = null;
 						$scope.calcPrice();
 					}
