@@ -30,7 +30,10 @@
 			$scope.maxPrice = ConfigService.maxPrice;
 
 			$scope.colorCollection = JSON.parse(JSON.stringify(window.oStaticData['colors']));
-			$scope.selectedColors = CatalogHashService.getSelectedColors($location.hash());
+			if (!!$routeParams.category){
+				$scope.selectedColors = CatalogHashService.getSelectedColors($location.path().split('/').pop());
+			}
+			// $scope.selectedColors = CatalogHashService.getSelectedColors($location.path().split('/').pop());
 			if ($scope.selectedColors && !_.isEmpty($scope.selectedColors))
 			{
 				_.each($scope.colorCollection, function(oColor){
@@ -49,10 +52,10 @@
 				count: 9,
 				min_price: ConfigService.minPrice,
 				max_price: ConfigService.maxPrice,
-				category: $routeParams.category,
+				category: $routeParams.category.split('=')[1] ? [] : $routeParams.category,
 				colors: $scope.selectedColors.toString(),
-				room_type: $location.hash().split('room=(')[1] ? $location.hash().split('room=(')[1].split(');')[0] : '',
-				'subcategory[]': $routeParams.subcategory ? [$routeParams.subcategory] : []
+				room_type: $location.path().split('room=(')[1] ? $location.path().split('room=(')[1].split(');')[0] : '',
+				'subcategory[]': !$routeParams.subcategory || $routeParams.subcategory && $routeParams.subcategory.split('=')[1] ? [] : [$routeParams.subcategory]
 			};
 			$scope.$watchCollection('searchOptions', function(oldVal, newVal){
 				$scope.getProductList();
@@ -66,11 +69,14 @@
 						}
 					});
 					$scope.searchOptions['subcategory[]'] = arr;
+					var bLink = !!$location.path().split('='),
+						sLink = $location.path().split('/').pop()
+					;
 					if ($scope.searchOptions['subcategory[]'].length === 1){
 						$location.url('catalog/' + $scope.searchOptions.category + '/' +
-							$scope.searchOptions['subcategory[]'] + $location.hash());
+							$scope.searchOptions['subcategory[]'] + (bLink ? '/' + sLink : ''));
 					} else {
-						$location.url('catalog/' + $scope.searchOptions.category + $location.hash());
+						$location.url('catalog/' + $scope.searchOptions.category + sLink);
 					}
 				}
 			});
@@ -81,8 +87,8 @@
 		$scope.getCatalog = function(){
 			$scope.$parent.showLoader = true;
 			CatalogService.getCatalog({
-				category: $routeParams.category,
-				subcategory: $routeParams.subcategory
+				category: $routeParams.category && $routeParams.category.split('=')[1] ? [] : $routeParams.category,
+				subcategory: $routeParams.subcategory && $routeParams.subcategory.split('=')[1] ? [] : $routeParams.subcategory
 			}).then(function(data){
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.pageOptions = data;
@@ -168,14 +174,26 @@
 		$scope.baseValueChange = function(baseValue) {
 			$scope.selectedColors = CatalogHashService.getColors($scope.colorCollection);
 			$scope.searchOptions.colors = $scope.selectedColors.toString();
-			var roomLink = $location.hash().split('room=(')[1] ? 'room=(' + $location.hash().split('room=(')[1].split(');')[0] + ');' : '';
+			var roomLink = $location.path().split('room=(')[1] ? 'room=(' + $location.path().split('room=(')[1].split(');')[0] + ');' : '';
 			if (!_.isEmpty($scope.selectedColors))
 			{
 				$scope.hash = roomLink + 'colors=(' + $scope.selectedColors.toString() + ');';
 			} else {
 				$scope.hash = roomLink + '';
 			}
-			$location.hash($scope.hash);
+			if ($location.path().split('=')[1])
+			{
+				var aLinks = $location.path().split('/'),
+					fullLink = ''
+				;
+				aLinks.pop();
+				_.each(aLinks, function(slink){
+					fullLink += slink + '/';
+				});
+				$location.path(fullLink + $scope.hash);
+			} else {
+				$location.path($location.path() + '/' + $scope.hash);
+			}
 		}
 
 		$scope.init();

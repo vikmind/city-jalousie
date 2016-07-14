@@ -107,6 +107,17 @@ var app = angular.module('myApp', [
 						ogImage: 'https://city-jaluzi.ru/img/fb.jpg'
 					}
 				})
+				.when('/catalog/:category/:subcategory/:searchtype', {
+					controller: 'CatalogCtrl',
+					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false,
+					meta: {
+						ogUrl: 'https://city-jaluzi.ru',
+						ogTitle: 'Сити Жалюзи: Производство и продажа жалюзи, штор, ворот.',
+						ogDescription: 'Все, что вы бы хотели спросить о жалюзи: где купить жалюзи в Москве на 18% дешевле?',
+						ogImage: 'https://city-jaluzi.ru/img/fb.jpg'
+					}
+				})
 				.when('/product/:category/:subcategory/:product', {
 					controller: 'ProductPageCtrl',
 					templateUrl: 'views/product.html',
