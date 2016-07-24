@@ -67,7 +67,7 @@
 			$scope.selectedColors = CatalogHashService.getColors($scope.colorCollection);
 			if (!_.isEmpty($scope.selectedColors))
 			{
-				$scope.colorHash = '#colors=(' + $scope.selectedColors.toString() + ');';
+				$scope.colorHash = '/colors=(' + $scope.selectedColors.toString() + ');';
 			} else {
 				$scope.colorHash = '';
 			}
