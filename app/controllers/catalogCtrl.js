@@ -98,6 +98,7 @@
 				$scope.$parent.showLoader = false;
 			}, function(err){
 				$log.log(err);
+				$scope.$parent.showLoader = false;
 			});
 		};
 
