@@ -52,8 +52,8 @@
 				count: 9,
 				min_price: ConfigService.minPrice,
 				max_price: ConfigService.maxPrice,
-				category: $routeParams.category.split('=')[1] ? [] : $routeParams.category,
-				colors: $scope.selectedColors.toString(),
+				category: $routeParams.category && $routeParams.category.split('=')[1] ? [] : $routeParams.category,
+				colors: $scope.selectedColors ? $scope.selectedColors.toString() : [],
 				room_type: $location.path().split('room=(')[1] ? $location.path().split('room=(')[1].split(');')[0] : '',
 				'subcategory[]': !$routeParams.subcategory || $routeParams.subcategory && $routeParams.subcategory.split('=')[1] ? [] : [$routeParams.subcategory]
 			};
@@ -99,6 +99,12 @@
 			}, function(err){
 				$log.log(err);
 				$scope.$parent.showLoader = false;
+				$scope.pageOptions = {};
+				$scope.pageOptions.title = 'Каталог';
+				if (!$scope.selectedColors && !$location.path().split('room=(')[1])
+				{
+					$location.path('/');
+				}
 			});
 		};
 
