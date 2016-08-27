@@ -7,6 +7,8 @@
 			'$log',
 			'youtubeEmbedUtils',
 			'$location',
+			'$rootScope',
+			'$route',
 			'$routeParams',
 			'TexturesService',
 			'ProductService',
@@ -19,7 +21,7 @@
 			productPageCtrl
 		]);
 
-	function productPageCtrl(ngMeta, $scope, $log, youtubeEmbedUtils, $location, $routeParams,
+	function productPageCtrl(ngMeta, $scope, $log, youtubeEmbedUtils, $location, $rootScope, $route, $routeParams,
 		TexturesService, ProductService, CartService, DialogService, ConfigService,
 		$sce, $timeout, ResponsiveService) {
 		/*$log.log('product page ctrl');*/
@@ -104,36 +106,23 @@
 			// Success
 			if (list.length > 0){
 				var category = $routeParams.category,
-					subcategory = $routeParams.subcategory,
-					product = $routeParams.product,
-					texture = $routeParams.texture,
-					oHash = $location.path().split('texture='),
-					hash = !!oHash[1] ? oHash[1] : '',
+					subcategory = !$routeParams.texture ? $routeParams.product : $routeParams.subcategory,
+					product = !$routeParams.texture ? $routeParams.texture : $routeParams.product,
+					texture = !$routeParams.texture ? '': $routeParams.texture,
+					hash = $location.search().texture ? $location.search().texture : '',
 					currentTexture = TexturesService.getTextureBySlug(hash) || {
 						id: list[0].id
 					},
 					currentId = currentTexture.id
 				;
 				$scope.textures = list;
+				if ($scope.textureModel === currentId)
+				{
+					$scope.textureModel = '-1';
+				}
 				$scope.textureModel = currentId;
 				$scope.showAllTextures = false;
 
-
-				$scope.$watch('textureModel', function (newVal) {
-					if (newVal !== "-1") {
-						$scope.getTextureById(newVal);
-						var aLinks = $location.path().split('/'),
-							fullLink = ''
-						;
-						aLinks.pop();
-						_.each(aLinks, function(slink){
-							fullLink += slink + '/';
-						});
-						$location.path(fullLink + 'texture=' + $scope.currentTexture.slug, false);
-						$scope.gallery.previewImage = null;
-						$scope.calcPrice();
-					}
-				});
 				$scope.$watch('previewTextureModel', function (newVal) {
 					if (newVal) {
 						$scope.gallery.previewImage = TexturesService.getTextureById(newVal).img;
@@ -144,6 +133,18 @@
 				$scope.$watch('product.withCornice', $scope.calcPrice);
 			}
 		};
+
+		$scope.$watch('textureModel', function (newVal) {
+			if (newVal !== "-1") {
+				$scope.getTextureById(newVal);
+				if ($scope.currentTexture)
+				{
+					$location.search({'texture': $scope.currentTexture.slug});
+				}
+				$scope.gallery.previewImage = null;
+				$scope.calcPrice();
+			}
+		});
 
 		$scope.getProduct = function () {
 			$scope.totalColors = 0;
@@ -300,6 +301,13 @@
 			$scope.toggleMobilePopup = !$scope.toggleMobilePopup;
 			$scope.$parent.filterOpened = !$scope.$parent.filterOpened;
 		};
+
+		// $rootScope.$on("$routeChangeStart", _.debounce(function (event, next, current) {
+		// 	if (current.params.category !== next.params.category || current.params.product !== next.params.product || current.params.subcategory !== next.params.subcategory)
+		// 	{
+		// 		$route.reload();
+		// 	}
+		// }, 50));
 
 		$scope.init();
 	}
